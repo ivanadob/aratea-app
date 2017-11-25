@@ -6,6 +6,7 @@ import module namespace templates="http://exist-db.org/xquery/templates" ;
 import module namespace config="http://www.digital-archiv.at/ns/aratea-app/config" at "config.xqm";
 import module namespace kwic = "http://exist-db.org/xquery/kwic" at "resource:org/exist/xquery/lib/kwic.xql";
 
+declare variable  $app:data := $config:app-root||'/data';
 declare variable  $app:editions := $config:app-root||'/data/editions';
 declare variable  $app:indices := $config:app-root||'/data/indices';
 declare variable $app:placeIndex := $config:app-root||'/data/indices/listplace.xml';
@@ -92,8 +93,8 @@ declare function app:nameOfIndexEntry($node as node(), $model as map (*)){
 
     let $searchkey := xs:string(request:get-parameter("searchkey", "No search key provided"))
     let $withHash:= '#'||$searchkey
-    let $entities := collection($app:editions)//tei:TEI//*[@ref=$withHash]
-    let $terms := (collection($app:editions)//tei:TEI[.//tei:term[./text() eq substring-after($withHash, '#')]])
+    let $entities := collection($app:data)//tei:TEI//*[@ref=$withHash]
+    let $terms := (collection($app:data)//tei:TEI[.//tei:term[./text() eq substring-after($withHash, '#')]])
     let $noOfterms := count(($entities, $terms))
     let $hit := collection($app:indices)//*[@xml:id=$searchkey]
     let $name := if (contains(node-name($hit), 'person'))
@@ -156,7 +157,7 @@ let $href := concat('show.html','?document=', app:getDocName($node), '&amp;direc
 declare function app:indexSearch_hits($node as node(), $model as map(*),  $searchkey as xs:string?, $path as xs:string?){
 let $indexSerachKey := $searchkey
 let $searchkey:= '#'||$searchkey
-let $entities := collection($app:editions)//tei:TEI[.//*/@ref=$searchkey]
+let $entities := collection($app:data)//tei:TEI[.//*/@ref=$searchkey]
 let $terms := collection($app:editions)//tei:TEI[.//tei:term[./text() eq substring-after($searchkey, '#')]]
 for $title in ($entities, $terms)
     let $docTitle := string-join(root($title)//tei:titleStmt/tei:title//text(), ' ')
