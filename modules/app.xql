@@ -1,9 +1,9 @@
 xquery version "3.0";
-module namespace app="http://www.digital-archiv.at/ns/dsebaseproject/templates";
+module namespace app="http://www.digital-archiv.at/ns/aratea-app/templates";
 declare namespace tei="http://www.tei-c.org/ns/1.0";
 declare namespace functx = 'http://www.functx.com';
 import module namespace templates="http://exist-db.org/xquery/templates" ;
-import module namespace config="http://www.digital-archiv.at/ns/dsebaseproject/config" at "config.xqm";
+import module namespace config="http://www.digital-archiv.at/ns/aratea-app/config" at "config.xqm";
 import module namespace kwic = "http://exist-db.org/xquery/kwic" at "resource:org/exist/xquery/lib/kwic.xql";
 
 declare variable  $app:editions := $config:app-root||'/data/editions';
@@ -182,18 +182,18 @@ for $title in ($entities, $terms)
 declare function app:listPers($node as node(), $model as map(*)) {
     let $hitHtml := "hits.html?searchkey="
     for $person in doc(concat($config:app-root, '/data/indices/listperson.xml'))//tei:listPerson/tei:person
-    let $gnd := $person/tei:note/tei:p[3]/text()
-    let $gnd_link := if ($gnd != "no gnd provided") then
+    let $gnd := data($person/tei:persName/@ref)
+    let $gnd_link := if ($gnd) then
         <a href="{$gnd}">{$gnd}</a>
         else
-        $gnd
+        "no gnd provided"
         return
         <tr>
             <td>
-                <a href="{concat($hitHtml,data($person/@xml:id))}">{$person/tei:persName/tei:surname}</a>
+                <a href="{concat($hitHtml,data($person/@xml:id))}">{$person/tei:persName[1]}</a>
             </td>
             <td>
-                {$person/tei:persName/tei:forename}
+                {string-join($person//tei:persName/text(), ' ')}
             </td>
             <td>
                 {$gnd_link}
@@ -207,15 +207,21 @@ declare function app:listPers($node as node(), $model as map(*)) {
 declare function app:listPlace($node as node(), $model as map(*)) {
     let $hitHtml := "hits.html?searchkey="
     for $place in doc(concat($config:app-root, '/data/indices/listplace.xml'))//tei:listPlace/tei:place
+    let $gnd := data($place/tei:placeName/@ref)
+    let $gnd_link := if ($gnd) then
+        <a href="{$gnd}">{$gnd}</a>
+        else
+        "no normadata provided"
+        return
     let $lat := tokenize($place//tei:geo/text(), ' ')[1]
     let $lng := tokenize($place//tei:geo/text(), ' ')[2]
         return
         <tr>
             <td>
-                <a href="{concat($hitHtml, data($place/@xml:id))}">{functx:capitalize-first($place/tei:placeName[1])}</a>
+                <a href="{concat($hitHtml, data($place/@xml:id))}">{$place/tei:placeName[1]/text()}</a>
             </td>
             <td>{for $altName in $place//tei:placeName return <li>{$altName/text()}</li>}</td>
-            <td>{$place//tei:idno/text()}</td>
+            <td>{$gnd_link}</td>
             <td>{$lat}</td>
             <td>{$lng}</td>
         </tr>
