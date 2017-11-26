@@ -31,21 +31,22 @@ let $RDF :=
             <acdh:hasFirstName>Peter</acdh:hasFirstName>
         </acdh:Person>
         
-<!-- define involved Organisations -->
+<!-- define involved Organisations
         
-        <acdh:Organisation rdf:about="http://d-nb.info/gnd/108889819X">
+       <acdh:Organisation rdf:about="http://d-nb.info/gnd/108889819X">
             <acdh:hasTitle>Fonds zur Förderung der Wissenschaftlichen Forschung (Österreich)</acdh:hasTitle>
-        </acdh:Organisation>
+        </acdh:Organisation> -->
         
 <!-- define involved Project(s) -->        
 
         <acdh:Project rdf:about="https://id.acdh.oeaw.ac.at/project/aratea-digital">
-            <acdh:hasTitle>sexy title</acdh:hasTitle>
+            <acdh:hasTitle>The Aratea in the Latin Middle Ages</acdh:hasTitle>
             <acdh:hasDescription>
-            sexy description
+            The aim of this project website is to provide basic information on the latin translations and derivative texts based on Aratus' didactic poem Phaenomena. Apart from references to the latest editions and relevant literature, the focus of the project is to list all pre-13th-century manuscripts of the texts and provide them with descriptions. 
+            This website is work-in-progress. We are constantly working on improving and enhancing the information provided.
             </acdh:hasDescription>
             <acdh:hasStartDate>2010-07-01</acdh:hasStartDate>
-            <acdh:hasEndDate>2015-06-30</acdh:hasEndDate>
+            <acdh:hasEndDate>2018-06-30</acdh:hasEndDate>
             <acdh:hasPrincipalInvestigator>
                 <acdh:Person rdf:about="https://orcid.org/0000-0003-2388-1114"/>
             </acdh:hasPrincipalInvestigator>

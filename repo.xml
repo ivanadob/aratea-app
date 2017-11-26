@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <meta xmlns="http://exist-db.org/xquery/repo">
-    <description>An eXist-db based web app to curate, publish and analyze documents encoded in XML/TEI</description>
+    <description>The aim of this project website is to provide basic information on the latin translations and derivative texts based on Aratus' didactic poem Phaenomena. Apart from references to the latest editions and relevant literature, the focus of the project is to list all pre-13th-century manuscripts of the texts and provide them with descriptions. This website is work-in-progress. We are constantly working on improving and enhancing the information provided.</description>
     <author ref="http://d-nb.info/gnd/129199176">Peter Andorfer</author>
     <website/>
     <status>alpha</status>
@@ -11,5 +11,6 @@
     <prepare>pre-install.xql</prepare>
     <finish>post-install.xql</finish>
     <permissions xmlns:repo="http://exist-db.org/xquery/repo" password="" user="admin" group="dba" mode="rw-rw-r--"/>
+
 
 </meta>

@@ -17,11 +17,11 @@ declare variable $api:JSON :=
         <http:header name="Content-Language" value="en"/>
         <http:header name="Content-Type" value="application/json; charset=utf-8"/>
     </http:response>
-    <output:serialization-parameters>
+    <output:serialization-parameters>
         <output:method value='json'/>
-        <output:media-type value='application/json'/>
-    </output:serialization-parameters>
- </rest:response>;
+        <output:media-type value='application/json'/>
+    </output:serialization-parameters>
+</rest:response>;
 
 declare variable $api:XML := 
 <rest:response>
@@ -31,11 +31,11 @@ declare variable $api:XML :=
         <http:header name="Content-Language" value="en"/>
         <http:header name="Content-Type" value="application/xml; charset=utf-8"/>
     </http:response>
-    <output:serialization-parameters>
+    <output:serialization-parameters>
         <output:method value='xml'/>
-        <output:media-type value='application/xml'/>
-    </output:serialization-parameters>
- </rest:response>;
+        <output:media-type value='application/xml'/>
+    </output:serialization-parameters>
+</rest:response>;
 
 
 (:~ lists content of collection ~:)
