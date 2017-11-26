@@ -5,7 +5,7 @@
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>Avienus: Aratea</title>
+            <title>Aratus Latinus</title>
          </titleStmt>
          <editionStmt>
             <edition/>
@@ -18,7 +18,9 @@
             </respStmt>
          </editionStmt>
          <publicationStmt>
-            <p>Publication Information</p>
+            <availability>
+               <licence target="https://creativecommons.org/licenses/by/4.0/">Attribution 4.0 International (CC BY 4.0). You are free to: Share — copy and redistribute the material in any medium or format; Adapt — remix, transform, and build upon the material for any purpose, even commercially. Under the following terms: Attribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.</licence>
+            </availability>
          </publicationStmt>
          <sourceDesc>
             <p>Information about the source</p>
@@ -31,8 +33,7 @@
             <head>
                <title>Introduction</title>
             </head>            
-            <p>Following to some extant Germanicus’ methodology, <rs type="person" ref="#avienus">Rufus Festus Avienus</rs> translated the poem once more into Latin in the 4th c. AD. It is the only Latin translation preserved in extenso that contains both the first and the second part of the poem. Avienus elaborated on the original work using <rs type="person" ref="#hipparchus">Hipparchus</rs>’ commentary and the <title>Catasterisms</title>. His style has been characterized as verbose which can be explained by the dominant literary tastes of his time and by the translator’s desire to say more than his model. In terms of figures, the 757 verses in Aratus’ first part correspond to 1383 verses in Avienus’. In the second part dealing with weather signs, however, the two versions are almost equal in size (422 verses and 553 verses respectively).</p>
-               <p>In conclusion, <rs type="person" ref="#cicero">Cicero</rs>’s translation followed the Greek original closely and seems to have intended mainly to “translate” the Greek charm of the poem. <rs type="person" ref="#germanicus">Germanicus</rs>’ and <rs type="person" ref="#avienus">Avienus</rs>’ translations were probably meant to be “scientifically” up-to-date and emended versions of the original.</p>
+            <p/>
          </div>
          <div>
             <head>

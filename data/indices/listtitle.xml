@@ -41,7 +41,8 @@
         <title>Aratus Latinus</title>
         <incipit>Ostensionem quoque de quibus uidentur oportet fieri</incipit>
         <explicit>in annum umquam reliquimus continentem in coelo signum.</explicit>
-        <bibl>Maass, pp. 102-306.</bibl>
+        <bibl>
+            <abbr>Maass</abbr>, pp. 102-306.</bibl>
     </work>
     <work xml:id="anonymus_sangallensis">
         <title>Anonymus Sangallensis</title>
@@ -67,7 +68,8 @@
         <note>Part from Aratus Latinus and Revised Aratus Latinus</note>
         <incipit>Ostensionem quoque de quibus videntur oportet fieri</incipit>
         <explicit>ut nihil te latere possit, quorum ab eo dicta sunt.</explicit>
-        <bibl>Maass, pp. 102-126.</bibl>
+        <bibl>
+            <abbr>Maass</abbr>, pp. 102-126.</bibl>
     </work>
     <work xml:id="astronomica" ref="http://d-nb.info/gnd/4263686-3">
         <title>Astronomica</title>
@@ -726,6 +728,7 @@
     </work>
     <work xml:id="ral">
         <title>Revised Aratus Latinus</title>
+        <bibl>Maass, Ernst. “Anonymus II. Arati epitomam isagogis et scholis auctam continens.” In <title>Commentariorum in Aratum reliquiae</title>, 100–306. Berlin: Weidmann, 1898.</bibl>
     </work>
     <work xml:id="satirae" ref="http://d-nb.info/gnd/4331976-2">
         <author ref="#iuvenalis">Iuvenalis</author>
