@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Germanicus' Aratea</title>
+         </titleStmt>
+         <editionStmt>
+            <edition/>
+            <respStmt>
+               <resp>TEI-P5 coded by</resp>
+               <name type="person">
+                        <rs type="person" ref="#ivana_dobcheva">Ivana Dobcheva</rs>
+                    </name>
+               <name type="org"/>
+            </respStmt>
+         </editionStmt>
+         <publicationStmt>
+            <p>Publication Information</p>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Information about the source</p>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <text>
+      <body>
+         <div>
+            <head>
+               <title>Introduction</title>
+            </head>            
+            <p>
+                    <rs type="person" ref="#germanicus">Germanicus</rs> or Tiberius (recent scholarship still argues about the authorship) made a second translation of Aratus’ poem known to us. Germanicus employed a more critical approach to the Phaenomena. Due to its elaborations and additions, as well as exclusions of certain parts his work is a reinterpretation rather than translation. Firstly, he introduced the corrections made by Hipparchus. Secondly, he dismissed most of the stoic elements in the text, so characteristic of Aratus’ work. Thirdly, Germanicus’ style resembles that of the Neoterics (Catullus, Cinna etc.) in contrast to Cicero’s mimesis of Ennius and Aratus’ usage of Hesiod as a model. The most radical change, however, is connected with his choice of replacing Aratus’ second part on weather signs with his own text on astral meteorology (the affect of the planets as they pass through the zodiac).</p>
+            <p>The manuscripts of Germanicus are in most cases accompanied by the so-called Germanicus’ scholia or <ref target="scholia_basileensia.xml">scholia Basileensia</ref>, which are an abbreviated translation of the Catasterisms of Pseudo-Erathostenes. Lactantius (fl. 4th c.) quoted them three times, which provides a <term>terminus ante quem</term> for their composition.</p>
+         </div>
+         <div>
+            <head>
+               <title>Editions</title>
+            </head>
+            <p/>
+         </div>
+         <div>
+            <head>
+               <title>Literature</title>
+            </head>
+            <p/>
+         </div>
+         <div>
+            <head>
+               <title>Manuscripts</title>
+            </head>
+            <p/>
+         </div>
+      </body>
+   </text>
+</TEI>

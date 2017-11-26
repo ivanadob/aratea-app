@@ -146,6 +146,9 @@
                     <person xml:id="hincmar">
                         <persName xml:id="gnd_118551280" ref="http://d-nb.info/gnd/118551280">Hincmar of Reims</persName>
                     </person>
+                    <person xml:id="hipparchus">
+                        <persName xml:id="gnd_100499651" ref="http://d-nb.info/gnd/100499651">Hipparchus</persName>
+                    </person>
                     <person xml:id="hrabanus">
                         <persName xml:id="gnd_118553909" ref="http://d-nb.info/gnd/118553909">Hrabanus &lt;Maurus&gt;</persName>
                     </person>
@@ -196,6 +199,9 @@
                     </person>
                     <person xml:id="iuvenalis">
                         <persName xml:id="gnd_118556126" ref="http://d-nb.info/gnd/118556126">Iuvenalis &lt;Decimus Iunius&gt;</persName>
+                    </person>
+                    <person xml:id="ivana_dobcheva">
+                        <persName ref="http://orcid.org/0000-0003-2388-1114">Ivana Dobcheva</persName>
                     </person>
                     <person xml:id="jacobus_pamelius">
                         <persName xml:id="gnd_100384978" ref="http://d-nb.info/gnd/100384978">Jacobus &lt;Pamelius&gt;</persName>
