@@ -8,6 +8,7 @@ import module namespace kwic = "http://exist-db.org/xquery/kwic" at "resource:or
 
 declare variable  $app:data := $config:app-root||'/data';
 declare variable  $app:editions := $config:app-root||'/data/editions';
+declare variable  $app:texts := $config:app-root||'/data/texts';
 declare variable  $app:indices := $config:app-root||'/data/indices';
 declare variable $app:placeIndex := $config:app-root||'/data/indices/listplace.xml';
 declare variable $app:personIndex := $config:app-root||'/data/indices/listperson.xml';
@@ -131,6 +132,15 @@ let $href := concat('show.html','?document=', app:getDocName($node))
 declare function app:hrefToDoc($node as node(), $collection as xs:string){
 let $name := functx:substring-after-last($node, '/')
 let $href := concat('show.html','?document=', app:getDocName($node), '&amp;directory=', $collection)
+    return $href
+};
+
+(:~
+ : href to document.
+ :)
+declare function app:hrefToDoc($node as node(), $collection as xs:string, $stylesheet as xs:string){
+let $name := functx:substring-after-last($node, '/')
+let $href := concat('show.html','?document=', app:getDocName($node), '&amp;directory=', $collection, '&amp;stylesheet=', $stylesheet)
     return $href
 };
 
@@ -295,4 +305,17 @@ let $params :=
 </parameters>
 return
     transform:transform($xml, $xsl, $params)
+};
+
+(:~
+: returns the content of data/texts as nav bar element.
+:)
+declare function app:textsNavBar($node as node(), $model as map (*)){
+for $x in collection($app:texts)//tei:TEI
+    let $title := $x//tei:titleStmt/tei:title[1]/text()[1]
+    order by $title
+    return
+        <li>
+            <a href="{app:hrefToDoc($title, 'texts', 'texts')}">{$title}</a>
+        </li>
 };

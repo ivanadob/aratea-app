@@ -728,7 +728,7 @@
     </work>
     <work xml:id="ral">
         <title>Revised Aratus Latinus</title>
-        <bibl>Maass, Ernst. “Anonymus II. Arati epitomam isagogis et scholis auctam continens.” In <title>Commentariorum in Aratum reliquiae</title>, 100–306. Berlin: Weidmann, 1898.</bibl>
+        <bibl>Maass, Ernst. “Anonymus II. Arati epitomam isagogis et scholis auctam continens.” In<title>Commentariorum in Aratum reliquiae</title>, 100–306. Berlin: Weidmann, 1898.</bibl>
     </work>
     <work xml:id="satirae" ref="http://d-nb.info/gnd/4331976-2">
         <author ref="#iuvenalis">Iuvenalis</author>
