@@ -128,7 +128,7 @@
                             </extent>
                             <foliation>Modern foliation with pencil at the top right corner of every folium.</foliation>
                             <collation>
-                                <formula/>. Quire mark (?) on f. 112v in the lower margin.</collation>
+                                <formula/>Quire mark (?) on f. 112v in the lower margin.</collation>
                             <condition>
                                 <p>Holes in the parchment partly sewed up.</p>
                             </condition>
@@ -137,7 +137,7 @@
                             <layout columns="1" writtenLines="30">Written in 30 long lines. Blind ruling with prikings visible in the outher margin. Red rubrics and initials.</layout>
                         </layoutDesc>
                     </objectDesc>
-                    <additions>On f.<locus from="115v">115v</locus> a charter transcript about a gift made by <rs type="person">Burkards von Mureck</rs> to the monastery St. Lambrecht. Published by <bibl>
+                    <additions>On f.<locus from="115v">115v</locus> a charter transcript about a gift made by <rs type="person">Burkards von Mureck</rs> to the <rs type="corporate">monastery St. Lambrecht</rs>. Published by <bibl>
                             <author>Johann Loserth</author>, "Kleine steiermärkische Nekrologien und nekrologische Notizen," in <title level="j">Beiträge zur Kunde steiermärkischer Geschichtsquellen</title> 26 (1894): 3-20</bibl>.</additions>
                     <bindingDesc>
                         <binding notBefore="1301" notAfter="1400">
@@ -147,7 +147,7 @@
                 </physDesc>
                 <history>
                     <origin>The manuscript was written in<origDate notBefore="1101" notAfter="1150">s. XII<hi rend="sup">1</hi>
-                        </origDate>, probably in the <origPlace>Benedictine monastery of St. Lambrecht</origPlace>. See the exlibris on the front paste-down <quote>Librum istum sancti lamberti et fratrum eius quisquis ui uel furto abstulerit anathema sit</quote>.</origin>
+                        </origDate>, probably in the <origPlace>Benedictine monastery of St. Lambrecht</origPlace>. See the exlibris on the front paste-down <quote>Librum istum sancti lamberti et fratrum eius quisquis ui uel furto abstulerit anathema sit</quote> (s. XII<hi rend="sup">2</hi>.</origin>
                 </history>
                 <additional>
                     <listBibl>
