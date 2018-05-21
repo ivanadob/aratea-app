@@ -190,18 +190,19 @@ for $title in ($entities, $terms)
 declare function app:listPers($node as node(), $model as map(*)) {
     let $hitHtml := "hits.html?searchkey="
     for $person in doc($app:personIndex)//tei:listPerson/tei:person
-    let $gnd := $person/tei:note/tei:p[3]/text()
-    let $gnd_link := if ($gnd != "no gnd provided") then
+    let $altname := $person//tei:persName[2]/text()
+    let $gnd := data($person/tei:persName/@ref)
+    let $gnd_link := if ($gnd) then
         <a href="{$gnd}">{$gnd}</a>
         else
         "-"
         return
         <tr>
             <td>
-                <a href="{concat($hitHtml,data($person/@xml:id))}">{$person/tei:persName/tei:surname}</a>
+                <a href="{concat($hitHtml,data($person/@xml:id))}">{$person/tei:persName[1]/text()}</a>
             </td>
             <td>
-                {$person/tei:persName/tei:forename}
+                {$altname}
             </td>
             <td>
                 {$gnd_link}
