@@ -290,18 +290,24 @@ return
  :)
 declare function app:listBibl($node as node(), $model as map(*)) {
     let $hitHtml := "hits.html?searchkey="
-    for $item in doc($app:workIndex)//tei:listBibl/tei:bibl
-    let $author := normalize-space(string-join($item/tei:author//text(), ' '))
-    let $gnd := $item//tei:idno/text()
+    for $item in doc($app:workIndex)//work
+    let $author := normalize-space(string-join($item/author//text(), ' '))
+    let $gnd := data($item/@ref)
     let $gnd_link := if ($gnd) 
         then
             <a href="{$gnd}">{$gnd}</a>
         else
-            'no normdata provided'
+            '-'
    return
         <tr>
             <td>
-                <a href="{concat($hitHtml,data($item/@xml:id))}">{$item//tei:title[1]/text()}</a>
+                <a href="{concat($hitHtml,data($item/@xml:id))}">{$item/title[1]/text()}</a>
+            </td>
+            <td>
+                {$item/incipit/text()}
+            </td>
+            <td>
+                {$item/explicit/text()}
             </td>
             <td>
                 {$author}
