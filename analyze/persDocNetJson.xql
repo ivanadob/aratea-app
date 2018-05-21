@@ -74,7 +74,7 @@ let $result :=
         for $doc at $pos in collection($app:editions)//tei:TEI
             let $title := $doc//tei:titleStmt/tei:title[@type='sub']
             let $docID := $pos
-            for $person in $doc//tei:body//tei:rs[@type="work"]
+            for $person in $doc//tei:msItem/tei:title[@ref]
                 let $key := data($person/@ref)
                 group by $key
                     return
@@ -86,7 +86,7 @@ let $result :=
     }
     {
         for $doc at $pos in collection($app:editions)//tei:TEI
-            for $person in $doc//tei:body//tei:rs[@type="work"]
+            for $person in $doc//tei:msItem/tei:title[@ref]
             let $key := data($person/@ref)
                 return
                     <edges>
