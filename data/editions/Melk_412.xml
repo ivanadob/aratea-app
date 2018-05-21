@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_ms.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_ms.rng" type="application/xml"
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_ms.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_ms.rng" type="application/xml"
 	schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
@@ -21,7 +20,7 @@
             </respStmt>
          </editionStmt>
          <publicationStmt>
-            <p></p>
+            <p/>
          </publicationStmt>
          <sourceDesc>
             <p>Information about the source</p>
@@ -46,9 +45,10 @@
                </altIdentifier>
             </msIdentifier>
             <head>Bede manual <lb/>
-               <region>St. Germain d'Auxerre </region>, <origDate>s. IX<hi rend="sup"
-                  >1</hi></origDate>
-               <lb/><note type="Aratea"/>
+               <region>St. Germain d'Auxerre </region>, <origDate>s. IX<hi rend="sup">1</hi>
+                    </origDate>
+               <lb/>
+                    <note type="Aratea"/>
                <!-- e.g. Composite MS region, century, Aratea texts next URL to digital-->
                <locus/>
             </head>
@@ -74,11 +74,11 @@
                      <condition/>
                   </supportDesc>
                   <layoutDesc>
-                     <layout columns="2" writtenLines="30">Written in two clumns on <locus from="1"
-                           to="28"> ff. 1-28</locus> and <locus from="59" to="192">ff.
-                           59-132.</locus></layout>
-                     <layout columns="1" writtenLines="29 34">Written in one column on <locus
-                           from="29" to="58">ff. 29-58.</locus></layout>
+                     <layout columns="2" writtenLines="30">Written in two clumns on <locus from="1" to="28"> ff. 1-28</locus> and <locus from="59" to="192">ff.
+                           59-132.</locus>
+                            </layout>
+                     <layout columns="1" writtenLines="29 34">Written in one column on <locus from="29" to="58">ff. 29-58.</locus>
+                            </layout>
                   </layoutDesc>
                </objectDesc>
             </physDesc>
@@ -95,8 +95,7 @@
                   based on his annotation in all three parts of the manuscripts. Judging by the
                   annotations and recepts in German inserted in the free space of the margins, the
                   manuscript was probably in the <date notBefore="1000" notAfter="1100">s. XI</date>
-                  was in a German speaking region. (Melk monastery was founded ca. 1089) In the<date
-                     notBefore="1100" notAfter="1200">s. XII</date> served as the exemplar of a
+                  was in a German speaking region. (Melk monastery was founded ca. 1089) In the<date notBefore="1100" notAfter="1200">s. XII</date> served as the exemplar of a
                   German (südostdeeutsche Abschrift) copy, Vatican Vat. lat. 643, where the scribe
                   copied the medical notes inserted in Melk 412, but skipped outdated text on ff??
                   Has a note on f. 1 that from the <date notBefore="1400" notAfter="1500">s.
@@ -381,7 +380,8 @@
             </msPart>
          </msDesc>
          <listBibl>
-            <bibl>manuscripta.at entry with further bibliographical references<ptr target="http://manuscripta.at/?ID=9008"/></bibl>
+            <bibl>manuscripta.at entry with further bibliographical references<ptr target="http://manuscripta.at/?ID=9008"/>
+                </bibl>
          </listBibl>
       </body>
   </text>

@@ -20,36 +20,30 @@ let $RDF :=
     
 <!-- define involved Persons -->
     
-        <acdh:Person rdf:about="https://orcid.org/0000-0003-2388-1114">
-            <acdh:hasTitle>Ivana Dobcheva</acdh:hasTitle>
-            <acdh:hasLastName>Ivana</acdh:hasLastName>
-            <acdh:hasFirstName>Dobcheva</acdh:hasFirstName>
-        </acdh:Person>  
-        <acdh:Person rdf:about="https://orcid.org/0000-0003-2388-1114">
-            <acdh:hasTitle>Peter Andorfer</acdh:hasTitle>
+        <acdh:Person rdf:about="https://viaf.org/viaf/251032539">
             <acdh:hasLastName>Andorfer</acdh:hasLastName>
             <acdh:hasFirstName>Peter</acdh:hasFirstName>
         </acdh:Person>
         
-<!-- define involved Organisations
+<!-- define involved Organisations -->
         
-       <acdh:Organisation rdf:about="http://d-nb.info/gnd/108889819X">
+        <acdh:Organisation rdf:about="http://d-nb.info/gnd/108889819X">
             <acdh:hasTitle>Fonds zur Förderung der Wissenschaftlichen Forschung (Österreich)</acdh:hasTitle>
-        </acdh:Organisation> -->
+        </acdh:Organisation>
         
 <!-- define involved Project(s) -->        
 
-        <acdh:Project rdf:about="https://id.acdh.oeaw.ac.at/project/aratea-digital">
-            <acdh:hasTitle>The Aratea in the Latin Middle Ages</acdh:hasTitle>
-            <acdh:hasDescription>
-            The aim of this project website is to provide basic information on the latin translations and derivative texts based on Aratus' didactic poem Phaenomena. Apart from references to the latest editions and relevant literature, the focus of the project is to list all pre-13th-century manuscripts of the texts and provide them with descriptions. 
-            This website is work-in-progress. We are constantly working on improving and enhancing the information provided.
-            </acdh:hasDescription>
+        <acdh:Project rdf:about="{$baseID||$config:app-name||'/project'}">
+            <acdh:hasTitle>{$config:app-name}</acdh:hasTitle>
+            <acdh:hasDescription>{$config:app-name}Project Description</acdh:hasDescription>
             <acdh:hasStartDate>2010-07-01</acdh:hasStartDate>
-            <acdh:hasEndDate>2018-06-30</acdh:hasEndDate>
+            <acdh:hasEndDate>2015-06-30</acdh:hasEndDate>
             <acdh:hasPrincipalInvestigator>
-                <acdh:Person rdf:about="https://orcid.org/0000-0003-2388-1114"/>
+                <acdh:Person rdf:about="https://viaf.org/viaf/251032539"/>
             </acdh:hasPrincipalInvestigator>
+            <acdh:hasFunder>
+                <acdh:Organisation rdf:about="http://d-nb.info/gnd/108889819X"/>
+            </acdh:hasFunder>
         </acdh:Project>
         
 
@@ -57,19 +51,16 @@ let $RDF :=
             <acdh:hasTitle>{$config:app-title}</acdh:hasTitle>
             <acdh:hasDescription>{$config:repo-description/text()}</acdh:hasDescription>
             <acdh:hasRelatedProject>
-                <acdh:Project rdf:about="https://id.acdh.oeaw.ac.at/project/aratea-digital"/>
+                <acdh:Project rdf:about="{$baseID||$config:app-name||'/project'}"/>
             </acdh:hasRelatedProject>
             <acdh:hasContributor>
-                <acdh:Person rdf:about="https://orcid.org/0000-0003-2388-1114"/>
+                <acdh:Person rdf:about="https://viaf.org/viaf/251032539"/>
             </acdh:hasContributor>
             
         </acdh:Collection>
         <acdh:Collection rdf:about="{concat($baseID, string-join(($config:app-name, 'data'), '/'))}">
             <acdh:hasTitle>{string-join(($config:app-name, 'data'), '/')}</acdh:hasTitle>
             <acdh:isPartOf rdf:resource="{concat($baseID,$config:app-name)}"/>
-            <acdh:hasCreator>
-                <acdh:Person rdf:about="https://orcid.org/0000-0003-2388-1114"/>
-            </acdh:hasCreator>
         </acdh:Collection>
 
         {
@@ -94,10 +85,28 @@ let $RDF :=
                     } catch * {
                         <acdh:hasTitle>{tokenize($filename, '/')[last()]}</acdh:hasTitle>
                     }
-                let $authors := <acdh:hasCreator>
-                                    <acdh:Person rdf:about="https://orcid.org/0000-0003-2388-1114"/>
-                                </acdh:hasCreator>
+                let $authors := try {
+                        
+                            for $y in $node//tei:titleStmt//tei:author//tei:persName
+                                let $uri := if(starts-with(data($y/@key), 'http')) 
+                                    then $y/@key
+                                    else $baseID||$config:app-name||'/'||data($y/@key)
                             
+                                return
+                                    <acdh:hasAuthor>
+                                <acdh:Person rdf:about="{$uri}">
+                                    <acdh:hasLastName>
+                                        {$y/tei:surname/text()}
+                                    </acdh:hasLastName>
+                                    <acdh:hasFirstName>
+                                        {$y/tei:forename/text()}
+                                    </acdh:hasFirstName>
+                                </acdh:Person>
+                                </acdh:hasAuthor>
+                            
+                        
+                } catch * {()}
+
                 
                 let $filename := string-join(($config:app-name, 'data', $x, $doc), '/')
                 return
@@ -105,7 +114,6 @@ let $RDF :=
                         {$title}
                         {$authors}
                         <acdh:isPartOf rdf:resource="{concat($baseID, (string-join(($config:app-name, 'data', $x), '/')))}"/>
-                        
                     </acdh:Resource>
         }
 

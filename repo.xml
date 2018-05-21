@@ -10,7 +10,6 @@
     <target>aratea-app</target>
     <prepare>pre-install.xql</prepare>
     <finish>post-install.xql</finish>
-    <permissions xmlns:_5="http://www.w3.org/2000/xmlns/" xmlns:repo="http://exist-db.org/xquery/repo" password="" user="admin" group="dba" mode="rw-rw-r--" _5:#unknown="http://exist-db.org/xquery/repo"/>
-
-
+    <permissions xmlns:repo="http://exist-db.org/xquery/repo" user="admin" group="dba" mode="rw-rw-r--"/>
+<deployed>2018-05-21T09:17:47.949+02:00</deployed>
 </meta>

@@ -3,7 +3,7 @@
     <head>
         <title data-template="config:app-title">App Title</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <command data-template="config:app-meta"/>
+        <meta data-template="config:app-meta"/>
         <link rel="shortcut icon" href="$shared/resources/images/exist_icon_16x16.ico"/>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"/>
@@ -50,17 +50,14 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Aratea Texts</a>
-                        <ul class="dropdown-menu">
-                            <li data-template="app:textsNavBar"/>
-                        </ul>
-                    </li>
                     <li class="dropdown" id="toc">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Table of Content</a>
                         <ul class="dropdown-menu">
                             <li>
                                 <a href="toc.html?collection=editions">Collection Editions</a>
+                            </li>
+                            <li>
+                                <a href="toc.html?collection=indices">Collection Indices</a>
                             </li>
                             <li>
                                 <a href="toc.html?collection=meta">Collection Meta</a>
@@ -76,6 +73,12 @@
                             <li>
                                 <a href="places.html">Places</a>
                             </li>
+                            <li>
+                                <a href="orgs.html">Organizations</a>
+                            </li>
+                            <li>
+                                <a href="bibl.html">Works</a>
+                            </li>
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -85,7 +88,13 @@
                                 <a href="timeline.html">Timeline</a>
                             </li>
                             <li>
-                                <a href="netvis.html">CMFI-Net</a>
+                                <a href="netvis.html">Entity-Document-Net</a>
+                            </li>
+                            <li>
+                                <a href="cmfi-netvis.html">CMFI-Net</a>
+                            </li>
+                            <li>
+                                <a href="cmfi-timeline.html">CMFI-Timeline</a>
                             </li>
                         </ul>
                     </li>
@@ -109,6 +118,23 @@
                             </li>
                             <li>
                                 <a href="../analyze/timeline.xql">Timeline</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Autocompletes</a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../ac/entity-ac.xql?query=">Persons</a>
+                            </li>
+                            <li>
+                                <a href="../ac/entity-ac.xql?entity=place&amp;query=">Places</a>
+                            </li>
+                            <li>
+                                <a href="../ac/entity-ac.xql?entity=org&amp;query=">Institutions</a>
+                            </li>
+                            <li>
+                                <a href="../ac/entity-ac.xql?entity=work&amp;query=">Work</a>
                             </li>
                         </ul>
                     </li>
@@ -139,7 +165,7 @@
                         </a>
                     </div>
                     <div class="col-md-4">
-                        <a href="https://github.com/ivanadob/aratea-app" class="navlink" target="_blank">
+                        <a href="https://github.com/KONDE-AT/aratea-app" class="navlink" target="_blank">
                             <img src="../resources/img/GitHub-Mark-Light-64px.png" alt="github" width="20%"/>
                         </a>
                     </div>
@@ -159,7 +185,7 @@
                         var dataKey = $( this ).attr('data-key');
                         var xsl = dataType.replace(".xml", "");
                         var baseUrl = "showNoTemplate.html?directory=indices&amp;document="
-                        var url = baseUrl+dataType+"&amp;stylesheet="+xsl+"&amp;entiyID="+dataKey;
+                        var url = baseUrl+dataType+"&amp;stylesheet=node2html&amp;entiyID="+dataKey;
                         $('#loadModal').load(url, function(){
                             $('#myModal').modal('show');
                         });

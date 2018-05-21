@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<TEI version="5.0" 
-    xmlns="http://www.tei-c.org/ns/1.0" 
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-    xsi:schemaLocation="http://www.tei-c.org/ns/1.0 http://diglib.hab.de/rules/schema/ER/v0.4/europeana-regia.xsd" 
-    xml:lang="deu">
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="5.0" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 http://diglib.hab.de/rules/schema/ER/v0.4/europeana-regia.xsd" xml:lang="deu">
     <teiHeader>
         <fileDesc>
             <titleStmt>
@@ -18,16 +14,18 @@
                 <respStmt>
                     <resp>TEI-P5 coded by </resp>
                     <name type="person">Ivana Dobcheva</name>
-                    <name type="org"></name>
+                    <name type="org"/>
                 </respStmt>
             </editionStmt>
             <publicationStmt>
                 <publisher>
-                    <name type="org"></name>
+                    <name type="org"/>
                     <!--<ptr target=""/>-->
                 </publisher>
             </publicationStmt>
-            <sourceDesc><p></p></sourceDesc>
+            <sourceDesc>
+                <p/>
+            </sourceDesc>
         </fileDesc>           
         <!--
             <revisionDesc>
@@ -41,14 +39,15 @@
                 <msIdentifier>
                     <settlement>Klosterneuburg</settlement>
                     <repository>Stiftsbibliothek</repository>
-                    <collection></collection>
+                    <collection/>
                     <idno>685</idno>
                 </msIdentifier>
                 <head>
                     <title>Bede works on nature</title>
                     <note type="caption"><!-- für eine vorformulierte Schlagzeile, die genauso abge"druckt" werden soll --></note>
-                    <origPlace ref="#corvey"></origPlace>
-                    <origDate notBefore="1201" notAfter="1250">s. XIII<hi rend="sup">1</hi></origDate>
+                    <origPlace ref="#corvey"/>
+                    <origDate notBefore="1201" notAfter="1250">s. XIII<hi rend="sup">1</hi>
+                    </origDate>
                 </head>
                 <msContents>
                     <textLang mainLang="lat" otherLangs=""/>
@@ -80,7 +79,7 @@
                             <locus from="15v">15v</locus>
                             <rubric>Incipit liber de temporibus. De computo uel loquela digitorum.</rubric>
                             <incipit>De temporum ratione domino adiuuante dicturi necessarium</incipit>
-                            <incipit></incipit>
+                            <incipit/>
                         </msItem>
                     </msItem>
                     <msItem>
@@ -97,56 +96,62 @@
                     <objectDesc form="codex">
                         <supportDesc material="perg">
                             <support>
-                                <p><material>Parchment</material></p>
+                                <p>
+                                    <material>Parchment</material>
+                                </p>
                             </support>
                             <extent>
                                 <measure type="leavesCount"> </measure>
                                 <dimensions type="leaf" unit="mm">
-                                    <height></height>
-                                    <width></width>
+                                    <height/>
+                                    <width/>
                                 </dimensions>
                             </extent>
-                            <foliation></foliation>
-                            <collation><formula></formula></collation>
+                            <foliation/>
+                            <collation>
+                                <formula/>
+                            </collation>
                             <condition>
-                                <p></p>
+                                <p/>
                             </condition>
                         </supportDesc>
                         <layoutDesc>
                             <layout columns="1">
-                                <p></p>
+                                <p/>
                             </layout>
                         </layoutDesc>
                     </objectDesc>
                     <scriptDesc>
-                        <summary></summary>
+                        <summary/>
                         <scriptNote script="carolmin">
-                            <p></p>
+                            <p/>
                         </scriptNote>                     
                     </scriptDesc>                                      
-                    <musicNotation></musicNotation>
+                    <musicNotation/>
                     <decoDesc>
                         <decoNote>Pendrawings in red and violet ink. On <locus from="70v"> f. 70v</locus> three rota-diagrams on of the terrestria zones, one stating the circumference of earth, and another combining zodiacal signs, months, elements and their qualities, and the path of the sun. (image<ptr target="http://manuscripta.at/images/AT/5000/AT5000-685/AT5000-685_70v.jpg"/>) Illustrations of the constellations on <locus from="71r" to="83v">ff. 71r-83v</locus>; portraits of the planets on <locus from="84r">f. 84r</locus>; Zodiacal circle with full figures of Sol and Luna in the middle on <locus from="86r"> f. 86r</locus>; medalion of Sol in quadriga on <locus from="86v">f. 86v</locus> and medalion of Luna in biga on <locus from="88r">f. 88r</locus>.</decoNote>
                     </decoDesc>
-                    <additions></additions>
+                    <additions/>
                     <bindingDesc>
                         <binding>
-                            <p></p>
+                            <p/>
                         </binding>
                     </bindingDesc>
                 </physDesc>
                 <history>
-                    <summary></summary>
+                    <summary/>
                     <origin>
                         <p>The manuscript cannot to be found in any of the monastery catalogues from the 12-14th c. A. Haidinger, in <bibl>Sehnsucht nach der Antike, ed. Huber Wolfgang, pp. 66-67</bibl> however found palaeographical similarities between this manuscript and other written in Klosterneuburg, as for example MS 20.</p>
                     </origin>
                     <provenance>
-                        <p>Exlibris on <locus from="88r">f. 88r</locus> <quote>Iste liber est sancte marie de Neuburga.</quote></p>
+                        <p>Exlibris on <locus from="88r">f. 88r</locus> <quote>Iste liber est sancte marie de Neuburga.</quote>
+                        </p>
                     </provenance>
                 </history>
                 <additional>
                     <listBibl>
-                        <bibl>Hermann Pfeiffer und Berthold Černík, Catalogus codicum manu scriptorum, qui in bibliotheca Canonicorum Regularium s. Augustini Claustroneoburgi asservantur. Bd. 4, pp. 892-894.<ptr target="http://www.ksbm.oeaw.ac.at/_scripts/php/newWin4msDescription.php?ID=889"/></bibl>
+                        <bibl>Hermann Pfeiffer und Berthold Černík, Catalogus codicum manu scriptorum, qui in bibliotheca Canonicorum Regularium s. Augustini Claustroneoburgi asservantur. Bd. 4, pp. 892-894.<ptr target="http://www.ksbm.oeaw.ac.at/_scripts/php/newWin4msDescription.php?ID=889"/>
+                        </bibl>
                         <bibl>Huber, Wolfgang, ed. Sehnsucht Nach Der Antike: Handbuch Und Katalog. Klosterneuburg: Mayer, 1992.</bibl>
                         <bibl>Winkler, Erich. Die Buchmalerei in Niederösterreich von 1150 - 1250.  Wien: Krystall-Verl., 1923. Pp. 11f.</bibl>
                         <bibl>Christine Glaßner–Alois Haidinger, Die Anfänge der Melker Bibliothek. Neue Erkenntnisse zu Handschriften und Fragmenten aus der Zeit vor 1200. Präsentiert im Rahmen der Sonderausstellung aus Anlaß '1000 Jahre Ostarrichi'. Melk 1996, 74-78.</bibl>
@@ -158,4 +163,3 @@
         </body>
     </text>
 </TEI>
-
