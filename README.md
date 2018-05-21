@@ -1,6 +1,6 @@
-#aratea-app
+#aratea-digital
 
-aratea-app stands for Digital (Scholarly) Editions Base Application. Its purpose is to bootstrap the development of (web) applications which support the process of
+aratea-digital stands for Digital (Scholarly) Editions Base Application. Its purpose is to bootstrap the development of (web) applications which support the process of
 
 * creating
 * curating
@@ -12,8 +12,8 @@ texts encoded in XML and validating against a TEI (P5) schema.
 
 ## History
 
-aratea-app is a successor of the generic-de-web-app project described by the blog post series [How to build a digital edition web app](https://howto.acdh.oeaw.ac.at/blog/books/how-to-build-a-digital-edition-web-app/). While these blog posts were focused on describing general principles and basic implementations of a digital edition web app, aratea-app should help you getting things done.
-generic-de-web-app as well as aratea-app are designed as (almost) self-containing eXist-db packages. Therefore you can
+aratea-digital is a successor of the generic-de-web-app project described by the blog post series [How to build a digital edition web app](https://howto.acdh.oeaw.ac.at/blog/books/how-to-build-a-digital-edition-web-app/). While these blog posts were focused on describing general principles and basic implementations of a digital edition web app, aratea-digital should help you getting things done.
+generic-de-web-app as well as aratea-digital are designed as (almost) self-containing eXist-db packages. Therefore you can
 
 * install your dse-web application via eXist-db’s package manager,
 * download your dse-web app via eXist-db’s package manager,
@@ -54,9 +54,9 @@ Basically all features mentioned above are implemented with plain XSLT, XQuery a
 ## Getting started
 
 1. Clone the repo into a suitable directory. Be aware that the name of the applications root directory will show up in several places (e.g. the name of the application’s .xar package)
-`git clone https://github.com/KONDE-AT/aratea-app.git <folder-name>`
+`git clone https://github.com/KONDE-AT/aratea-digital.git <folder-name>`
 
-2. Run a search and replace through the whole codebase, replacing `aratea-app` with e.g. the name of your application’s root directory. Since `aratea-app` is used in several namespaces, make sure the replacement string does not contain any tricky characters.
+2. Run a search and replace through the whole codebase, replacing `aratea-digital` with e.g. the name of your application’s root directory. Since `aratea-digital` is used in several namespaces, make sure the replacement string does not contain any tricky characters.
 
 3. Go through the `data` directory and replace the existing data with your own. But keep the directory structure (`data/editions/, data/indices/, data/meta/`) as it is.  
 Ideally, your data (structure, markup) is very similar to the application’s sample data – in this case most of the features mentioned above should work 'out of the box'.
