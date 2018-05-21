@@ -3,7 +3,10 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>Description of<ref type="altMs" target="http://bsbsbb.bsb.lrz.de/~db/0000/sbb00000113/images/index.html">Bamberg, Staatsbibliothek, MS Class. 55</ref>
+                <title type="main">
+            Aratea Digital
+        </title>
+            <title type="sub">Description of<ref type="altMs" target="http://bsbsbb.bsb.lrz.de/~db/0000/sbb00000113/images/index.html">Bamberg, Staatsbibliothek, MS Class. 55</ref>
                 </title>
                 <respStmt>
                     <resp>Catalogued by:</resp>

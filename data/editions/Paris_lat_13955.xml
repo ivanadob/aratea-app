@@ -3,7 +3,10 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>Description of<ref type="altMs" target="http://gallica.bnf.fr/ark:/12148/btv1b9066978w">Paris, BnF, MS lat. 13955</ref>
+                <title type="main">
+            Aratea Digital
+        </title>
+            <title type="sub">Description of<ref type="altMs" target="http://gallica.bnf.fr/ark:/12148/btv1b9066978w">Paris, BnF, MS lat. 13955</ref>
                 </title>
                 <respStmt>
                     <resp>Catalogued by:</resp>
@@ -812,7 +815,8 @@
                </msItem>
                 <msItem>
                     <locus from="147v">147v</locus>                    
-                    <note>Section from<rs type="person" ref="#censorinus">(Ps.)Censorinus</rs> <title>Fragmentum Censorini</title>: <title>De stellis fixis et stantibus</title>, §§ 3-6 on the influence of planets.</note>
+                    <note>Section from<rs type="person" ref="#censorinus">(Ps.)Censorinus</rs> 
+                     <title>Fragmentum Censorini</title>: <title>De stellis fixis et stantibus</title>, §§ 3-6 on the influence of planets.</note>
                     <incipit>Saturni stella frigida et sterilis terris nascentibus non salutaris</incipit>
                     <explicit>Plurimum in originibus ualent quae in ortus languent in occasu.</explicit>
                     <bibl>
@@ -864,7 +868,8 @@
                <msItem>
                    <note>Gromatic texts:</note>
                    <msItem>
-                       <locus from="165v" to="168v">165v-166v</locus><!--
+                       <locus from="165v" to="168v">165v-166v</locus>
+                     <!--
                        <title>De iugeribus metiundis</title>           -->            
                        <rubric rend="rustics">De iugeribus metiundis</rubric>
                        <incipit>Castrensis iugerus quadratus habet perticas CCLXXXVIII Pedes autem quaadratos XXVIIIDCCC</incipit>
@@ -937,7 +942,8 @@
                         <!--<p>Hand A copied most of Boethius' <title>De musica</title> (ff. 60r-105v), taking turns with at least two less experienced hands (change for instance on ff. 72r, 73r-v, 75r-76r, from f. 78r and further till end of text a hand slanting to the right); Hand A wrote again sections from the text on geometry (ff. 107r-) as on f. 112r-v, 113v, 114v, 116v, the most of the text however was written by at least three different hand (see for example ff. 118v-119r). Hand A took turns with a less experienced similar hand in the text of Columella (ff. 131r-134v).</p>
                         <p>Text of Boethius, <title>In isagogen</title> (ff. 5r-46r) is written by a different hand, Hand B, writing a more narrow and more angular script. Hand A added corrections, as in the bottom of f. 42r, and wrote the last ten lines of the text on f. 46v.</p> 
                         <p>The text of Isidore (f. 137r) was copied by a hand which wrote <quote>g</quote> with an open upper lobe.</p>-->
-                        <p>All hands share similar features: e-caudata, round<quote>r</quote> after o. Ligatures: nt, ct, rt, ri, st. Abbreviations: insular <quote>h</quote> for <foreign>autem</foreign>, <quote>H</quote> for <foreign>enim</foreign>, and <quote>÷</quote> for <foreign>est</foreign>; <quote>²</quote> for <foreign>-ur</foreign>, apostroph for <foreign>-us</foreign>.</p> </handNote>
+                        <p>All hands share similar features: e-caudata, round<quote>r</quote> after o. Ligatures: nt, ct, rt, ri, st. Abbreviations: insular <quote>h</quote> for <foreign>autem</foreign>, <quote>H</quote> for <foreign>enim</foreign>, and <quote>÷</quote> for <foreign>est</foreign>; <quote>²</quote> for <foreign>-ur</foreign>, apostroph for <foreign>-us</foreign>.</p> 
+                  </handNote>
                     <handNote>Later additions by another hand on f. 3r-v.</handNote>
                     <handNote>Later additions of Gerbert's letter and Fulbert's poem by an 11<hi rend="sup">th</hi>-century hand (?).</handNote>
                 </handDesc>
@@ -961,7 +967,8 @@
                    <p>The manuscript was probably consulted in<rs type="place">Chartres</rs> in the 10th or 11th century by <persName>Fulbert</persName>. It is tempting to believe that during that time the two filling text on ff. 105v-106v were copied during that period. Later on the manuscript was the property of the monastery of <rs type="place" ref="#st_germain_des_pres">Saint-Germain-des-Prés</rs> (see note on f.<locus from="1r">1r</locus>.</p>
                </provenance>
                 <acquisition>
-                    <p>Acquired by the Bibliothèque nationale during the French revolution (see f.<locus from="1r">1r</locus> <quote>N. 1094</quote> and <quote>olim 544</quote>.</p>
+                    <p>Acquired by the Bibliothèque nationale during the French revolution (see f.<locus from="1r">1r</locus> 
+                     <quote>N. 1094</quote> and <quote>olim 544</quote>.</p>
                 </acquisition>
             </history>
             <additional>

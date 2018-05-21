@@ -3,7 +3,10 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>Description of Paris, BnF, lat. 5239.</title>
+                <title type="main">
+            Aratea Digital
+        </title>
+            <title type="sub">Description of Paris, BnF, lat. 5239.</title>
                 <respStmt>
                     <resp>Catalogued by:</resp>
                     <name type="person">Ivana Dobcheva</name>

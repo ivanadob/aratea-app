@@ -3,7 +3,10 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>Description of<ref type="mss" target="http://www.e-codices.unifr.ch/de/list/one/bbb/0088">Bern, Burgerbibliothek, MS 88</ref>
+                <title type="main">
+            Aratea Digital
+        </title>
+            <title type="sub">Description of<ref type="mss" target="http://www.e-codices.unifr.ch/de/list/one/bbb/0088">Bern, Burgerbibliothek, MS 88</ref>
                 </title>
                 <respStmt>
                     <resp>Catalogued by:</resp>

@@ -4,7 +4,10 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>Description of<ref type="mss" target="http://data.onb.ac.at/rec/AL00174919">Vienna, Österreichische Nationalbibliothek, Codex Vindobonensis Palatinus 12600</ref>
+                <title type="main">
+            Aratea Digital
+        </title>
+            <title type="sub">Description of<ref type="mss" target="http://data.onb.ac.at/rec/AL00174919">Vienna, Österreichische Nationalbibliothek, Codex Vindobonensis Palatinus 12600</ref>
                 </title>
                 <respStmt>
                     <resp>Catalogued by:</resp>
@@ -425,7 +428,9 @@
                         </msItem>
                         <msItem>
                             <locus from="38r" to="40r">38r-40r</locus>
-                            <note>Computistical tables.<locus from="38r">38r</locus> <quote>Cursus lunae per duodecim signa</quote>; On <locus from="39r">39r</locus> a marginal note: <quote>Hii omnes eximii conputiste fuere  Nestor capuarius episcopus<add place="above">uel victor obscure scriptum</add>, Anatolius laodicie episcopus <gap reason="omitted"/> Beda in testimonium computi sui sumpsit. Beda ipse, Rabanus, Elbericus. Hii duo imitatores bedae fuerunt. <rs type="person" ref="#hermannus_contractus">Herimannus sueui</rs> gena phylosophus quamuis ultima in computatione sua est subtilissimus. Hic multa et ammirabili et hactenus inaudita regula composuit</quote>. <locus from="39v">39v</locus> <quote>In quo signo sit luna cottidie</quote>. In the upper margine a later 14th-century note dividing the zodiac in three groups: aries, libra, aquarius and sagittarius - <quote>bona</quote>; cancer, capricornus, pisces and virgo <quote>media</quote>; and <sic>thaurus</sic>, gemini, leo and scorpio <quote>mala</quote>. <locus from="40r">40r</locus> unfinished rota diagram.</note>
+                            <note>Computistical tables.<locus from="38r">38r</locus> 
+                        <quote>Cursus lunae per duodecim signa</quote>; On <locus from="39r">39r</locus> a marginal note: <quote>Hii omnes eximii conputiste fuere  Nestor capuarius episcopus<add place="above">uel victor obscure scriptum</add>, Anatolius laodicie episcopus <gap reason="omitted"/> Beda in testimonium computi sui sumpsit. Beda ipse, Rabanus, Elbericus. Hii duo imitatores bedae fuerunt. <rs type="person" ref="#hermannus_contractus">Herimannus sueui</rs> gena phylosophus quamuis ultima in computatione sua est subtilissimus. Hic multa et ammirabili et hactenus inaudita regula composuit</quote>. <locus from="39v">39v</locus> 
+                        <quote>In quo signo sit luna cottidie</quote>. In the upper margine a later 14th-century note dividing the zodiac in three groups: aries, libra, aquarius and sagittarius - <quote>bona</quote>; cancer, capricornus, pisces and virgo <quote>media</quote>; and <sic>thaurus</sic>, gemini, leo and scorpio <quote>mala</quote>. <locus from="40r">40r</locus> unfinished rota diagram.</note>
                         </msItem>
                         <msItem>
                             <locus from="40v" to="41v">40v-41v</locus>

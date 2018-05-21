@@ -3,7 +3,10 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>Description of<ref type="mss" target="https://www.google.at/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=12&amp;cad=rja&amp;uact=8&amp;ved=0ahUKEwjUlp-60YTQAhWGvxQKHc4PA4gQFghNMAs&amp;url=https%3A%2F%2Fdisc.leidenuniv.nl%2Fwebclient%2FDeliveryManager%3Fcustom_att_2%3Dsimple_viewer%26pid%3D1739618&amp;usg=AFQjCNEPAT35U1FWC4RVm0RviP6w-z5Kvw">Leiden, Bibliotheek der Rijksuniversiteit Leiden, MS VLQ 79</ref>
+                <title type="main">
+            Aratea Digital
+        </title>
+            <title type="sub">Description of<ref type="mss" target="https://www.google.at/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=12&amp;cad=rja&amp;uact=8&amp;ved=0ahUKEwjUlp-60YTQAhWGvxQKHc4PA4gQFghNMAs&amp;url=https%3A%2F%2Fdisc.leidenuniv.nl%2Fwebclient%2FDeliveryManager%3Fcustom_att_2%3Dsimple_viewer%26pid%3D1739618&amp;usg=AFQjCNEPAT35U1FWC4RVm0RviP6w-z5Kvw">Leiden, Bibliotheek der Rijksuniversiteit Leiden, MS VLQ 79</ref>
                 </title>
                 <respStmt>
                     <resp>Catalogued by:</resp>
@@ -166,7 +169,8 @@
                             </origDate>, somewhere in <origPlace ref="#lotharingia">Lotharingia</origPlace> (<origPlace ref="#aachen">Aachen</origPlace>-<origPlace ref="#metz">Metz</origPlace>) by the request of the royal court of <rs type="person" role="commissioner" ref="#louis_pious">Louis the Pious</rs> (813-840) and his second wife <rs type="person" ref="#judith">Judith</rs> (819-843); compiler and coordinator of the pictures and text was presumably <rs type="person" role="editor" ref="#astronomus">the Astronomus</rs>. Mütherich (1990) observed that the dedication <quote>Vale fidens in domino Christi vestitus amore</quote> suggests that this was a product made for a noble patron.</p>
                     </origin>
                     <provenance>
-                        <p>The MS was probably in<rs type="place">St. Bertin</rs> <date notBefore="0990" notAfter="1010">around the year 1000</date> where it served as the exemplar for <ref type="altMs" target="Boulogne-sur-mer_BM_188.xml">Boulogne-sur-mer 188</ref>
+                        <p>The MS was probably in<rs type="place">St. Bertin</rs> 
+                     <date notBefore="0990" notAfter="1010">around the year 1000</date> where it served as the exemplar for <ref type="altMs" target="Boulogne-sur-mer_BM_188.xml">Boulogne-sur-mer 188</ref>
                         </p>
                     </provenance>
                     <provenance>

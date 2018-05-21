@@ -3,7 +3,10 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>Description of <ref type="altMs" target="http://gallica.bnf.fr/ark:/12148/btv1b9076834n">Paris, BnF, lat. 12117</ref>
+                <title type="main">
+            Aratea Digital
+        </title>
+            <title type="sub">Description of <ref type="altMs" target="http://gallica.bnf.fr/ark:/12148/btv1b9076834n">Paris, BnF, lat. 12117</ref>
                 </title>
                 <respStmt>
                     <resp>Catalogued by:</resp>
@@ -148,8 +151,8 @@
                 </msItem>
                 <msItem>
                     <author ref="#fulbert_of_chartres">Fulbert of Chartres</author>
-                <title>De uncia et partibus eius</title>
-                <rubric>De uncia et partibus eius</rubric>
+                  <title>De uncia et partibus eius</title>
+                  <rubric>De uncia et partibus eius</rubric>
                     <incipit>Uncia uiginti scripulos et quattuor ambit</incipit>
                     <explicit>scripulis seu gramma retentant.</explicit>                    
                 </msItem>
@@ -313,7 +316,8 @@
                 <msItem>
                     <locus from="129v" to="130r">129v-130r</locus> 	
                     <title ref="#excerptum_de_astrologia">Excerptum de astrologia</title>
-                    <note>The text is preceded by a short note also found in <ref type="altMs" target="Strasbourg_BNU_326.xml">Strasbourg, BNU, Ms 326</ref> <quote>Discite de iuvenes cum Abraham caeli et cursus syderum cognoscere non cum epicureo uoluptatum adsertore ventre desevire et luxuriare</quote>.</note>
+                    <note>The text is preceded by a short note also found in <ref type="altMs" target="Strasbourg_BNU_326.xml">Strasbourg, BNU, Ms 326</ref> 
+                     <quote>Discite de iuvenes cum Abraham caeli et cursus syderum cognoscere non cum epicureo uoluptatum adsertore ventre desevire et luxuriare</quote>.</note>
                     <rubric>Excerptum de astrologia</rubric>
                     <incipit>Duo sunt extremi vertices mundi quos appellant polos</incipit>
                     <explicit>quia ad ipsum usque decurrit accipiens.</explicit>
@@ -581,7 +585,8 @@
             <history>
                 <origin>Judging by the presence of the <title>Anneles Sancti Germani</title> (ff.<locus from="111r" to="126v">111r-126v</locus>) the manuscript was produced in <origPlace type="place" ref="#st_germain_des_pres">Saint-Germain-des-Prés</origPlace>. The last king mentioned in the chronicle list on f.<locus from="110v">110v</locus> (written by a hand copying also other parts in the manuscript) is Henry I. (1031-1060), which gives a <term>terminus post quem</term> 1031. The <term>terminus ante quem</term> is provided by the annals ending 1063. Consequently the date of origin is between the years <origDate notBefore="1031" notAfter="1063">1031-1063</origDate>. Note however, that modern scholars take the last year of Henry's reign and suggest the manuscript is datable to 1060-1063. The introduction of gothic characteristic in the script suggests indeed a date in s.XI<hi rend="sup">2</hi>. The illustrations and decoration are the work of the artist <rs type="person" ref="#ingelard">Ingelard</rs> (see the article of Deslandres and Vieillard-Troiekouroff).</origin>
                 <provenance>The manuscript remained in the abbey till <date notAfter="1600">s.XV</date>. See the former shelf-mark on f.
-                    <locus from="1r">1r</locus> <quote>434</quote>, <quote>547</quote> as well as two ex-libris notes on f.<locus from="184v">184v</locus> (s.XV?): <quote>Liber germano de pratis pertinet almo</quote> and <quote>Iste liber <supplied>est Sancti Germani de Pratis Parisiensis</supplied> Qui <gap reason="illegible"/>
+                    <locus from="1r">1r</locus> 
+                  <quote>434</quote>, <quote>547</quote> as well as two ex-libris notes on f.<locus from="184v">184v</locus> (s.XV?): <quote>Liber germano de pratis pertinet almo</quote> and <quote>Iste liber <supplied>est Sancti Germani de Pratis Parisiensis</supplied> Qui <gap reason="illegible"/>
                         </quote>, (s.XIV?) now crossed-over and illegible on the microfilm.</provenance>
                 <provenance>On f.<locus from="184r">184r</locus> note (s.XIV?): <quote>legite librum plenum fidei confirmatione morum instructione, bonorum omnium exemplo, karitatis amore errore confusione ac omnibus doctrinis ad uitam eternam consequendam, quam nobis prestare <unclear>dignet</unclear>, qui est benedictus in secula seculorum amen amen benedictus sit jhesus amen.</quote>
                     </provenance>

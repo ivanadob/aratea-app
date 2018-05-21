@@ -3,7 +3,10 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>Description of<ref target="http://sosa2.uni-graz.at/sosa/katalog/katalogisate/297.html">Graz, Universitätsbibliothek, Ms 297</ref>.</title>
+                <title type="main">
+            Aratea Digital
+        </title>
+            <title type="sub">Description of<ref target="http://sosa2.uni-graz.at/sosa/katalog/katalogisate/297.html">Graz, Universitätsbibliothek, Ms 297</ref>.</title>
                 <respStmt>
                     <resp>Catalogued by:</resp>
                     <name type="person">Ivana Dobcheva</name>

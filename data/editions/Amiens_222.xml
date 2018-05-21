@@ -3,7 +3,10 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>Description of<ref type="altMS" target="http://gallica.bnf.fr/ark:/12148/btv1b8452179s"> Amiens, BM MS 222</ref>
+                <title type="main">
+            Aratea Digital
+        </title>
+            <title type="sub">Description of<ref type="altMS" target="http://gallica.bnf.fr/ark:/12148/btv1b8452179s"> Amiens, BM MS 222</ref>
                 </title>
                 <respStmt>
                     <resp>Catalogued by:</resp>

@@ -3,7 +3,10 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>Description of<ref target="http://gallica.bnf.fr/ark:/12148/btv1b10224563x">Strasbourg, Bibliothèque nationale et universitaire, Ms 326</ref>
+                <title type="main">
+            Aratea Digital
+        </title>
+            <title type="sub">Description of<ref target="http://gallica.bnf.fr/ark:/12148/btv1b10224563x">Strasbourg, Bibliothèque nationale et universitaire, Ms 326</ref>
                 </title>
                 <respStmt>
                     <resp>Catalogued by:</resp>
@@ -341,7 +344,8 @@
                         </msItem>
                         <msItem>
                             <locus from="121r">121r</locus>
-                            <note>Another wind diagram with eight wedge-shaped segments, each divided further in two. Texts inbetween the eight segments each starting with the the letter O:<quote>O miranda suo flamantia sidera celo</quote>, <quote>Ordine quadrifido solari currere ciclo</quote> <quote>Orridus est aquilo frigentia climate celo</quote> etc.</note>
+                            <note>Another wind diagram with eight wedge-shaped segments, each divided further in two. Texts inbetween the eight segments each starting with the the letter O:<quote>O miranda suo flamantia sidera celo</quote>, <quote>Ordine quadrifido solari currere ciclo</quote> 
+                        <quote>Orridus est aquilo frigentia climate celo</quote> etc.</note>
                         </msItem>                        
                         <msItem>
                             <locus from="121v">121v</locus>
@@ -740,7 +744,9 @@
                             <msItem>
                                 <locus from="186r" to="190v">186r–190v</locus>
                                 <note>On the duration of the day and the night throughout the year.</note>
-                                <incipit>In una parte zodiaci id est in XXIIII<hi rend="sup">or</hi> horis et XXI ostentis adcrescunt diei uel nocti ostenta IIII<hi rend="sup">or</hi> <gap reason="omitted"/> In una die et XXor ostento adcrescunt ostenta IIII<hi rend="sup">or</hi> <gap reason="omitted"/> In tredecim diebus et CCLXXIII ostentis adcrescunt ostenta LII <gap reason="omitted"/> In XV partibus zodiaci adcrescit hora una <gap reason="omitted"/> Partes XC quarta pars anni solaris est</incipit>
+                                <incipit>In una parte zodiaci id est in XXIIII<hi rend="sup">or</hi> horis et XXI ostentis adcrescunt diei uel nocti ostenta IIII<hi rend="sup">or</hi> 
+                           <gap reason="omitted"/> In una die et XXor ostento adcrescunt ostenta IIII<hi rend="sup">or</hi> 
+                           <gap reason="omitted"/> In tredecim diebus et CCLXXIII ostentis adcrescunt ostenta LII <gap reason="omitted"/> In XV partibus zodiaci adcrescit hora una <gap reason="omitted"/> Partes XC quarta pars anni solaris est</incipit>
                                 <explicit>In utroque aequinoccio dies habet horas XII. Nox horas XII.</explicit>
                                 <note>A table showing the length of the day for each day of the year<quote>I KL IAN dies horarum VI et puncta IIIor<gap reason="omitted"/>
                                     </quote>.</note>

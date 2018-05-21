@@ -5,7 +5,10 @@
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>Description of Melk, Benediktinerstiftes, Cod. 370</title>
+            <title type="main">
+            Aratea Digital
+        </title>
+            <title type="sub">Description of Melk, Benediktinerstiftes, Cod. 370</title>
             <respStmt>
                <resp>Catalogued by:</resp>
                <name type="person">Ivana Dobcheva</name>
@@ -88,7 +91,7 @@
                   <origPlace>
                      <geogName>N. France</geogName>
                      <settlement>St. Germain d'Auxerre</settlement>
-                     <geo/>
+                     <tei:geo xmlns:tei="http://www.tei-c.org/ns/1.0"/>
                   </origPlace>
                </origin>
                <provenance> Belonged to<persName>Heiric of Auxerre</persName>, as one can suppose
@@ -100,7 +103,7 @@
                   copied the medical notes inserted in Melk 412, but skipped outdated text on ff??
                   Has a note on f. 1 that from the <date notBefore="1400" notAfter="1500">s.
                      XV</date> belonged to the Melk monastery. <settlement/>
-                  <geo/>
+                  <tei:geo xmlns:tei="http://www.tei-c.org/ns/1.0"/>
                </provenance>
             </history>
             <additional>

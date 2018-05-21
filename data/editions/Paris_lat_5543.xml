@@ -3,7 +3,10 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>Description of <ref type="altMs" target="http://gallica.bnf.fr/ark:/12148/btv1b10502052p">Paris, BnF, lat. 5543</ref>.</title>
+                <title type="main">
+            Aratea Digital
+        </title>
+            <title type="sub">Description of <ref type="altMs" target="http://gallica.bnf.fr/ark:/12148/btv1b10502052p">Paris, BnF, lat. 5543</ref>.</title>
                 <respStmt>
                     <resp>Catalogued by:</resp>
                     <name type="person">Ivana Dobcheva</name>

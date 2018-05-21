@@ -3,7 +3,10 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>Description<ref type="altMs" target="http://norman.hrc.utexas.edu/mnemGal/29/HRC_29.pdf">Austin, HRC MS 29</ref>
+                <title type="main">
+            Aratea Digital
+        </title>
+            <title type="sub">Description<ref type="altMs" target="http://norman.hrc.utexas.edu/mnemGal/29/HRC_29.pdf">Austin, HRC MS 29</ref>
                 </title>
                 <respStmt>
                     <resp>cataloged by</resp>
@@ -191,8 +194,10 @@
                          </origPlace>                        
                     </origin>
                     <provenance>
-                        <p>The manuscript is supposed to be copied in part by<rs type="person" ref="#ellinger">Abbot Ellinger</rs> of <rs type="corporate" ref="#tegernsee_abbey">Tegernsee Abbey</rs> (975/980-1056), as it is stated in a note on <locus from="103v">fol. 103v</locus> <quote>Abbas indignus ego Ellinger peccator istam glosam scripsi dum essem in Altahensi monasterio deo sanctoque quirino. Rogo uos omnes in ea legentes ut oretis pro me.</quote> which however is an indication only that he copied <title>De verborum significatione</title> and the following shorter texts, and not necessarily the whole manuscript.</p>
-                        <p>It belong to the<rs type="corporate" ref="#tegernsee_abbey">Tegernsee Abbey</rs> as noted on the <locus from="Ir">first flyleaf</locus> <quote>Istud volumen<unclear>attinet</unclear> venerabili monasterio sancti Quirini in Tegernsee<gap/> H̃ Abbas Ellingerus scripsit hunc librum</quote>. Additionally there is a note from the librarian of the monastery <rs type="person">Ambrosius Schwerzenbeck</rs> on the small paper leaf <locus from="1r">fol. 1-bis</locus> from the 15th c. This together with the notes and glosses written by <rs type="person" ref="#ellinger">Abbot Ellinger</rs> suggests that the manuscript in its current composition was procured by the Abbot for the use of his community around the <origDate notBefore="1001" notAfter="1050">first half of the 11th c.</origDate> in <rs type="corporate" ref="#tegernsee_abbey">Tegernsee</rs>. The manuscript is recorded in the 15th c. catalogue among Bede's works under the title <quote>Excerptum de naturalibus hystoriis Plinii philosophi</quote> with the signature <quote>l 44</quote>.</p>
+                        <p>The manuscript is supposed to be copied in part by<rs type="person" ref="#ellinger">Abbot Ellinger</rs> of <rs type="corporate" ref="#tegernsee_abbey">Tegernsee Abbey</rs> (975/980-1056), as it is stated in a note on <locus from="103v">fol. 103v</locus> 
+                     <quote>Abbas indignus ego Ellinger peccator istam glosam scripsi dum essem in Altahensi monasterio deo sanctoque quirino. Rogo uos omnes in ea legentes ut oretis pro me.</quote> which however is an indication only that he copied <title>De verborum significatione</title> and the following shorter texts, and not necessarily the whole manuscript.</p>
+                        <p>It belong to the<rs type="corporate" ref="#tegernsee_abbey">Tegernsee Abbey</rs> as noted on the <locus from="Ir">first flyleaf</locus> 
+                     <quote>Istud volumen<unclear>attinet</unclear> venerabili monasterio sancti Quirini in Tegernsee<gap/> H̃ Abbas Ellingerus scripsit hunc librum</quote>. Additionally there is a note from the librarian of the monastery <rs type="person">Ambrosius Schwerzenbeck</rs> on the small paper leaf <locus from="1r">fol. 1-bis</locus> from the 15th c. This together with the notes and glosses written by <rs type="person" ref="#ellinger">Abbot Ellinger</rs> suggests that the manuscript in its current composition was procured by the Abbot for the use of his community around the <origDate notBefore="1001" notAfter="1050">first half of the 11th c.</origDate> in <rs type="corporate" ref="#tegernsee_abbey">Tegernsee</rs>. The manuscript is recorded in the 15th c. catalogue among Bede's works under the title <quote>Excerptum de naturalibus hystoriis Plinii philosophi</quote> with the signature <quote>l 44</quote>.</p>
                     </provenance>
                 </history>
                 <additional>

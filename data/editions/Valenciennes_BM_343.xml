@@ -5,7 +5,10 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>Description of<ref type="mss" target="http://gallica.bnf.fr/ark:/12148/btv1b8452589j">Valenciennes, Bibliothèque municipale, Ms. 343</ref>
+                <title type="main">
+            Aratea Digital
+        </title>
+            <title type="sub">Description of<ref type="mss" target="http://gallica.bnf.fr/ark:/12148/btv1b8452589j">Valenciennes, Bibliothèque municipale, Ms. 343</ref>
                 </title>
                 <respStmt>
                     <resp>Catalogued by:</resp>
@@ -358,7 +361,8 @@
                                         <locus from="45v">45v</locus>
                                     </locusGrp>
                                     <note>On the bottom under the tables argumenta: f. 35v<quote>Unde supra. Si nosse uis annum incarnationis dominicae scito quot fuerint ordines indictianum<gap reason="omitted"/>
-                                        </quote><!--, f. 36r <quote>Unde supra. Si uis scire quota sit indictione annos ab initio mundi <gap reason="omitted"/></quote>, f. 36v <quote>Argumentum cicli decennouenalis. Si cyclum decennouenalem cognoscere cupis tene annos domini et unum <gap reason="omitted"/></quote>, f. 37r <quote>Argumentum cycli lunaris. Si cyclum lunarem nosse desideras sume annos domini <gap reason="omitted"/></quote>, f. 37v <quote>De feria XIIII lunae. Si nosse uis quae sit feria XIIII luna sume numerum quem mensibus apponere <gap reason="omitted"/></quote>,  <quote>Quota sit luna in pascha domini. Si scire uis quota sit luna in pascha domini sume lunam <gap reason="omitted"/></quote>, f. 38r <quote>Quota sit luna in pascha domini. Si scire uis quota sit luna in pascha domini sume lunam quae fuit <gap reason="omitted"/></quote>--> f. 45v <quote>Argumentum ad annum mundi inueniendum. Sci scire cupis annos ab inicio mundi multiplica<gap reason="omitted"/>et hoc ordine deinceps seruito annos mundi sine errore reperies.</quote>
+                                        </quote>
+                              <!--, f. 36r <quote>Unde supra. Si uis scire quota sit indictione annos ab initio mundi <gap reason="omitted"/></quote>, f. 36v <quote>Argumentum cicli decennouenalis. Si cyclum decennouenalem cognoscere cupis tene annos domini et unum <gap reason="omitted"/></quote>, f. 37r <quote>Argumentum cycli lunaris. Si cyclum lunarem nosse desideras sume annos domini <gap reason="omitted"/></quote>, f. 37v <quote>De feria XIIII lunae. Si nosse uis quae sit feria XIIII luna sume numerum quem mensibus apponere <gap reason="omitted"/></quote>,  <quote>Quota sit luna in pascha domini. Si scire uis quota sit luna in pascha domini sume lunam <gap reason="omitted"/></quote>, f. 38r <quote>Quota sit luna in pascha domini. Si scire uis quota sit luna in pascha domini sume lunam quae fuit <gap reason="omitted"/></quote>--> f. 45v <quote>Argumentum ad annum mundi inueniendum. Sci scire cupis annos ab inicio mundi multiplica<gap reason="omitted"/>et hoc ordine deinceps seruito annos mundi sine errore reperies.</quote>
                                     </note>
                                 </msItem>
                             </msItem>
@@ -401,7 +405,9 @@
                                 <locus from="67v">67v</locus>
                                 <note>Prayer (later addition)</note>
                                 <incipit>In nomine patris et filii et spiritu sancti aius aius aius sanctus sanctus sanctus dominus deus sabaoth qui erat et qui est</incipit>
-                                <explicit>et pax tibi fiat in diebus. Per signum sancte<gap reason="damage"/> <unclear>crucis</unclear> tuis liberet te deus alleluia alleluia alleluia a <gap reason="damage"/> sanctus sanctus sanctus <unclear>iskarus</unclear> <gap reason="damage"/>
+                                <explicit>et pax tibi fiat in diebus. Per signum sancte<gap reason="damage"/> 
+                           <unclear>crucis</unclear> tuis liberet te deus alleluia alleluia alleluia a <gap reason="damage"/> sanctus sanctus sanctus <unclear>iskarus</unclear> 
+                           <gap reason="damage"/>
                                 </explicit>
                             </msItem>                 
                             <msItem>
@@ -520,7 +526,8 @@
                             <title ref="#chronica_maiora">Chronica maiora</title>
                             <rubric>Incipit<unclear>chronica</unclear> ab anno incarnationis domini <gap/> ab initio uero mundi anno IIII DCC LXX</rubric>                        
                             <incipit>Iustinianus minor filius constantini regnauit annos X. Hic constituit pacem cum sarracenis decennio terra marique</incipit>
-                            <explicit>Imperator<unclear>hludouicus</unclear> <gap/> cum consilio francorum constituit.</explicit>
+                            <explicit>Imperator<unclear>hludouicus</unclear> 
+                        <gap/> cum consilio francorum constituit.</explicit>
                         </msItem>
                     </msContents>
                 </msPart>

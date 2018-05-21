@@ -3,7 +3,10 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>Description of<ref type="mss" target="http://www.bl.uk/manuscripts/FullDisplay.aspx?ref=Harley_MS_3595">London, British Library, Harley MS 3595</ref>
+                <title type="main">
+            Aratea Digital
+        </title>
+            <title type="sub">Description of<ref type="mss" target="http://www.bl.uk/manuscripts/FullDisplay.aspx?ref=Harley_MS_3595">London, British Library, Harley MS 3595</ref>
                 </title>
                 <respStmt>
                     <resp>Catalogued by:</resp>
@@ -123,7 +126,8 @@
                             <incipit>In dandis accipiendisque muneribus ita recte offitia</incipit>
                             <explicit>
                                 <note>
-                                    <locus from="48r">48r</locus> </note>huius descriptio<add place="above">nis</add> subter exemplar subiecimus.</explicit>
+                                    <locus from="48r">48r</locus> 
+                        </note>huius descriptio<add place="above">nis</add> subter exemplar subiecimus.</explicit>
                             <decoNote>f.<locus from="48v">48v</locus> a diagram with four rectangulars <quote>geometrica</quote>, <quote>arithmetica</quote>, <quote>armonica</quote>, <quote>consonantiae</quote>.</decoNote>
                             <note>Many interlienar and marginal glosses, tables and figures.</note>
                         </msItem>                        
@@ -163,7 +167,8 @@
                                 <note>Book III, ch. 1* (end imperfect)</note>
                                 <rubric>Incipit liber· III· I· Adversum aristoxenem demonstratio super particulare proportionem· dividi in aequa non posse atque ideo nec tonvm</rubric>
                                 <incipit>SVPERIORE uolumine demonstratum est diatessaron consonantiam</incipit>
-                                <explicit>dimidium cum ipsa sesqui XVI<hi rend="sup">ma</hi> <gap reason="lacuna"/>
+                                <explicit>dimidium cum ipsa sesqui XVI<hi rend="sup">ma</hi> 
+                           <gap reason="lacuna"/>
                                 </explicit>
                             </msItem>
                             <msItem>

@@ -5,7 +5,10 @@
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>Description of <ref target="https://digi.vatlib.it/view/MSS_Vat.lat.643">Vatican, BAV, Vat. lat. 643</ref>
+            <title type="main">
+            Aratea Digital
+        </title>
+            <title type="sub">Description of <ref target="https://digi.vatlib.it/view/MSS_Vat.lat.643">Vatican, BAV, Vat. lat. 643</ref>
                 </title>
             <respStmt>
                <resp>Catalogued by:</resp>
@@ -214,13 +217,13 @@
                      <origPlace>
                         <geogName>Austria</geogName>
                         <settlement>Melk (?)</settlement>
-                        <geo/>
+                        <tei:geo xmlns:tei="http://www.tei-c.org/ns/1.0"/>
                      </origPlace>
                   </origin>
                   <provenance>
                      <persName/> From the <date when="1700">18th c.</date> was in the
                      <settlement>Vatican</settlement>
-                     <geo/>
+                     <tei:geo xmlns:tei="http://www.tei-c.org/ns/1.0"/>
                   </provenance>
                </history>
                <additional>

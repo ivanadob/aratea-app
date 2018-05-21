@@ -3,7 +3,10 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>Description of<ref type="mss" target="http://bvmm.irht.cnrs.fr/consult/consult.php?reproductionId=115">Boulogne-sur-mer, BM, MS 188</ref>
+                <title type="main">
+            Aratea Digital
+        </title>
+            <title type="sub">Description of<ref type="mss" target="http://bvmm.irht.cnrs.fr/consult/consult.php?reproductionId=115">Boulogne-sur-mer, BM, MS 188</ref>
                 </title>
                 <respStmt>
                     <resp>Catalogued by:</resp>
@@ -169,7 +172,8 @@
                                 <hi rend="font-variant:small-caps">mercurius bimos gradivvs perficit orbis.</hi>
                             </explicit>
                             <decoNote>40 illustrations of the constellations placed in orange-black frames on blue background in the left part of the f.os. Two pictures per page one on top of the other; stars noted with black or golden dots.</decoNote>
-                            <decoNote> <locus from="30r">30r</locus> planisphere showing the planetary circles (similar to that in <ref type="altMs">Leiden VLQ MS 79 f. 93v</ref>), around the diagram in each corner four smaller circular diagram: 7 concentric circles one for each planet: similar to that in<ref type="altMs"> Laon BM 422 f. 15v</ref> but with textual differences; upper left an isidorian type of rota for the five zones; lower left a rota for the yearly position of the sun (so called tronos soli diagram or horologium rota), lower right a rota diagram for the twelve winds.</decoNote>
+                            <decoNote> 
+                        <locus from="30r">30r</locus> planisphere showing the planetary circles (similar to that in <ref type="altMs">Leiden VLQ MS 79 f. 93v</ref>), around the diagram in each corner four smaller circular diagram: 7 concentric circles one for each planet: similar to that in<ref type="altMs"> Laon BM 422 f. 15v</ref> but with textual differences; upper left an isidorian type of rota for the five zones; lower left a rota for the yearly position of the sun (so called tronos soli diagram or horologium rota), lower right a rota diagram for the twelve winds.</decoNote>
                         </msItem>
                         <msItem>
                             <locus from="33v">33v</locus>
@@ -192,7 +196,8 @@
                                     <width>280</width>
                                 </dimensions>
                             </extent>
-                            <collation>According to<bibl>C. Jeudi, Y.-F. Riou</bibl> <formula>I<hi rend="sup">10</hi> (ff.1-10), II-III<hi rend="sup">8</hi> (ff.11-18 and 19-26), IV<hi rend="sup">8(-1)</hi> (ff.27-33)</formula>.</collation>
+                            <collation>According to<bibl>C. Jeudi, Y.-F. Riou</bibl> 
+                        <formula>I<hi rend="sup">10</hi> (ff.1-10), II-III<hi rend="sup">8</hi> (ff.11-18 and 19-26), IV<hi rend="sup">8(-1)</hi> (ff.27-33)</formula>.</collation>
                         </supportDesc>
                         <layoutDesc>
                             <layout columns="2" ruledLines="36">

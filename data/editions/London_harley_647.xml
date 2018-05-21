@@ -3,7 +3,10 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>Description of<ref target="http://www.bl.uk/manuscripts/FullDisplay.aspx?ref=Harley_MS_647">London, BL, Ms Harley 647</ref>
+                <title type="main">
+            Aratea Digital
+        </title>
+            <title type="sub">Description of<ref target="http://www.bl.uk/manuscripts/FullDisplay.aspx?ref=Harley_MS_647">London, BL, Ms Harley 647</ref>
                 </title>
                 <respStmt>
                     <resp>Catalogued by:</resp>
@@ -91,7 +94,7 @@
                     <incipit>Octauam nominauerunt scorpionem, quia scorpius arcuatam habet caudam et uariatam</incipit>
                     <explicit>sed Christus Dominus saluator mundi euertit.</explicit>
                     <note>The first folio is a later (s. X<hi rend="sup">ex</hi>/s. XI?) substitution. The original first folio was lost (see history).</note>                    
-                <!--Remarks: foliated 162? On the 12 region of the sky (the zodiac) but starting only from the eighth (Scorpio); then on the name of constellations based on Isidore, Etym. III, 71 (De nominibus stellarum); the first part based on? Again reproach to these fabulis mendacissimis foedicissimisque
+                  <!--Remarks: foliated 162? On the 12 region of the sky (the zodiac) but starting only from the eighth (Scorpio); then on the name of constellations based on Isidore, Etym. III, 71 (De nominibus stellarum); the first part based on? Again reproach to these fabulis mendacissimis foedicissimisque
                 This folio was to replace a missing one. The current fol. 1 is written by an English hand (according to T. A. M. Bishoff a late tenth-century hand of St. Augustine’s, Canterbury). Originally there were three short text preceding the Aratea text based on Isidore on the name of the constellations, and two short prayers (the second is unfinished). Both prayers touch upon the firmament and cosmological themes – connected with the text to follow. In the Tib. B. V., Harley 2506 and Cambridge 945 – the prayers precede the Isidorian text on the constellations (probably scribes thought it more suitable to start with the prayers and then constellations and swift transition to the Aratea). Comparing the missing and existing section with text in Harley 2506 – missing sections that was preceding the current fol. 2 – the Carolingian original – could have fit approximately 2,1 pages – roughly 1 folio (Text on the XII regions and the beginning of the Isidorian text on the constellations); the later added English which now also starts imperfectly missing the first 7 regions – text approximately same in length as the one present now – i.e. less than page and a half ?? Most logical to presume there is missing one folio now, but what was on it, apart from the text on the regions (again the two prayers?): f. 2: written by a continental hand; based on Isidore, Etym. III, 71 (De nominibus stellarum) but ends up with the phrase: His de positione quarundam stellarum iuxta opinionem antiquorum in quibusdam quasi uerisimilibus commemoratus · reliqua nomina falsissimo commento inuenta et a filiis dei id est xristianis ita ignoranda ac si nunquam fuissent audita uel scripta penitus sunt omittenda quę diabolicus error confirmauit · sed christus dominus saluator mundi euertit.
                 Remarks: perhaps it was originally there, then in 11th c. someone noticed it starts imperfectly and added in a bifolio the first part (but consequently lost the first folio).-->
                 </msItem>
@@ -247,9 +250,9 @@
                    <layoutDesc>
                      <layout columns="1" writtenLines="33 36">Written in one column, between 33 and 36 lines. Written-space: 
                      <dimensions type="written">
-                         <height>22</height>
-                         <width>18</width>
-                     </dimensions>. On ff. <locus from="2v" to="13v">2v-13v</locus> the text of Cicero's poem are placed below the corresponding illustrations. Most of the pages have titles in <term>Capitalis rustica</term> at the bottom naming the constellation. The verses begin with rubricated initials in Capitalis rustica (corroded). The scribe on ff. <locus from="16r" to="17v">16r-17v</locus> placed them ahead of the verses (versals). The astronomical texts on ff. <locus from="17v" to="20r">17v-20r</locus> have rubricated titles in <term>Capitalis rustica</term>. The red pigment has corroded. In the second part of the poem (ff. <locus from="14r" to="17v">14r-17v</locus>) whole verses are written in red pigment to mark text divisions.</layout>
+                           <height>22</height>
+                           <width>18</width>
+                        </dimensions>. On ff. <locus from="2v" to="13v">2v-13v</locus> the text of Cicero's poem are placed below the corresponding illustrations. Most of the pages have titles in <term>Capitalis rustica</term> at the bottom naming the constellation. The verses begin with rubricated initials in Capitalis rustica (corroded). The scribe on ff. <locus from="16r" to="17v">16r-17v</locus> placed them ahead of the verses (versals). The astronomical texts on ff. <locus from="17v" to="20r">17v-20r</locus> have rubricated titles in <term>Capitalis rustica</term>. The red pigment has corroded. In the second part of the poem (ff. <locus from="14r" to="17v">14r-17v</locus>) whole verses are written in red pigment to mark text divisions.</layout>
                   </layoutDesc>
                </objectDesc>
                 <handDesc>
@@ -283,7 +286,8 @@
                 <provenance>In<date notBefore="1101" notAfter="1150">s. XII<hi rend="sup">1</hi>
                         </date> the manuscript was at <rs type="place" ref="#peterborough">Peterborough</rs>, where it served as an exemplar for <ref type="altMs" target="London_cotton_ci.xml">London, BL, MS Cotton Tib. C. I</ref>.</provenance>
                 <provenance>By the<date notBefore="1486" notAfter="1500">late 15th century</date> the manuscript was at the <rs type="corporate" ref="#saint_augustine_abbey">Benedictine abbey of St Augustine</rs>, Canterbury as it was included in the catalogue (see <title>Medieval Libraries of Great Britain: A List of Surviving Books</title>, ed. by N. R. Ker, London: Royal Historical Society, 1964, p. 44).</provenance>
-                <provenance>It belonged further to<rs type="person" ref="#francis_babington">Francis Babington</rs> (academic administrator at the University of Oxford, d. 1569): see inscription on f. <locus from="2v">2v</locus> <quote>Francis Babyngton</quote>.</provenance>
+                <provenance>It belonged further to<rs type="person" ref="#francis_babington">Francis Babington</rs> (academic administrator at the University of Oxford, d. 1569): see inscription on f. <locus from="2v">2v</locus> 
+                  <quote>Francis Babyngton</quote>.</provenance>
                 <provenance>The manuscript became part of the collection owned by<rs type="person" ref="#robert_harley">Rober Harley</rs> (d. 1724), later by his daughter, the duchess of Portland, who sold it to the British nation.</provenance>
             </history>
             <additional>

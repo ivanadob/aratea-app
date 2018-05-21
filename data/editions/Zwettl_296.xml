@@ -5,7 +5,10 @@
   <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>Description of Zwettl, Stiftsbibliothek, Cod. 296</title>
+            <title type="main">
+            Aratea Digital
+        </title>
+            <title type="sub">Description of Zwettl, Stiftsbibliothek, Cod. 296</title>
             <respStmt>
                <resp>Catalogued by:</resp>
                <name type="person">Ivana Dobcheva</name>
@@ -73,14 +76,14 @@
                      <origPlace>
                         <geogName>Austria</geogName>
                         <settlement>Zwettl</settlement>
-                        <geo/>
+                        <tei:geo xmlns:tei="http://www.tei-c.org/ns/1.0"/>
                      </origPlace>
                      <p>Ferner showed that Klosterneuburg MS 685 could not have been copied from Zwettl MS 296, but both were copied from one and the same model. The scribe of  Klosterneuburg 685 made fewer mistakes than his colleague. The model was not Vat. lat. 643, but a MS which was a model for Vat. lat. 643. The two austrian MS have also iconographical differences compared to the Vat. lat. 643. The two are nearer to the iconography of Paris, BnF lat. 5543.</p>
                   </origin>
                   <provenance>
                      <persName/>
                      <settlement>Zwettl</settlement>
-                     <geo/>
+                     <tei:geo xmlns:tei="http://www.tei-c.org/ns/1.0"/>
                   </provenance>
                </history>
                <msPart>

@@ -3,7 +3,10 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>Description of<ref target="http://gallica.bnf.fr/ark:/12148/btv1b8432469w.r=8663.langEN">Paris, BnF, Ms. lat. 8663</ref>
+                <title type="main">
+            Aratea Digital
+        </title>
+            <title type="sub">Description of<ref target="http://gallica.bnf.fr/ark:/12148/btv1b8432469w.r=8663.langEN">Paris, BnF, Ms. lat. 8663</ref>
                 </title>
                 <respStmt>
                     <resp>Catalogued by:</resp>
@@ -103,7 +106,8 @@
                           </extent>
                           <foliation>In pencil and ink in the upper right corner of every folium.</foliation>
                       <collation>
-                                <p>Composed, according to Moster, from three homogeneous and contemporary parts: ff. 1-24, ff. 25-46 and ff. 47-58 (Mostert's BF 1155, 1156 and 1157 accordingly).</p> <formula>I<hi rend="sup">2</hi> (ff.1-2), II-III<hi rend="sup">8</hi> (ff.3-10 and 11-18), IV<hi rend="sup">2</hi> (ff.19-20), V<hi rend="sup">4</hi> (ff.21-24), VI-VII<hi rend="sup">8</hi> (ff.25-32 and 33-40), VIII<hi rend="sup">6</hi> (ff.41-46), IX<hi rend="sup">4</hi> (ff.47-50) and X<hi rend="sup">8</hi> (ff.51-58)</formula>
+                                <p>Composed, according to Moster, from three homogeneous and contemporary parts: ff. 1-24, ff. 25-46 and ff. 47-58 (Mostert's BF 1155, 1156 and 1157 accordingly).</p> 
+                        <formula>I<hi rend="sup">2</hi> (ff.1-2), II-III<hi rend="sup">8</hi> (ff.3-10 and 11-18), IV<hi rend="sup">2</hi> (ff.19-20), V<hi rend="sup">4</hi> (ff.21-24), VI-VII<hi rend="sup">8</hi> (ff.25-32 and 33-40), VIII<hi rend="sup">6</hi> (ff.41-46), IX<hi rend="sup">4</hi> (ff.47-50) and X<hi rend="sup">8</hi> (ff.51-58)</formula>
                             </collation>
                       <condition>The manuscript lost at least two quaternions between ff. 32 and 33. See note to<locus from="25r" to="44v">25r-44v</locus>.</condition>
                   </supportDesc>

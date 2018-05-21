@@ -3,7 +3,10 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>Description of <ref target="http://www.bl.uk/manuscripts/FullDisplay.aspx?ref=Royal_MS_13_A_XI">London, BL, Royal MS 13 A XI</ref>
+                <title type="main">
+            Aratea Digital
+        </title>
+            <title type="sub">Description of <ref target="http://www.bl.uk/manuscripts/FullDisplay.aspx?ref=Royal_MS_13_A_XI">London, BL, Royal MS 13 A XI</ref>
                 </title>
                 <respStmt>
                     <resp>Catalogued by:</resp>
@@ -88,61 +91,61 @@
                         <incipit>Si tenebre ęgiptus graio sermone uocatur</incipit>
                         <explicit>mortale periculum est sanguinem minuere.</explicit>
                     </msItem>
-<msItem>
-<locus from="13r" to="14r">13r-14r</locus>
-    <note>Computus material including Ciclus annalis, De horis mensium and De singulis horis in die quomodo mensurantur cum pedibus with a table of moveable feasts (f. 13r) and an orologium diagram.</note> 
-    <msItem>
-        <locus from="13r">13r</locus>
-        <rubric>Incipit ciclus annalis</rubric>
-        <incipit>Arsista apud hebreos siros et chaldeos nimiam uocatur</incipit>
-        <explicit/>
-        <note>Computistical table for the moveable feasts.</note>
-    </msItem>
-    <msItem>
-        <locus from="13v">13v</locus>
-        <rubric>De horis mensium</rubric>
-        <incipit>Ianuarius et december hora I et XI pedes XXIX</incipit>
-        <explicit>Iunius et Iulius hora I et XV pedes XIX.</explicit>
-    </msItem>
-    <msItem>
-        <locus from="13v">13v</locus>
-        <rubric>Item de singulis horis in die quomodo mensurantur cum pedibus</rubric>
-        <incipit>Coniunge semper duos menses coequales</incipit>
-        <explicit>longitudine dierum et uario statu umbrarum.</explicit>
-    </msItem>
-    <msItem>
-        <locus from="13v" to="14r">13v-14r</locus>
-        <rubric>Item</rubric>
-        <incipit>Ianuarius et december hora I et XI pedes XXVIIII, hora II et X pedes XIX</incipit>
-        <explicit>hora VI pedem I.</explicit>
-        <decoNote>Diagram for the horlogium: <quote>Orologium</quote>.</decoNote>
-    </msItem>
-</msItem>
-<msItem>
-<locus from="14r" to="28r">14r-22r</locus>
-    <author ref="#bede">Bede</author>
-    <title ref="#DNR">De natura rerum</title>
-    <rubric>Incipiunt duo libelli Bede presbiteri de natura rerum et ratione temporum. Incipit liber primus de quadrifario dei opere</rubric>
-    <incipit>Operatio divina que secula creavit et gubernat</incipit>
-    <explicit>atque inde affrica a meridie usque ad occidentem excenditur.</explicit>
-    <finalRubric>Explicit liber primus.</finalRubric>
-    <note>Marginal annotation on f. 16r: <quote>Quando luna plena est uix stelle uidentur in caelo quia superat tunc lux lune lumen stellarum et si defectus illius fuerit quia tunc accidere solet statim apparent. Similiter si in die fuerit defectus solis omnes eadem hora possunt uideri. Si quando oriuntur truces seui que uenticuta etherem rapiunt scintillas ex ethereo igne et sic uidetur quasi stelle cadant</quote>.</note>
-</msItem>
-<msItem>
-    <locus from="22r" to="28r">22r-28r</locus>
-<author ref="#bede">Bede</author>
-    <title ref="#DT">De temporibus</title>
-    <rubric>Incipit secundus de temporibus horis et momentis</rubric>
-    <incipit>Tempora momentis horis diebus mensibus annis saeculis ętatibus diuiduntur</incipit>
-    <explicit/>
-</msItem>
-<msItem>
-    <locus from="28r" to="29v">28r-29v</locus>
-    <title>Epistola Petosiris de sphera vite et mortis</title>
-    <incipit>
+               <msItem>
+                  <locus from="13r" to="14r">13r-14r</locus>
+                  <note>Computus material including Ciclus annalis, De horis mensium and De singulis horis in die quomodo mensurantur cum pedibus with a table of moveable feasts (f. 13r) and an orologium diagram.</note> 
+                  <msItem>
+                     <locus from="13r">13r</locus>
+                     <rubric>Incipit ciclus annalis</rubric>
+                     <incipit>Arsista apud hebreos siros et chaldeos nimiam uocatur</incipit>
+                     <explicit/>
+                     <note>Computistical table for the moveable feasts.</note>
+                  </msItem>
+                  <msItem>
+                     <locus from="13v">13v</locus>
+                     <rubric>De horis mensium</rubric>
+                     <incipit>Ianuarius et december hora I et XI pedes XXIX</incipit>
+                     <explicit>Iunius et Iulius hora I et XV pedes XIX.</explicit>
+                  </msItem>
+                  <msItem>
+                     <locus from="13v">13v</locus>
+                     <rubric>Item de singulis horis in die quomodo mensurantur cum pedibus</rubric>
+                     <incipit>Coniunge semper duos menses coequales</incipit>
+                     <explicit>longitudine dierum et uario statu umbrarum.</explicit>
+                  </msItem>
+                  <msItem>
+                     <locus from="13v" to="14r">13v-14r</locus>
+                     <rubric>Item</rubric>
+                     <incipit>Ianuarius et december hora I et XI pedes XXVIIII, hora II et X pedes XIX</incipit>
+                     <explicit>hora VI pedem I.</explicit>
+                     <decoNote>Diagram for the horlogium: <quote>Orologium</quote>.</decoNote>
+                  </msItem>
+               </msItem>
+               <msItem>
+                  <locus from="14r" to="28r">14r-22r</locus>
+                  <author ref="#bede">Bede</author>
+                  <title ref="#DNR">De natura rerum</title>
+                  <rubric>Incipiunt duo libelli Bede presbiteri de natura rerum et ratione temporum. Incipit liber primus de quadrifario dei opere</rubric>
+                  <incipit>Operatio divina que secula creavit et gubernat</incipit>
+                  <explicit>atque inde affrica a meridie usque ad occidentem excenditur.</explicit>
+                  <finalRubric>Explicit liber primus.</finalRubric>
+                  <note>Marginal annotation on f. 16r: <quote>Quando luna plena est uix stelle uidentur in caelo quia superat tunc lux lune lumen stellarum et si defectus illius fuerit quia tunc accidere solet statim apparent. Similiter si in die fuerit defectus solis omnes eadem hora possunt uideri. Si quando oriuntur truces seui que uenticuta etherem rapiunt scintillas ex ethereo igne et sic uidetur quasi stelle cadant</quote>.</note>
+               </msItem>
+               <msItem>
+                  <locus from="22r" to="28r">22r-28r</locus>
+                  <author ref="#bede">Bede</author>
+                  <title ref="#DT">De temporibus</title>
+                  <rubric>Incipit secundus de temporibus horis et momentis</rubric>
+                  <incipit>Tempora momentis horis diebus mensibus annis saeculis ętatibus diuiduntur</incipit>
+                  <explicit/>
+               </msItem>
+               <msItem>
+                  <locus from="28r" to="29v">28r-29v</locus>
+                  <title>Epistola Petosiris de sphera vite et mortis</title>
+                  <incipit>
                             <sic>Pitoris</sic> Necnepso regi salutem. De his que a me ad humane vite</incipit>
-    <decoNote>(ff. 28v-29r) and two circular diagrams (f. 29v).</decoNote>
-    </msItem>
+                  <decoNote>(ff. 28v-29r) and two circular diagrams (f. 29v).</decoNote>
+               </msItem>
                     <msItem>
                         <locus from="30v" to="103v">30v-103v</locus>
                         <author>Bede</author>
@@ -152,57 +155,57 @@
                             <note>Prologue:</note>
                             <incipit/>
                         </msItem>
-</msItem>
-<msItem>
-<locus from="104r" to="112v">104r-112v</locus>
-    <author>Hyginus</author>
-    <title>De astrologia</title>
-    <incipit>Duo sunt vertices mundi</incipit>
-    <note>book 1 to 3.</note>
-</msItem>
+               </msItem>
+               <msItem>
+                  <locus from="104r" to="112v">104r-112v</locus>
+                  <author>Hyginus</author>
+                  <title>De astrologia</title>
+                  <incipit>Duo sunt vertices mundi</incipit>
+                  <note>book 1 to 3.</note>
+               </msItem>
                     <msItem>
                         <locus from="112v" to="113r">112v-113r</locus>
                         <note>Short astrological text preceding Abbo of Fleury's Sententia</note>
                         <incipit>Colurorum primus incipit ad octava parte arietis</incipit>
                     </msItem>
-<msItem>
-<locus from="113r" to="115v">113r-115v</locus>
-    <author>Abbo of Fleury</author> 
-    <title>De differentia circule et sphere</title>
-    <incipit>Studiosis astrologie primo sciendum est</incipit>
-</msItem>
+               <msItem>
+                  <locus from="113r" to="115v">113r-115v</locus>
+                  <author>Abbo of Fleury</author> 
+                  <title>De differentia circule et sphere</title>
+                  <incipit>Studiosis astrologie primo sciendum est</incipit>
+               </msItem>
                     <msItem>
                         <locus from="114r" to="115v">114r-115v</locus>
                         <author>Abbo of Fleury</author>
                         <title>Excerptio Abbonis ex Hygino de figuratione signorum</title>
                         <incipit>Denique luna totius Zodiaci signa</incipit>
                     </msItem>
-<msItem>
-    <locus from="115v" to="118r">115v-118r</locus>
-    <title>De xii signis cur figurantur sic de ariete</title>
-</msItem>
+               <msItem>
+                  <locus from="115v" to="118r">115v-118r</locus>
+                  <title>De xii signis cur figurantur sic de ariete</title>
+               </msItem>
                     <msItem>
                         <locus from="118v" to="119v">118v-119v</locus>
                         <note>On the measurements of the celestes circuli</note>
                         <incipit>Spera fiat omni parte equalis</incipit>
                     </msItem>
-<msItem>
-<locus from="120r" to="126v">120r-126v</locus>
-    <author>Dungalus</author>
-    <title>Epistola ad Carolum Magnum de duplici solis eclipsi anno 810</title>
-    <note>Dungal's letter to Charlemagne about the two solar eclipses that occurred in 810.</note>
-</msItem>
+               <msItem>
+                  <locus from="120r" to="126v">120r-126v</locus>
+                  <author>Dungalus</author>
+                  <title>Epistola ad Carolum Magnum de duplici solis eclipsi anno 810</title>
+                  <note>Dungal's letter to Charlemagne about the two solar eclipses that occurred in 810.</note>
+               </msItem>
                     <msItem>
                         <locus from="126v" to="127r">126v-127r</locus>
                         <author>Isidore of Seville</author>
                         <note>Extracts from <title>Etymologiae</title>, book 3, De eclipse, chapters 58 and 59.</note>
                         <incipit>Eclipsis solis est quotiens luna trigesima ad eandem lineam</incipit>
                     </msItem>
-<msItem>
-<locus from="127r" to="132r">127r-132r</locus>
-    <author>Macrobius</author>
-    <note>Extracts on astronomical subjects from <title>Commentarii in Ciceronis Somnium Scipionis</title>.</note>
-    </msItem>
+               <msItem>
+                  <locus from="127r" to="132r">127r-132r</locus>
+                  <author>Macrobius</author>
+                  <note>Extracts on astronomical subjects from <title>Commentarii in Ciceronis Somnium Scipionis</title>.</note>
+               </msItem>
                     <msItem>
                         <locus from="132v" to="139v">132v-139v</locus>
                         <note>Anonymous, treatise on the method of computation with examples.</note>
@@ -232,19 +235,19 @@
                         <locus from="145v">145v</locus>
                         <note>A short text on the moveable feasts followed by a diagram on the epacts allowing to find the date in the lunar calendar from the solar calendar; it is used in the calculation of the date of Easter.</note>
                     </msItem> 
-<msItem>
-<locus from="146r" to="148v">146r-148v</locus>
-    <author>Bede</author>
-    <title>Epistola ad Wicthedum de aequinoctio vel de paschae celebratione</title>
-    <note>imperfect at the beginning and at the end</note>
-    <incipit>[equi]noctialem sui cursus locum in signifero circulo</incipit>
-    <explicit>aut nona kalendarum aprilium die non fuisse, aut ante equinoctium fuisse confirmet</explicit>
-    <finalRubric>Explicit Epistola Bede presbiteri ad Vicredam (sic) presbiterum </finalRubric>
-</msItem>
-<msItem>
-<locus from="149r" to="v">149r-v</locus>
-    <note>verses on the seven liberal arts. The last verses have been copied by two different 15th-century hands (f. 149v).</note>
-</msItem>
+               <msItem>
+                  <locus from="146r" to="148v">146r-148v</locus>
+                  <author>Bede</author>
+                  <title>Epistola ad Wicthedum de aequinoctio vel de paschae celebratione</title>
+                  <note>imperfect at the beginning and at the end</note>
+                  <incipit>[equi]noctialem sui cursus locum in signifero circulo</incipit>
+                  <explicit>aut nona kalendarum aprilium die non fuisse, aut ante equinoctium fuisse confirmet</explicit>
+                  <finalRubric>Explicit Epistola Bede presbiteri ad Vicredam (sic) presbiterum </finalRubric>
+               </msItem>
+               <msItem>
+                  <locus from="149r" to="v">149r-v</locus>
+                  <note>verses on the seven liberal arts. The last verses have been copied by two different 15th-century hands (f. 149v).</note>
+               </msItem>
             </msContents>
             <physDesc>
                <!-- contains a full physical description of a manuscript or manuscript part, optionally subdivided using more specialized elements from the model.physDescPart class. -->

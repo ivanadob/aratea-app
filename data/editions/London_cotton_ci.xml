@@ -3,7 +3,10 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>Description of <ref target="http://www.bl.uk/manuscripts/FullDisplay.aspx?index=0&amp;ref=Cotton_MS_Tiberius_C_I">London, BL, Cotton Tib. C. I</ref>
+                <title type="main">
+            Aratea Digital
+        </title>
+            <title type="sub">Description of <ref target="http://www.bl.uk/manuscripts/FullDisplay.aspx?index=0&amp;ref=Cotton_MS_Tiberius_C_I">London, BL, Cotton Tib. C. I</ref>
                 </title>
                 <respStmt>
                     <resp>Catalogued by:</resp>

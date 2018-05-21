@@ -9,15 +9,11 @@
             <title type="sub">Person index</title>
                 <respStmt>
                     <resp/>
-                    <name>
-                        <rs type="person" ref="#ivana_dobcheva">Ivana Dobcheva</rs>
-                    </name>
+                    <name>Ivana Dobcheva</name>
                 </respStmt>
             </titleStmt>
             <publicationStmt>
-                <availability>
-                    <licence target="https://creativecommons.org/licenses/by/4.0/">Attribution 4.0 International (CC BY 4.0). You are free to: Share — copy and redistribute the material in any medium or format; Adapt — remix, transform, and build upon the material for any purpose, even commercially. Under the following terms: Attribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.</licence>
-                </availability>
+                <p/>
             </publicationStmt>
             <sourceDesc>
                 <p> </p>
@@ -34,11 +30,8 @@
                     <person xml:id="ademar_de_chabannes">
                         <persName xml:id="gnd_118643835" ref="http://d-nb.info/gnd/118643835">Adémar de Chabannes</persName>
                         <bibl>
-                        <ptr target="https://en.wikipedia.org/wiki/Ad%C3%A9mar_de_Chabannes"/>
-                    </bibl>
-                    </person>
-                    <person xml:id="aelfric">
-                        <persName xml:id="gnd_118500813" ref="http://d-nb.info/gnd/118500813">Aelfric</persName>
+                  <ptr target="https://en.wikipedia.org/wiki/Ad%C3%A9mar_de_Chabannes"/>
+               </bibl>
                     </person>
                     <person xml:id="alcuinus_flaccus">
                         <persName xml:id="gnd_118502026" ref="http://d-nb.info/gnd/118502026">Alcuinus, Flaccus</persName>
@@ -82,8 +75,8 @@
                     <person xml:id="boniface">
                         <persName type="gnd_118513249" ref="http://d-nb.info/gnd/118513249">Saint Boniface</persName>
                         <bibl>
-                        <ptr target="https://en.wikipedia.org/wiki/Saint_Boniface"/>
-                    </bibl>
+                  <ptr target="https://en.wikipedia.org/wiki/Saint_Boniface"/>
+               </bibl>
                     </person>
                     <person xml:id="calcidius">
                         <persName xml:id="gnd_118669036" ref="http://d-nb.info/gnd/118669036">Calcidius</persName>
@@ -129,7 +122,7 @@
                     <person xml:id="hadoard">
                         <persName xml:id="gnd_102501424" ref="http://d-nb.info/gnd/102501424">Hadoardus</persName>
                         <affiliation>
-                        <rs type="place" ref="#corbie">Corbie</rs>, Abbey of St. Peter</affiliation>
+                  <rs type="place" ref="#corbie">Corbie</rs>, Abbey of St. Peter</affiliation>
                     </person>
                     <person xml:id="haito">
                         <persName xml:id="gnd_103086854" ref="http://d-nb.info/gnd/103086854">Haito &lt;Augiensis&gt;</persName>
@@ -138,8 +131,8 @@
                     <person xml:id="heiric">
                         <persName xml:id="gnd_119215888" ref="http://d-nb.info/gnd/119215888">Heiric of Auxerres</persName>
                         <note type="references">
-                        <ref target="http://en.wikipedia.org/wiki/Heiric_of_Auxerre">Wikipedia</ref>
-                    </note>
+                  <ref target="http://en.wikipedia.org/wiki/Heiric_of_Auxerre">Wikipedia</ref>
+               </note>
                     </person>
                     <person xml:id="herigerus_lobiensis">
                         <persName xml:id="gnd_118703625" ref="http://d-nb.info/gnd/118703625">Herigerus &lt;Lobiensis&gt;</persName>
@@ -152,9 +145,6 @@
                     </person>
                     <person xml:id="hincmar">
                         <persName xml:id="gnd_118551280" ref="http://d-nb.info/gnd/118551280">Hincmar of Reims</persName>
-                    </person>
-                    <person xml:id="hipparchus">
-                        <persName xml:id="gnd_100499651" ref="http://d-nb.info/gnd/100499651">Hipparchus</persName>
                     </person>
                     <person xml:id="hrabanus">
                         <persName xml:id="gnd_118553909" ref="http://d-nb.info/gnd/118553909">Hrabanus &lt;Maurus&gt;</persName>
@@ -207,9 +197,6 @@
                     <person xml:id="iuvenalis">
                         <persName xml:id="gnd_118556126" ref="http://d-nb.info/gnd/118556126">Iuvenalis &lt;Decimus Iunius&gt;</persName>
                     </person>
-                    <person xml:id="ivana_dobcheva">
-                        <persName ref="http://orcid.org/0000-0003-2388-1114">Ivana Dobcheva</persName>
-                    </person>
                     <person xml:id="jacobus_pamelius">
                         <persName xml:id="gnd_100384978" ref="http://d-nb.info/gnd/100384978">Jacobus &lt;Pamelius&gt;</persName>
                         <persName>Jacques Joigny de Pamele</persName>
@@ -247,8 +234,8 @@
                     <person xml:id="notker_labeo">
                         <persName xml:id="gnd_118588869" ref="http://d-nb.info/gnd/118588869">Notker Labeo</persName>
                         <affiliation>
-                        <rs type="place" ref="http://www.geonames.org/2658822">St. Gall</rs>
-                    </affiliation>
+                  <rs type="place" ref="http://www.geonames.org/2658822">St. Gall</rs>
+               </affiliation>
                     </person>
                     <person xml:id="odbert">
                         <persName ref="http://oxfordindex.oup.com/view/10.1093/gao/9781884446054.article.T063211">Odbert from Saint-Bertin</persName>
@@ -269,7 +256,6 @@
                     <person xml:id="priscianus">
                         <persName xml:id="gnd_118596624" ref="http://d-nb.info/gnd/118596624">Priscianus</persName>
                         <persName>Ps. Priscianus</persName>
-                        <persName>Priscianus Caesariensis</persName>
                     </person>
                     <person xml:id="remius_favinus">
                         <persName xml:id="gnd_102405026" ref="http://d-nb.info/gnd/102405026">Remius &lt;Favinus&gt;</persName>
@@ -321,8 +307,8 @@
                         <persName>Wolfgerus &lt;Pruveningensis&gt;</persName>
                         <floruit>ca.1100-ca.1173</floruit>
                         <affiliation>
-                        <rs type="place" ref="#pruefening">Prüfening</rs>
-                    </affiliation>
+                  <rs type="place" ref="#pruefening">Prüfening</rs>
+               </affiliation>
                         <occupation>monk</occupation>
                         <occupation>librarian</occupation>
                     </person> 

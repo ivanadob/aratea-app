@@ -5,7 +5,10 @@
   <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>List of organisations</title>
+            <title type="main">
+            Aratea Digital
+        </title>
+            <title type="sub">List of organisations</title>
          </titleStmt>
          <publicationStmt>
             <p>Publication Information</p>
@@ -24,7 +27,7 @@
             <org xml:id="new_minster">
                <orgName xml:id="gnd_4604518-1">New Minster</orgName>
                <bibl>wikipedia<ptr target="https://en.wikipedia.org/wiki/New_Minster,_Winchester"/>
-                    </bibl>
+               </bibl>
             </org>
             <org xml:id="saint-bertin">
                <orgName xml:id="gnd_1086389638" ref="http://www.geonames.org/2977845">Abbey of Saint-Omer-Saint-Bertin</orgName>
@@ -38,7 +41,7 @@
             <org xml:id="hyde_abbey">
                <orgName xml:id="gnd_1092073159">Hyde Abbey</orgName>
                <bibl>wikipedia<ptr target="https://en.wikipedia.org/wiki/Hyde_Abbey"/>
-                    </bibl>
+               </bibl>
             </org>
             <org xml:id="tegernsee_abbey">
                <orgName xml:id="gnd_809501-2" ref="http://www.geonames.org/2823679">Abbey Tegernsee</orgName>

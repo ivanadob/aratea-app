@@ -3,7 +3,10 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>Description of Einsiedeln, Stiftsbibliothek, Codex 338</title>
+                <title type="main">
+            Aratea Digital
+        </title>
+            <title type="sub">Description of Einsiedeln, Stiftsbibliothek, Codex 338</title>
                 <respStmt>
                     <resp>Catalogued by:</resp>
                     <name type="person">Ivana Dobcheva</name>
