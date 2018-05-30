@@ -249,11 +249,25 @@ declare function app:toc($node as node(), $model as map(*)) {
                 <a href="{app:hrefToDoc($title, $collection)}">{app:getDocName($title)}</a>
             else
                 <a href="{app:hrefToDoc($title)}">{app:getDocName($title)}</a>
+        let $status := data($title//tei:revisionDesc/@status)
+        let $transcription := if(contains($date, 'Transcription'))
+            then
+                'yes'
+            else
+                'no'
         return
         <tr>
-           <td>{$date}</td>
+           <td>
+               {$date}
+           </td>
+           <td>
+               {$link2doc}
+           </td>
             <td>
-                {$link2doc}
+                {$status}
+            </td>
+            <td>
+                {$transcription}
             </td>
         </tr>
 };
@@ -293,7 +307,7 @@ declare function app:listBibl($node as node(), $model as map(*)) {
     for $item in doc($app:workIndex)//work
     let $author := normalize-space(string-join($item/author//text(), ' '))
     let $gnd := data($item/@ref)
-    let $gnd_link := if ($gnd) 
+    let $gnd_link := if ($gnd)
         then
             <a href="{$gnd}">{$gnd}</a>
         else
@@ -326,7 +340,7 @@ declare function app:listOrg($node as node(), $model as map(*)) {
     for $item in doc($app:orgIndex)//tei:listOrg/tei:org
     let $altnames := normalize-space(string-join($item//tei:orgName[@type='alt'], ' '))
     let $gnd := $item//tei:idno/text()
-    let $gnd_link := if ($gnd) 
+    let $gnd_link := if ($gnd)
         then
             <a href="{$gnd}">{$gnd}</a>
         else
@@ -344,4 +358,3 @@ declare function app:listOrg($node as node(), $model as map(*)) {
             </td>
         </tr>
 };
-

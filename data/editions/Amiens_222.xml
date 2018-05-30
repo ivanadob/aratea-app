@@ -21,12 +21,10 @@
                 </respStmt>
             </editionStmt>
             <publicationStmt>
-                <date type="issued" when="2016-09-24">24.09.2016</date>
-                <publisher>
-                    <name type="org"/>
-                    <!--<ptr target=""/>-->
-                </publisher>
-            </publicationStmt>
+            <availability status="free">
+               <licence target="https://creativecommons.org/licenses/by/4.0/">This document is published under the Creative Commons licence Attribution 4.0 International (CC BY 4.0).</licence>
+            </availability>
+         </publicationStmt>
             <sourceDesc>
                 <p/>
             </sourceDesc>

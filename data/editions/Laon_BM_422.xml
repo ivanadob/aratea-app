@@ -19,10 +19,9 @@
             </respStmt>
          </editionStmt>
          <publicationStmt>
-            <publisher>
-               <name type="org"/>
-               <!--<ptr target=""/>-->
-            </publisher>
+            <availability status="free">
+               <licence target="https://creativecommons.org/licenses/by/4.0/">This document is published under the Creative Commons licence Attribution 4.0 International (CC BY 4.0).</licence>
+            </availability>
          </publicationStmt>
          <sourceDesc>
             <p/>
@@ -56,7 +55,7 @@
                <origPlace>Laon</origPlace>
                <origDate notBefore="0801" notAfter="0850">s. IX<hi rend="sup">1</hi>
                     </origDate>
-               <ref target="http://gallica.bnf.fr/ark:/12148/btv1b8492138z">Digital fscsimile at gallica</ref>
+               <ref target="http://gallica.bnf.fr/ark:/12148/btv1b8492138z">Digital facsimile at gallica.bnf.fr.</ref>
             </head>
             <msContents>
                
