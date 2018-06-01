@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <register xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-
+<work xml:id="gerbert_letter">
+  <author ref="#gerbert">Gerbert of Aurillac</author>
+  <title>Letter to Constantine of Fleury on the abacus</title>
+  <bibl>
+      <abbr>Bubnov 1899</abbr>, pp. 6-8.</bibl>
+  <bibl>Gerbert of Aurillac. <title level="m">The Letters of Gerbert with His Papal Privileges as Sylvester II</title>. Translated by Harriet Pratt Lattin. New York: Columbia Univ. Press, 1961.</bibl>
+  </work>
+    <work xml:id="gerbert_letter_sphere">
+        <author ref="#gerbert">Gerbert of Aurillac</author>
+        <title>Letter to Constantinus on making a hemisphere</title>
+        <bibl>
+            <abbr>Bubnov 1899</abbr>, pp. 25-28.</bibl>
+        <bibl>Gerbert of Aurillac. <title>The Letters of Gerbert with His Papal Privileges as Sylvester II</title>. Tr. Harriet Pratt Lattin. New York: Columbia Univ. Press, 1961 (here pp. 36-39).</bibl>
+    </work>
     <work xml:id="abbo_sentenia">
+        <author ref="#abbo">Abbo of Fleury</author>
         <title>Sententia Abbonis de differentia circuli et sperae</title>
         <title type="alternative">De ratione sphere</title>
         <incipit>Studiosis astrologie primo sciendum est per geometricam quid distat inter circulum et speram</incipit>
@@ -12,18 +26,21 @@
          <abbr>Borst, Kalenderreform</abbr>, p. 328.</bibl>
     </work>
     <work xml:id="abbo_denique_luna">
+        <author ref="#abbo">Abbo of Fleury</author>
         <title>Untitled</title>
         <incipit>Denique luna totius zodiaci signa puncta partes studiooso lectori manifestabit</incipit>
         <explicit>similiter de reliquis.</explicit>
         <bibl>Thomson, Ron B. “Two Astronomical Tractates of Abbo of Fleury.” <title level="m">In The Light of Nature. Essays in the History and Philosophy of Science Presented to A.C. Crombie</title>, edited by J.D. North and J.J. Roche, 113–33. Dordrecht: Springer, 1985.</bibl>
     </work>
     <work xml:id="abbo_de_duplici">
+        <author ref="#abbo">Abbo of Fleury</author>
         <title>De duplici signorum ortu vel occasu</title>
         <incipit>De duplici ortu signorum dubitantes aliquando hac ratione conveni</incipit>
         <explicit>Matutino ex ortu hiemalem horrorem, vespertino vernalem adducunt temperiem.</explicit>
         <bibl>Thomson, Ron B. "Further Astronomical Material of Abbo of Fleury." <title level="j">Medieval Studies</title> 50 (1988): 671-3.</bibl>
     </work>
     <work xml:id="abbo_de_quinque_circulis">
+        <author ref="#abbo">Abbo of Fleury</author>
         <title>De quinque circulis mundi</title>
         <incipit>Quinque tenent caelum zonae quarum una corusco</incipit>
         <explicit>unde etiam fit ut duae zonae frigidissimae sint, ad quas sol numquam accedit.</explicit>
@@ -88,7 +105,12 @@
         <incipit>Bissena mensium uertigine uoluitur annis</incipit>
         <explicit>personas idus decurrens atque kalendas.</explicit>
         <bibl>Ed. in Baker and Lapidge 1995, p. 384.</bibl>
-    </work> 
+    </work>
+    <work xml:id="carmen_de_eclipsibus" ref="http://d-nb.info/gnd/4804416-7">
+        <author ref="#sisebut">Sisebut</author>
+        <title>Carmen de eclipsibus</title>
+        <bibl>Fontaine, J. <title>Isidore de Séville. Traité de la nature; suivi de l'épître en vers du roi Sisebut à Isidore</title>. Bordeaux: Féret et fils, 1960 (here pp. 329-335).</bibl>
+    </work>
     <work xml:id="chronica_isidori">
         <author ref="#isidore">Isidore</author>
         <title>Chronica</title>
@@ -108,7 +130,7 @@
         <bibl>
          <abbr>Clavis</abbr> 2273.</bibl>
         <bibl>Bede. Opera Didascalica. Edited by Charles Jones. CCSL, 123 C. Turnhout: Brepols, 1980. Pp. 601-611.</bibl>
-    </work>    
+    </work>
     <work xml:id="chronica_maiora">
         <author ref="#bede">Bede</author>
         <title>Chronica maiora</title>
@@ -309,7 +331,7 @@
         <author ref="#censorinus">Censorinus</author>
         <bibl>M. Olsen, L'étude des auteurs classiques latins aux xie et xiie siècles, IV. 2, p. 114, 332.</bibl>
       <!--        mentioned also St Gall 250 (s. ix2); Paris 1614 s. ix1 Tours, Bruxelles 5413-5422 (s. ix3/3 NE France), bern 87-->
-    </work>    
+    </work>
     <work xml:id="de_figuris_numerorum">
         <author ref="#priscianus">Priscianus</author>
         <title>De figuris numerorum</title>
@@ -331,7 +353,7 @@
         <bibl>
          <abbr>GL</abbr> III 2, pp. 430-440.</bibl>
     </work>
-    
+
     <work xml:id="de_gubernatione_dei" ref="http://d-nb.info/1000898628">
         <title>De gubernatione dei</title>
     </work>
@@ -383,7 +405,7 @@
       </explicit>
         <bibl>Martianus Capella. De nuptiis philologiae et mercurii. Edited by James Willis. Leipzig: Teubner, 1983.</bibl>
         <bibl>Martianus Capella. <title>Martianus Capella and the Seven Liberal Arts</title>. Vol. 2, <title>The Marriage of Philology and Mercury</title>. Translated by William H. Stahl and Richard Johnson. New York: COlumbia University Press, 1977.</bibl>
-    </work>    
+    </work>
     <work xml:id="de_ordine_ac_positione">
         <title>De ordine ac positione stellarum in signis</title>
         <incipit>Est quidem hic ordo et positio siderum, quae fixa caelo plurium coaceruatione stellarum</incipit>
@@ -432,7 +454,7 @@
         <title>De signis (interpolated version)</title>
         <incipit>Quinam tamen multa dicunt et alii aliter narrasse celum diuersis proferentes uocabulis sed ipse magis axe continetur quam se continui indemetipso reuoluitur. Habet autem undique inponderata per medium terre in circuitum celi equalem deductum</incipit>
         <explicit/>
-    </work>    
+    </work>
     <work xml:id="DT" ref="http://d-nb.info/gnd/7745328-1">
         <title>De temporibus</title>
         <author ref="#bede">Bede</author>
@@ -560,7 +582,7 @@
         <bibl>David Juste, "Neither Observation nor Astronomical Tables: An Alternative Way of Computing the Planetary Longitudes in the Early Western Middle Ages," in Studies in the History of the Exact Sciences in Honour of David Pingree, Leiden-Boston, MA 2004, pp. 181-222, with editioin in the appendix (<ref target="http://librarun.org/book/62528/231">pp. 216-217</ref>).</bibl>
         <bibl>Entry in <ref target="http://www.mirabileweb.it/title/in-quo-signo-versetur-mars-title/169852">Mirabile</ref>.</bibl>
         <note>The work  offers a method to calculate the longitude of the five planets without the need of observation or manipulation of astronomical tables. Since one knew the position of the planets during the Creation, one needed just to calculate the time elapsed since Creation and do the neccessary multiplication.</note>
-    </work>    
+    </work>
     <work xml:id="itaque_stella_veneris">
         <author ref="#bede">(Ps.) Bede</author>
         <title>Opusculum Itaque stella veneris et mercurii</title>
@@ -569,6 +591,8 @@
         <bibl>Bede. Opera Didascalica. Edited by Charles Jones. CCSL, 123 C. Turnhout: Brepols, 1980. P. 658.</bibl>
         <bibl>
          <abbr>Clavis</abbr>, 2323a.</bibl>
+        <bibl>
+            <abbr>Thorndike-Kibre</abbr> 797.7.</bibl>
         <!-- Borst supposed that these additions V.13 and v.14 came from Auxerre (MS Melk 412) or Fleury (Paris lat. 5543), Schriften p. 1069 -->
     </work>
     <work xml:id="de_actibus_apostolorum" ref="http://d-nb.info/gnd/4250713-3">
@@ -598,6 +622,19 @@
         <bibl>
          <abbr>PL</abbr>, 50, 773A-822D.</bibl>
     </work>
+    <work xml:id="in_sallustium">
+      <author ref="#cicero">Ps-Cicero</author>
+      <title>In Sallustium</title>
+      <bibl>Loeb 462, pp. 372-391.</bibl>
+      <bibl>Novokhatko, Anna. The Invectives of Sallust and Cicero. Critical Edition with Introduction, Translation, and Commentary. Berlin: Walter de Gruyter, 2009</bibl>
+    </work>
+    <work xml:id="in_ciceronem">
+        <author ref="#sallustius">Ps-Sallustius</author>
+        <title>In Ciceronem</title>
+        <bibl>Novokhatko, Anna. The Invectives of Sallust and Cicero. Critical Edition with Introduction, Translation, and Commentary. Berlin: Walter de Gruyter, 2009</bibl>
+        <bibl>Text in LacusCurtius<ptr target="http://penelope.uchicago.edu/Thayer/l/roman/texts/Sallust/pseudo/In_Ciceronem*.html"/>
+        </bibl>
+    </work>
     <work xml:id="in_vergilii_carmina_commentarii" ref="http://d-nb.info/gnd/4138843-4">
         <author ref="#servius">Servius</author>
         <title>In Vergilii carmina commentarii</title>
@@ -619,6 +656,10 @@
         <bibl>Wallis, Faith, trans. Bede: The Reckoning of Time. Liverpool: Liverpool University Press, 1999. Pp. 417-424.</bibl>
         <bibl>
          <abbr>Clavis</abbr>, 2321.</bibl>
+    </work>
+    <work xml:id="liber_alchandrei">
+        <title>Liber Alchandrei</title>
+        <bibl>Juste, David. Les Alchandreana Primitifs: Étude Sur Les plus Anciens Traités Astrologiques Latin d’origin Arabe (Xe Siècle). Leiden: Brill, 2007.</bibl>
     </work>
     <work xml:id="argumentum_aquens">
         <title>Argumentum ad lunam, cursu turbato anno domini infrascripto</title>
@@ -675,6 +716,14 @@
         <note>Consists of one opening letter (Praefatio) addressed to Otrich and the text of the martyrologium.</note>
         <incipit>Domino Otrio Wandalbertus salutem dicit. Veteri et perantiquo praecepto monemur</incipit>
         <incipit>Dies 1 Primum nunc Iani vocitatum nomine mensem </incipit>
+    </work>
+    <work xml:id="oratio">
+        <title>Prayer</title>
+        <quote>Domine deus omnipotens sancta trinitas et indiuisa unitas Domine pater qui per unigenitum filium tuum dominum nostrum ihesum christum totum coaeternum et aequalem in substantia diuinitatis, in unitate et uirtute spiritus sancti omnia condidisti, et tempore nouissimo per eundem incarnatum totum mundum reformasti, presta domine ut tua misericordia inspirante per apertionem illam qua sensus apostolorum post resurrectionem aperuisti de uolubilitate firmamenti et stellarum astrorumque cursu secundum modulum nostrae fragilitatis capere et aliis ministrare ualeamus. per eundem dominum.</quote>
+    </work>
+    <work xml:id="sancta_scriptura">
+        <title>On the creation of the luminaries according to the bible</title>
+        <quote>Sancta scriptura nobis a deo per beatum moysen tradita docet deum in quarto die luminaria duo solem uidelicet lunamque per uerbum sicut omnia creauit fecisse luminare maius ut preesset et diei et luminare minus nocti ut preesset nocti.</quote>
     </work>
     <work xml:id="partitiones_duodecim_versuum_aeneidos">
         <title>Partitiones duodecim versuum Aeneidos principalium</title>
@@ -747,6 +796,12 @@
     <work xml:id="ral">
         <title>Revised Aratus Latinus</title>
     </work>
+    <work xml:id="regulae_herigerus">
+      <author ref="#herigerus_lobiensis">Herigerus Lobiensis</author>
+      <title>Regulae de numerorum abaci rationibus</title>
+      <bibl>
+          <abbr>Bubnov 1899</abbr>, pp. 8-22.</bibl>
+      </work>
     <work xml:id="satirae" ref="http://d-nb.info/gnd/4331976-2">
         <author ref="#iuvenalis">Iuvenalis</author>
         <title>Saturae</title>
@@ -756,7 +811,7 @@
     <work xml:id="scottus_ratio">
         <title>De ratione conputandi<note> (Scottus Rat.)</note>
       </title>
-        <bibl>Maura Walsh, and Dáibhí Ó Cróinín (ed). <title>Cummian’s Letter De controversia paschali, together with a related Irish computistical tract De ratione conputandi</title>. Toronto: Pontifical Institute of Medieval Studies, 1988.</bibl>        
+        <bibl>Maura Walsh, and Dáibhí Ó Cróinín (ed). <title>Cummian’s Letter De controversia paschali, together with a related Irish computistical tract De ratione conputandi</title>. Toronto: Pontifical Institute of Medieval Studies, 1988.</bibl>
         <note>Borst (<bibl>
             <abbr>Borst, Kalenderreform</abbr>, pp. 177-189.</bibl>) suggested that this work was written around 650 in South Ireland. It was intended not only for monastic, but for general use - a manual for all Latin readers including clerics. On calendar and arithmetical questions followed Victorius of Aquitaine and Dionysius. For the theme on language borrowed heavily from Isidore. The manual is divided in two parts: 1) comprising 62 chapters mainly on the solar calendar with a catalogue of time units; 2) comprising 53 chapters - the course of the moon and its significance for the Easter calculation.</note>
     </work>

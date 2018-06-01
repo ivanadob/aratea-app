@@ -37,6 +37,9 @@
                         <tei:geo>51.21989 4.40346</tei:geo>
                     </tei:location>
                 </place>
+                <place xml:id="austria">
+                    <placeName ref="http://www.geonames.org/2782113">Austria</placeName>
+                </place>
                 <place xml:id="bamberg">
                     <placeName ref="http://www.geonames.org/2952984">Bamberg</placeName>
                     <tei:location xmlns:tei="http://www.tei-c.org/ns/1.0">
@@ -55,8 +58,11 @@
                         <tei:geo>51.27904 1.07992</tei:geo>
                     </tei:location>
                 </place>
+                <place xml:id="chartres">
+                    <placeName ref="http://www.geonames.org/3026467">Chartres</placeName>
+                </place>
                 <place xml:id="cologne">
-                    <placeName ref="http://www.geonames.org/2886242/koeln">Cologne</placeName>
+                    <placeName ref="http://www.geonames.org/2886242/">Cologne</placeName>
                     <placeName>Köln</placeName>
                 </place>
                 <place xml:id="corbie">
@@ -125,6 +131,12 @@
                         <tei:geo>47.8171 6.365</tei:geo>
                     </tei:location>
                 </place>
+                <place xml:id="melk">
+                    <placeName ref="http://www.geonames.org/2771682/">Melk</placeName>
+                    <tei:location xmlns:tei="http://www.tei-c.org/ns/1.0">
+                        <tei:geo>48.227 15.332</tei:geo>
+                    </tei:location>
+                </place>
                 <place xml:id="metz">
                     <placeName ref="http://www.geonames.org/2994160">Metz</placeName>
                     <tei:location xmlns:tei="http://www.tei-c.org/ns/1.0">
@@ -179,6 +191,9 @@
                         <tei:geo>47.42391 9.37477</tei:geo>
                     </tei:location>
                 </place>
+                <place xml:id="st_lambrecht">
+                    <placeName ref="http://www.geonames.org/7872476">Sankt Lambrecht</placeName>
+                </place>
                 <place xml:id="strasbourg">
                     <placeName xml:id="gnd_4057878-1" ref="http://www.geonames.org/2973783">Strasbourg</placeName>
                     <tei:location xmlns:tei="http://www.tei-c.org/ns/1.0">
@@ -229,6 +244,9 @@
                 </place>
                 <place xml:id="w_germany">
                     <placeName>West Germany</placeName>
+                </place>
+                <place xml:id="s_germany">
+                    <placeName>South Germany</placeName>
                 </place>
             </listPlace>
         </body>

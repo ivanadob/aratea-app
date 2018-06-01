@@ -27,7 +27,7 @@
     </teiHeader>
     <text>
         <body>
-                <listPerson> 
+                <listPerson>
                     <person xml:id="abbo">
                         <persName xml:id="gnd_118637576" ref="http://d-nb.info/gnd/118637576">Abbo &lt;Floriacensis&gt;</persName>
                         <persName>Abbo of Fleury</persName>
@@ -145,8 +145,14 @@
                         <ref target="http://en.wikipedia.org/wiki/Heiric_of_Auxerre">Wikipedia</ref>
                     </note>
                     </person>
+                    <person xml:id="henry_ii">
+                        <persName xml:id="gnd_118548255" ref="http://d-nb.info/gnd/118548255">Henry II.</persName>
+                    </person>
                     <person xml:id="herigerus_lobiensis">
                         <persName xml:id="gnd_118703625" ref="http://d-nb.info/gnd/118703625">Herigerus &lt;Lobiensis&gt;</persName>
+                        <bibl>
+                        <ref target="http://www.geschichtsquellen.de/repPers_118703625.html">Entry in Repertorium Geschichtsquellen des deutschen Mittelalters</ref>
+                    </bibl>
                     </person>
                     <person xml:id="hermannus_contractus">
                         <persName xml:id="gnd_118549693" ref="http://d-nb.info/gnd/118549693">Hermannus &lt;Contractus&gt;</persName>
@@ -287,11 +293,17 @@
                     <person xml:id="salvianus_massiliensis">
                         <persName xml:id="gnd_118605208" ref="http://d-nb.info/gnd/118605208">Salvianus &lt;Massiliensis&gt;</persName>
                     </person>
+                    <person xml:id="sallustius">
+                      <persName xml:id="gnd_118605097" ref="http://d-nb.info/gnd/118605097">Ps-Sallustius</persName>
+                    </person>
                     <person xml:id="servius">
                         <persName xml:id="gnd_118796313" ref="http://d-nb.info/gnd/118796313">Servius</persName>
                     </person>
                     <person xml:id="sextus_festus">
                         <persName xml:id="gnd_118683489" ref="http://d-nb.info/gnd/118683489">Sextus Pompeius Festus</persName>
+                    </person>
+                    <person xml:id="sisebut">
+                        <persName xml:id="gnd_00960995" ref="http://d-nb.info/gnd/100960995">Sisebut</persName>
                     </person>
                     <person xml:id="susius">
                         <persName xml:id="gnd_135617855">Iacobus &lt;Susius&gt;</persName>
@@ -329,7 +341,7 @@
                     </affiliation>
                         <occupation>monk</occupation>
                         <occupation>librarian</occupation>
-                    </person> 
+                    </person>
                 </listPerson>
         </body>
     </text>
