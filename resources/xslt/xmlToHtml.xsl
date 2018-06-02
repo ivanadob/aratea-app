@@ -26,38 +26,78 @@
                     </h3>
                 </div>
                 <div class="panel-body">
-                    <table class="table table-striped">
-                        <tr>
-                            <th>
-                                Manuscript Title
-                            </th>
-                            <td>
-                                <xsl:value-of select=".//tei:body//tei:msDesc//tei:head//tei:title"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>Located at</th>
-                            <td>
-                                <xsl:value-of select=".//tei:body//tei:msDesc/tei:msIdentifier//tei:*" separator=", "/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>
-                                Place of Origin
-                            </th>
-                            <td>
-                                <xsl:apply-templates select=".//tei:body//tei:msDesc//tei:head//tei:origPlace"/> 
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>
-                                Date of Origin
-                            </th>
-                            <td>
-                                <xsl:apply-templates select=".//tei:body//tei:msDesc//tei:head//tei:origDate"/> 
-                            </td>
-                        </tr>
-                    </table>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <h4 align="center">some title</h4>
+                            </h4>
+                        </div>
+                        <div class="pandel-body">
+                            <table class="table table-striped">
+                            <tr>
+                                <th>
+                                    Manuscript Title
+                                </th>
+                                <td>
+                                    <xsl:value-of select=".//tei:body//tei:msDesc//tei:head//tei:title"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Located at</th>
+                                <td>
+                                    <xsl:value-of select=".//tei:body//tei:msDesc/tei:msIdentifier//tei:*" separator=", "/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    Place of Origin
+                                </th>
+                                <td>
+                                    <xsl:apply-templates select=".//tei:body//tei:msDesc//tei:head//tei:origPlace"/> 
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    Date of Origin
+                                </th>
+                                <td>
+                                    <xsl:apply-templates select=".//tei:body//tei:msDesc//tei:head//tei:origDate"/> 
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Digital Facsimile</th>
+                                <td>
+                                    <xsl:apply-templates select=".//tei:body//tei:msDesc//tei:head//tei:ref"/>
+                                </td>
+                            </tr>
+                        </table>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <h4 align="center">Physical Description</h4>
+                            </h4>
+                        </div>
+                        <div class="pandel-body">
+                            <table class="table table-striped">
+                                <tr>
+                                    <th>
+                                        Material
+                                    </th>
+                                    <td>
+                                        <xsl:apply-templates select=".//tei:body//tei:objectDesc//tei:material"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Extent</th>
+                                    <td>
+                                        <xsl:apply-templates select=".//tei:extent"/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
                     <div class="panel-footer">
                         <p style="text-align:center;">
                             <a>
@@ -438,5 +478,31 @@
         <abbr title="{$dates}">
             <xsl:value-of select="."/>
         </abbr>
+    </xsl:template>
+    <xsl:template match="tei:extent">
+        <xsl:apply-templates select="./tei:measure"/>
+        <xsl:apply-templates select="./tei:dimensions"/>
+    </xsl:template>
+    <xsl:template match="tei:measure">
+        <xsl:variable name="x">
+            <xsl:value-of select="./@type"/>
+        </xsl:variable>
+        <xsl:variable name="y">
+            <xsl:value-of select="./@quantity"/>
+        </xsl:variable>
+        <abbr title="type: {$x}, quantity: {$y}">Measure</abbr>: <xsl:value-of select="./text()"/>
+        <br/>
+    </xsl:template>
+    <xsl:template match="tei:dimensions">
+        <xsl:variable name="x">
+            <xsl:value-of select="./@type"/>
+        </xsl:variable>
+        <xsl:variable name="y">
+            <xsl:value-of select="./@unit"/>
+        </xsl:variable>
+        <abbr title="type: {$x}">Dimensions:</abbr> h: <xsl:value-of select="./tei:height/text()"/>
+        <xsl:value-of select="$y"/>, w: <xsl:value-of select="./tei:width/text()"/>
+        <xsl:value-of select="$y"/>
+        <br/>
     </xsl:template>
 </xsl:stylesheet>
