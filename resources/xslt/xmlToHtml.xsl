@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet xmlns="http://www.w3.org/1999/xhtml" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tei="http://www.tei-c.org/ns/1.0" exclude-result-prefixes="tei" version="2.0"><!-- <xsl:strip-space elements="*"/>-->
+<xsl:stylesheet xmlns="http://www.w3.org/1999/xhtml" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:foo="http://whatever" xmlns:tei="http://www.tei-c.org/ns/1.0" exclude-result-prefixes="tei" version="2.0"><!-- <xsl:strip-space elements="*"/>-->
     <xsl:param name="document"/>
     <xsl:param name="app-name"/>
     <xsl:param name="collection-name"/>
@@ -9,6 +9,7 @@
 ### Seitenlayout und -struktur ###
 ##################################
 -->
+   
     <xsl:template match="/">
         <div class="page-header">
             <h2 align="center">
@@ -185,7 +186,7 @@
                                 <h3 align="center">Content</h3>
                             </h3>
                         </div>
-                        <div class="pandel-body">
+                        <div class="panel-body">
                             <xsl:for-each select=".//tei:msPart">
                                 <xsl:apply-templates select="."/>
                             </xsl:for-each>
@@ -646,7 +647,23 @@
     </xsl:template>
     
     <xsl:template match="tei:locus">
-        <xsl:value-of select="./@from"/>-<xsl:value-of select="./@to"/>
+        <xsl:variable name="folio-from-id">
+            <xsl:value-of select="./@from"/>
+        </xsl:variable>
+        <xsl:variable name="folio-to-id">
+            <xsl:value-of select="./@to"/>
+        </xsl:variable>
+        <xsl:variable name="url-from-facs">
+            <xsl:value-of select="./ancestor::tei:TEI//tei:graphic[@n=$folio-from-id]/@url"/>
+        </xsl:variable>
+        <xsl:variable name="url-to-facs">
+            <xsl:value-of select="./ancestor::tei:TEI//tei:graphic[@n=$folio-to-id]/@url"/>
+        </xsl:variable>
+        <a href="{$url-from-facs}">
+            <xsl:value-of select="$folio-from-id"/>
+        </a>-<a href="{$url-to-facs}">
+            <xsl:value-of select="./@to"/>
+        </a>
     </xsl:template>
     
     <xsl:template match="tei:handDesc">
@@ -699,14 +716,12 @@
     <xsl:template match="tei:msPart">
         <div class="panel panel-default">
             <div class="panel-heading">
-
                     <h4 align="center">
                         <xsl:value-of select="./tei:msIdentifier"/>
                         <xsl:value-of select="./tei:head"/>
                     </h4>
-                
             </div>
-            <div class="pandel-body">
+            <div class="panel-body">
                 <xsl:apply-templates select=".//tei:msContents"/>
             </div>
         </div>
@@ -759,30 +774,38 @@
                         </td>
                     </tr>
                 </xsl:if>
-                <tr>
-                    <th>incipit</th>
-                    <td>
-                        <xsl:apply-templates select="./tei:incipit"/>
-                    </td>
-                </tr>
-                <tr>
-                    <th>explicit</th>
-                    <td>
-                        <xsl:apply-templates select="./tei:explicit"/>
-                    </td>
-                </tr>
-                <tr>
-                    <th>finalRubric</th>
-                    <td>
-                        <xsl:apply-templates select="./tei:finalRubric"/>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Bibliography</th>
-                    <td>
-                        <xsl:apply-templates select="./tei:bibl"/>
-                    </td>
-                </tr>
+                <xsl:if test="./tei:incipit">
+                    <tr>
+                        <th>incipit</th>
+                        <td>
+                            <xsl:apply-templates select="./tei:incipit"/>
+                        </td>
+                    </tr>
+                </xsl:if>
+                <xsl:if test="./tei:explicit">
+                    <tr>
+                        <th>explicit</th>
+                        <td>
+                            <xsl:apply-templates select="./tei:explicit"/>
+                        </td>
+                    </tr>
+                 </xsl:if>
+                <xsl:if test="./tei:finalRubric">
+                    <tr>
+                        <th>finalRubric</th>
+                        <td>
+                            <xsl:apply-templates select="./tei:finalRubric"/>
+                        </td>
+                    </tr>
+                </xsl:if>
+                <xsl:if test="./tei:bibl">
+                    <tr>
+                        <th>Bibliography</th>
+                        <td>
+                            <xsl:apply-templates select="./tei:bibl"/>
+                        </td>
+                    </tr>
+                </xsl:if>
             </tbody>
         </table>
     </xsl:template>
