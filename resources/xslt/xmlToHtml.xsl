@@ -14,9 +14,9 @@
             <h2 align="center">
                 <xsl:value-of select=".//tei:titleStmt//tei:title[@type='sub']"/>
             </h2>
-            <h4 align="center">
+            <h3 align="center">
                 <xsl:value-of select=".//tei:titleStmt//tei:respStmt//text()"/>
-            </h4>
+            </h3>
         </div>
         <div class="regest">
             <div class="panel panel-default">
@@ -28,9 +28,9 @@
                 <div class="panel-body">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <h4 align="center">some title</h4>
-                            </h4>
+                            <h3 class="panel-title">
+                                <h3 align="center">some title</h3>
+                            </h3>
                         </div>
                         <div class="pandel-body">
                             <table class="table table-striped">
@@ -75,9 +75,9 @@
                     </div>
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <h4 align="center">Physical Description</h4>
-                            </h4>
+                            <h3 class="panel-title">
+                                <h3 align="center">Physical Description</h3>
+                            </h3>
                         </div>
                         <div class="pandel-body">
                             <table class="table table-striped">
@@ -142,9 +142,9 @@
                     </div>
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <h4 align="center">History</h4>
-                            </h4>
+                            <h3 class="panel-title">
+                                <h3 align="center">History</h3>
+                            </h3>
                         </div>
                         <div class="pandel-body">
                             <table class="table table-striped">
@@ -171,12 +171,24 @@
                     </div>
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <h4 align="center">Bibliography</h4>
-                            </h4>
+                            <h3 class="panel-title">
+                                <h3 align="center">Bibliography</h3>
+                            </h3>
                         </div>
                         <div class="pandel-body">
                             <xsl:apply-templates select=".//tei:listBibl"/>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                <h3 align="center">Content</h3>
+                            </h3>
+                        </div>
+                        <div class="pandel-body">
+                            <xsl:for-each select=".//tei:msPart">
+                                <xsl:apply-templates select="."/>
+                            </xsl:for-each>
                         </div>
                     </div>
                     
@@ -305,6 +317,9 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template><!--    footnotes -->
+    <xsl:template match=".//msItem/tei:note">
+        <xsl:apply-templates/>
+    </xsl:template>
     <xsl:template match="tei:note">
         <xsl:element name="a">
             <xsl:attribute name="name">
@@ -384,6 +399,19 @@
             </li>
         </xsl:for-each>
     </xsl:template><!-- reference strings   -->
+    <xsl:template match="tei:title[@ref]">
+        <strong>
+            <xsl:element name="a">
+                <xsl:attribute name="class">reference</xsl:attribute>
+                <xsl:attribute name="data-type">listtitle.xml</xsl:attribute>
+                <xsl:attribute name="data-key">
+                    <xsl:value-of select="substring-after(data(@ref), '#')"/>
+                    <xsl:value-of select="@key"/>
+                </xsl:attribute>
+                <xsl:value-of select="."/>
+            </xsl:element>
+        </strong>
+    </xsl:template>
     <xsl:template match="tei:origPlace[@ref]">
         <strong>
             <xsl:element name="a">
@@ -397,6 +425,21 @@
             </xsl:element>
         </strong>
     </xsl:template>
+    
+    <xsl:template match="tei:author[@ref]">
+        <strong>
+            <xsl:element name="a">
+                <xsl:attribute name="class">reference</xsl:attribute>
+                <xsl:attribute name="data-type">listperson.xml</xsl:attribute>
+                <xsl:attribute name="data-key">
+                    <xsl:value-of select="substring-after(data(@ref), '#')"/>
+                    <xsl:value-of select="@key"/>
+                </xsl:attribute>
+                <xsl:value-of select="."/>
+            </xsl:element>
+        </strong>
+    </xsl:template>
+    
     <xsl:template match="tei:rs[@ref or @key]">
         <strong>
             <xsl:element name="a">
@@ -651,5 +694,96 @@
             <xsl:value-of select="./@target"/>
         </xsl:variable>
         <a href="{$x}" class="fas fa-link"/>
+    </xsl:template>
+    
+    <xsl:template match="tei:msPart">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+
+                    <h4 align="center">
+                        <xsl:value-of select="./tei:msIdentifier"/>
+                        <xsl:value-of select="./tei:head"/>
+                    </h4>
+                
+            </div>
+            <div class="pandel-body">
+                <xsl:apply-templates select=".//tei:msContents"/>
+            </div>
+        </div>
+    </xsl:template>
+    
+    <xsl:template match="tei:msContents">
+        <xsl:for-each select=".//tei:msItem">
+            <h5>Manuscript Item Nr: <xsl:value-of select="position()"/>
+            </h5>
+            <xsl:apply-templates select="."/>
+        </xsl:for-each>
+    </xsl:template>
+    
+    <xsl:template match="tei:msItem">
+        <table class="table table-condensed table-bordered">
+            <thead>
+                <tr>
+                    <th width="20%">Key</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>locus</th>
+                    <td>
+                        <xsl:apply-templates select="./tei:locus"/>
+                    </td>
+                </tr>
+                <xsl:if test="./tei:note">
+                    <tr>
+                        <th>notes</th>
+                        <td>
+                            <xsl:apply-templates select="./tei:note"/>
+                        </td>
+                    </tr>
+                </xsl:if>
+                <xsl:if test="./tei:author">
+                    <tr>
+                        <th>author</th>
+                        <td>
+                            <xsl:apply-templates select="./tei:author"/>
+                        </td>
+                    </tr>
+                </xsl:if>
+                <xsl:if test="./tei:title">
+                    <tr>
+                        <th>title</th>
+                        <td>
+                            <xsl:apply-templates select="./tei:title"/>
+                        </td>
+                    </tr>
+                </xsl:if>
+                <tr>
+                    <th>incipit</th>
+                    <td>
+                        <xsl:apply-templates select="./tei:incipit"/>
+                    </td>
+                </tr>
+                <tr>
+                    <th>explicit</th>
+                    <td>
+                        <xsl:apply-templates select="./tei:explicit"/>
+                    </td>
+                </tr>
+                <tr>
+                    <th>finalRubric</th>
+                    <td>
+                        <xsl:apply-templates select="./tei:finalRubric"/>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Bibliography</th>
+                    <td>
+                        <xsl:apply-templates select="./tei:bibl"/>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </xsl:template>
 </xsl:stylesheet>
