@@ -12,119 +12,51 @@
     <xsl:template match="/">
         <div class="page-header">
             <h2 align="center">
-                <xsl:for-each select="//tei:fileDesc/tei:titleStmt/tei:title">
-                    <xsl:apply-templates/>
-                    <br/>
-                </xsl:for-each>
+                <xsl:value-of select=".//tei:titleStmt//tei:title[@type='sub']"/>
             </h2>
+            <h4 align="center">
+                <xsl:value-of select=".//tei:titleStmt//tei:respStmt//text()"/>
+            </h4>
         </div>
         <div class="regest">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">
-                        <h2 align="center">Header</h2>
+                        <h2 align="center">Manuscript Description</h2>
                     </h3>
                 </div>
                 <div class="panel-body">
                     <table class="table table-striped">
-                        <tbody>
-                            <tr>
-                                <th>
-                                    <abbr title="tei:titleStmt/tei:title">Dokument</abbr>
-                                </th>
-                                <td>
-                                    <xsl:for-each select="//tei:fileDesc/tei:titleStmt/tei:title">
-                                        <xsl:apply-templates/>
-                                        <br/>
-                                    </xsl:for-each>
-                                </td>
-                            </tr>
-                            <xsl:if test="//tei:msIdentifier">
-                                <tr>
-                                    <th>
-                                        <abbr title="//tei:msIdentifie">Signatur</abbr>
-                                    </th>
-                                    <td>
-                                        <xsl:for-each select="//tei:msIdentifier/child::*">
-                                            <abbr>
-                                                <xsl:attribute name="title">
-                                                    <xsl:value-of select="name()"/>
-                                                </xsl:attribute>
-                                                <xsl:value-of select="."/>
-                                            </abbr>
-                                            <br/>
-                                        </xsl:for-each><!--<xsl:apply-templates select="//tei:msIdentifier"/>-->
-                                    </td>
-                                </tr>
-                            </xsl:if>
-                            <xsl:if test="//tei:msContents">
-                                <tr>
-                                    <th>
-                                        <abbr title="//tei:msContents">Regest</abbr>
-                                    </th>
-                                    <td>
-                                        <xsl:apply-templates select="//tei:msContents"/>
-                                    </td>
-                                </tr>
-                            </xsl:if>
-                            <xsl:if test="//tei:supportDesc/tei:extent">
-                                <tr>
-                                    <th>
-                                        <abbr title="//tei:supportDesc/tei:extent">Extent</abbr>
-                                    </th>
-                                    <td>
-                                        <xsl:apply-templates select="//tei:supportDesc/tei:extent"/>
-                                    </td>
-                                </tr>
-                            </xsl:if>
-                            <tr>
-                                <th>Verantwortlich</th>
-                                <td>
-                                    <xsl:for-each select="//tei:author">
-                                        <xsl:apply-templates/>
-                                    </xsl:for-each>
-                                </td>
-                            </tr>
-                            <xsl:if test="//tei:titleStmt/tei:respStmt">
-                                <tr>
-                                    <th>
-                                        <abbr title="//tei:titleStmt/tei:respStmt">responsible</abbr>
-                                    </th>
-                                    <td>
-                                        <xsl:for-each select="//tei:titleStmt/tei:respStmt">
-                                            <p>
-                                                <xsl:apply-templates/>
-                                            </p>
-                                        </xsl:for-each>
-                                    </td>
-                                </tr>
-                            </xsl:if>
-                                <tr>
-                                    <th>
-                                        <abbr title="//tei:availability//tei:p[1]">License</abbr>
-                                    </th>
-                                    <xsl:choose>
-                                        <xsl:when test="//tei:licence[@target]">
-                                         <td align="center">
-                                             <a class="navlink" target="_blank">
-                                                 <xsl:attribute name="href">
-                                                     <xsl:value-of select="//tei:licence[1]/data(@target)"/>
-                                                 </xsl:attribute>
-                                                 <xsl:value-of select="//tei:licence[1]/data(@target)"/>
-                                             </a>
-                                         </td>
-                                        </xsl:when>
-                                        <xsl:when test="//tei:licence">
-                                            <td>
-                                                <xsl:apply-templates select="//tei:licence"/>
-                                            </td>
-                                        </xsl:when>
-                                        <xsl:otherwise>
-                                            <td>no license provided</td>
-                                        </xsl:otherwise>
-                                    </xsl:choose>
-                                </tr>                            
-                        </tbody>
+                        <tr>
+                            <th>
+                                Manuscript Title
+                            </th>
+                            <td>
+                                <xsl:value-of select=".//tei:body//tei:msDesc//tei:head//tei:title"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Located at</th>
+                            <td>
+                                <xsl:value-of select=".//tei:body//tei:msDesc/tei:msIdentifier//tei:*" separator=", "/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                Place of Origin
+                            </th>
+                            <td>
+                                <xsl:apply-templates select=".//tei:body//tei:msDesc//tei:head//tei:origPlace"/> 
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                Date of Origin
+                            </th>
+                            <td>
+                                <xsl:apply-templates select=".//tei:body//tei:msDesc//tei:head//tei:origDate"/> 
+                            </td>
+                        </tr>
                     </table>
                     <div class="panel-footer">
                         <p style="text-align:center;">
@@ -325,6 +257,19 @@
             </li>
         </xsl:for-each>
     </xsl:template><!-- reference strings   -->
+    <xsl:template match="tei:origPlace[@ref]">
+        <strong>
+            <xsl:element name="a">
+                <xsl:attribute name="class">reference</xsl:attribute>
+                <xsl:attribute name="data-type">place</xsl:attribute>
+                <xsl:attribute name="data-key">
+                    <xsl:value-of select="substring-after(data(@ref), '#')"/>
+                    <xsl:value-of select="@key"/>
+                </xsl:attribute>
+                <xsl:value-of select="."/>
+            </xsl:element>
+        </strong>
+    </xsl:template>
     <xsl:template match="tei:rs[@ref or @key]">
         <strong>
             <xsl:element name="a">
@@ -485,5 +430,13 @@
         <xsl:element name="strike">
             <xsl:apply-templates/>
         </xsl:element>
+    </xsl:template>
+    <xsl:template match="tei:origDate[@notBefore and @notAfter]">
+        <xsl:variable name="dates">
+            <xsl:value-of select="./@*" separator="-"/>
+        </xsl:variable>
+        <abbr title="{$dates}">
+            <xsl:value-of select="."/>
+        </abbr>
     </xsl:template>
 </xsl:stylesheet>
