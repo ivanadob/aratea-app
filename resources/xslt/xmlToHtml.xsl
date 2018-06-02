@@ -95,19 +95,101 @@
                                         <xsl:apply-templates select=".//tei:extent"/>
                                     </td>
                                 </tr>
+                                <tr>
+                                    <th>Foliation</th>
+                                    <td>
+                                        <xsl:apply-templates select=".//tei:foliation"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Collation</th>
+                                    <td>
+                                        <xsl:apply-templates select=".//tei:collation"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Condition</th>
+                                    <td>
+                                        <xsl:apply-templates select=".//tei:condition"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Layout Description</th>
+                                    <td>
+                                        <xsl:apply-templates select=".//tei:layoutDesc"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Hands</th>
+                                    <td>
+                                        <xsl:apply-templates select=".//tei:handDesc"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Scripts</th>
+                                    <td>
+                                        <xsl:apply-templates select=".//tei:scriptDesc"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Bindings</th>
+                                    <td>
+                                        <xsl:apply-templates select=".//tei:bindingDesc"/>
+                                    </td>
+                                </tr>
                             </table>
                         </div>
                     </div>
-                    <div class="panel-footer">
-                        <p style="text-align:center;">
-                            <a>
-                                <xsl:attribute name="href">
-                                    <xsl:value-of select="$path2source"/>
-                                </xsl:attribute>
-                                see the TEI source of this document
-                            </a>
-                        </p>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <h4 align="center">History</h4>
+                            </h4>
+                        </div>
+                        <div class="pandel-body">
+                            <table class="table table-striped">
+                                <tr>
+                                    <th>Origin</th>
+                                    <td>
+                                        <xsl:apply-templates select=".//tei:origin"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Provenance</th>
+                                    <td>
+                                        <xsl:apply-templates select=".//tei:provenance"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Acquisition</th>
+                                    <td>
+                                        <xsl:apply-templates select=".//tei:acquisition"/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <h4 align="center">Bibliography</h4>
+                            </h4>
+                        </div>
+                        <div class="pandel-body">
+                            <xsl:apply-templates select=".//tei:listBibl"/>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="panel-footer">
+                    <p style="text-align:center;">
+                        <a>
+                            <xsl:attribute name="href">
+                                <xsl:value-of select="$path2source"/>
+                            </xsl:attribute>
+                            see the TEI source of this document
+                        </a>
+                    </p>
                 </div>
             </div>
         </div>
@@ -208,6 +290,11 @@
                     <xsl:apply-templates/>
                 </i>
             </xsl:when>
+            <xsl:when test="@rend='sup'">
+                <sup>
+                    <xsl:apply-templates/>
+                </sup>
+            </xsl:when>
             <xsl:otherwise>
                 <span>
                     <xsl:attribute name="style">
@@ -301,7 +388,7 @@
         <strong>
             <xsl:element name="a">
                 <xsl:attribute name="class">reference</xsl:attribute>
-                <xsl:attribute name="data-type">place</xsl:attribute>
+                <xsl:attribute name="data-type">listplace.xml</xsl:attribute>
                 <xsl:attribute name="data-key">
                     <xsl:value-of select="substring-after(data(@ref), '#')"/>
                     <xsl:value-of select="@key"/>
@@ -504,5 +591,65 @@
         <xsl:value-of select="$y"/>, w: <xsl:value-of select="./tei:width/text()"/>
         <xsl:value-of select="$y"/>
         <br/>
+    </xsl:template>
+    
+    <xsl:template match="tei:layoutDesc">
+        <xsl:for-each select="tei:layout">
+            <div>
+                <xsl:value-of select="./@columns"/> Column(s) à <xsl:value-of select="./@ruledLines |./@writtenLines"/> ruled/written lines:
+                <xsl:apply-templates/>
+            </div>
+        </xsl:for-each>
+    </xsl:template>
+    
+    <xsl:template match="tei:locus">
+        <xsl:value-of select="./@from"/>-<xsl:value-of select="./@to"/>
+    </xsl:template>
+    
+    <xsl:template match="tei:handDesc">
+        <xsl:for-each select="./tei:handNote">
+            <div>
+                <xsl:apply-templates/>
+            </div>
+        </xsl:for-each>
+    </xsl:template>
+    
+    <xsl:template match="tei:title">
+        <strong>
+            <xsl:apply-templates/>
+        </strong>
+    </xsl:template>
+    
+    <xsl:template match="tei:scriptDesc">
+        <xsl:for-each select="./tei:scriptNote">
+            <div>
+                Type: <xsl:value-of select="./@script"/>
+                <xsl:apply-templates/>
+            </div>
+        </xsl:for-each>
+    </xsl:template>
+    
+    <xsl:template match="tei:bindingDesc">
+        <xsl:for-each select="./tei:binding">
+            <div>
+                Date: <xsl:value-of select="./@notBefore"/>-<xsl:value-of select="./@notAfter"/>
+                <xsl:apply-templates/>
+            </div>
+        </xsl:for-each>
+    </xsl:template>
+    
+    <xsl:template match="tei:listBibl">
+        <xsl:for-each select=".//tei:bibl">
+            <li>
+                <xsl:apply-templates/>
+            </li>
+        </xsl:for-each>
+    </xsl:template>
+    
+    <xsl:template match="tei:ptr">
+        <xsl:variable name="x">
+            <xsl:value-of select="./@target"/>
+        </xsl:variable>
+        <a href="{$x}" class="fas fa-link"/>
     </xsl:template>
 </xsl:stylesheet>
