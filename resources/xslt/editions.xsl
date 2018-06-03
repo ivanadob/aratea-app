@@ -390,5 +390,9 @@
                 </div>
             </div>
         </div>
-    </xsl:template>   
+    </xsl:template>
+    
+    <xsl:template match="tei:note">
+        <xsl:apply-templates/>
+    </xsl:template>
 </xsl:stylesheet>
