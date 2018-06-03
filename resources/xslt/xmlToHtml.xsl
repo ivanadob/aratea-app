@@ -96,7 +96,7 @@
                         <ul class="dropdown-menu">
                             <xsl:for-each select=".//tei:msPart">
                                 <xsl:variable name="x">
-                                    <xsl:value-of select="position()"/>
+                                    <xsl:number level="any" count="tei:msPart"/>
                                 </xsl:variable>
                                 <li class="dropdown-submenu">
                                     <a href="#mspart_{$x}">MS Parts Nr. <xsl:value-of select="$x"/>
@@ -104,10 +104,11 @@
                                     <ul class="dropdown-menu">
                                         <xsl:for-each select=".//tei:msItem">
                                             <xsl:variable name="x">
-                                                <xsl:value-of select="position()"/>
+                                                <xsl:number level="any" count="tei:msItem"/>
                                             </xsl:variable>
                                             <li>
-                                                <a href="#msitem_{$x}">MS Item <xsl:value-of select="$x"/>
+                                                <a href="#msitem_{$x}">
+                                                    MS Item <xsl:value-of select="$x"/>
                                                 </a>
                                             </li>
                                         </xsl:for-each>
@@ -425,10 +426,9 @@
                 </span>
             </xsl:otherwise>
         </xsl:choose>
-    </xsl:template><!--    footnotes -->
-    <xsl:template match=".//msItem/tei:note">
-        <xsl:apply-templates/>
     </xsl:template>
+    
+    <!--    footnotes -->   
     <xsl:template match="tei:note">
         <xsl:element name="a">
             <xsl:attribute name="name">
@@ -447,6 +447,7 @@
             </span>
         </xsl:element>
     </xsl:template>
+
     <xsl:template match="tei:div">
         <xsl:choose>
             <xsl:when test="@type='regest'">
@@ -456,7 +457,8 @@
                     </xsl:attribute>
                     <xsl:apply-templates/>
                 </div>
-            </xsl:when><!-- transcript -->
+            </xsl:when>
+            <!-- transcript -->
             <xsl:when test="@type='transcript'">
                 <div>
                     <xsl:attribute name="class">
@@ -822,7 +824,10 @@
     </xsl:template>
     
     <xsl:template match="tei:msPart">
-        <div class="panel panel-default">
+        <xsl:variable name="x">
+            <xsl:number count="." level="any"/>
+        </xsl:variable>
+        <div class="panel panel-default" id="mspart_{$x}">
             <div class="panel-heading">
                     <h4 align="center">
                         <xsl:value-of select="./tei:msIdentifier"/>
@@ -837,16 +842,17 @@
     
     <xsl:template match="tei:msContents">
         <xsl:for-each select=".//tei:msItem">
-            <xsl:variable name="x">
-                <xsl:value-of select="position()"/>
-            </xsl:variable>
-            <h5 id="msitem_{$x}">Manuscript Item Nr: <xsl:value-of select="$x"/>
-            </h5>
             <xsl:apply-templates select="."/>
         </xsl:for-each>
     </xsl:template>
     
     <xsl:template match="tei:msItem">
+        <xsl:variable name="x">
+            <xsl:number level="any" count="tei:msItem"/>
+        </xsl:variable>
+        <h5 id="msitem_{$x}">
+            Manuscript Item Nr: <xsl:value-of select="$x"/>
+        </h5>
         <table class="table table-condensed table-bordered">
             <thead>
                 <tr>
