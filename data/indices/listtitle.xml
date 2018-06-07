@@ -64,6 +64,7 @@
         <title>Anonymus Sangallensis</title>
         <incipit>Herodius dicit helicem licaonis fuisse filiam</incipit>
         <explicit>absides eius ultima in capricorno est.</explicit>
+        <bibl>Le Bourdellès, Hubert. "De astronomia more christiano." Studi medievali (3rd series) 32 (1991): 385-444.</bibl>
     </work>
     <work xml:id="apuleian_sphere">
         <title>Apuleian sphere</title>
@@ -100,11 +101,14 @@
         <bibl/>
     </work>
     <work xml:id="bissena_mensum">
-        <title/>
-        <summary>17 verses on the Roman calendar its months, weeks and days.</summary>
+        <title>Martyrologium</title>
+        <summary>17 verses on the Roman calendar its months, weeks and days. Following are short poems on the twelve months</summary>
         <incipit>Bissena mensium uertigine uoluitur annis</incipit>
-        <explicit>personas idus decurrens atque kalendas.</explicit>
+        <explicit>Ter nonas idus decurrens atque kalendas.</explicit>
+        <incipit>Prima dies iani est qua circumciditur agnus</incipit>
+        <explicit>Silvestrem pridias celebramus ab orbe colendum.</explicit>
         <bibl>Ed. in Baker and Lapidge 1995, p. 384.</bibl>
+        <bibl>Beda. Opera quae supersunt omnia. Vol 1. Ed. by J. A. Giles. London, 1843, pp. 50-53.</bibl>
     </work>
     <work xml:id="carmen_de_eclipsibus" ref="http://d-nb.info/gnd/4804416-7">
         <author ref="#sisebut">Sisebut</author>
@@ -302,7 +306,7 @@
         <title>De astronomia more christiano</title>
         <incipit>Hae fisicae partes quae astronomia et astrologia dicuntur, dum deest mathematica</incipit>
         <explicit>de ceteris astronomicis conscribere signis.</explicit>
-        <bibl/>
+        <bibl>Le Bourdellès, Hubert. "De astronomia more christiano." Studi medievali (3rd series) 32 (1991): 385-444.</bibl>
     </work>
     <work xml:id="de_computo">
         <author ref="#hrabanus">Hrabanus Maurus</author>
