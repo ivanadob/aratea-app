@@ -3,11 +3,11 @@
     <teiHeader>
         <fileDesc>
             <titleStmt>
-                <title>About your application</title>
+                <title>Aratea Digital</title>
                 <author>
                     <persName>
-                        <forename>forename</forename>
-                        <surname>surename</surname>
+                        <forename>Ivana</forename>
+                        <surname>Dobcheva</surname>
                     </persName>
                 </author>
             </titleStmt>
@@ -27,9 +27,33 @@
     <text>
         <body>
             <div>
-                <head>About</head>
-                <p>Some place to write your project</p>
+                <head>Aratea Digital</head>
+                <p>The term Aratea or Aratea carmina refers to three classical Latin translations (these of Cicero, Germanicus, and Avienus) as well as multiple medieval renderings of Aratus‘ (ca. 315/310-240 BC) didactic poem the Phaenomena.[1] With more than sixty manuscripts the Aratea was the main and in many respects the only source from which medieval readers received information about stellar astronomy, making it an important research topic. Sufficient numbers of studies have been devoted to the literary aspects of the Latin translations of the poem. Some manuscripts of the Aratea have attracted scholarly attention due to their illustrations and diagrams, but no overall study on the transmission and reception of the Aratea has been written.[2] The utmost goal of my dissertation project is an evaluation of the role the text of the Aratea played in the astronomical studies during a period from the 8th c. to the 12th c., taking into consideration how the entire body of the texts that make up the Aratea was read, commented on and copied during this period.</p>
+                <div>
+                    <head>Concise History of the Texts</head>
+                    <div>
+                        <head>The Greek Original(s)</head>
+                        <div>
+                            <head>Aratus’ Poem – the Phaenomena</head>
+                            <p>
+                                The Phaenomena, literary “Things that appear”, is a didactic poem, which teaches about the fixed stars, and their annual motion, as well as about the atmospheric occurrences, and the behaviour of the flora and fauna.[3] Aratus leitmotif was not to write an astronomical didactic poem, but to draw attention to the perceivable signs in nature, which Zeus benignly gives to mankind. Nevertheless, early on a division was introduced between the astronomical part (refer to as Phaenomena and comprising the first 757 verses) and the later (refer to as Diosemeia comprising the later 383 verses).
+                                <list>
+                                    <item>
+                                        1-18 proem
+                                    </item>
+                                    <item>
+                                        19-461 constellations in the northern and southern hemispheres
+                                    </item>
+                                </list>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <head>Aratus Latinus, Revised Aratus Latinus and their derivative texts.</head>
+                </div>
             </div>
+            
         </body>
     </text>
 </TEI>

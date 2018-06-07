@@ -537,5 +537,15 @@
             <xsl:apply-templates/>
         </code>
     </xsl:template>
+    
+    <xsl:template match="tei:list">
+        <ul>
+            <xsl:for-each select="./tei:item">
+                <li>
+                    <xsl:apply-templates/>
+                </li>
+            </xsl:for-each>
+        </ul>
+    </xsl:template>
  
 </xsl:stylesheet>

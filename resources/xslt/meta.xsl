@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet xmlns="http://www.w3.org/1999/xhtml" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tei="http://www.tei-c.org/ns/1.0" exclude-result-prefixes="tei" version="2.0"><!-- <xsl:strip-space elements="*"/>-->
-    <xsl:param name="ref"/><!--
-##################################
-### Seitenlayout und -struktur ###
-##################################
--->
+<xsl:stylesheet xmlns="http://www.w3.org/1999/xhtml" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tei="http://www.tei-c.org/ns/1.0" exclude-result-prefixes="tei" version="2.0">
+    <xsl:import href="shared/base.xsl"/>
+    
+    <xsl:param name="document"/>
+    <xsl:param name="app-name"/>
+    <xsl:param name="collection-name"/>
+    <xsl:param name="path2source"/>
+    <xsl:param name="ref"/>
     <xsl:template match="/">
         <div class="page-header" align="center">
             <h2>
@@ -22,6 +24,35 @@
             </h4>
         </div>
         <div>
+            <xsl:if test="//tei:div/tei:head">
+                <h3 id="clickme">
+                    <abbr title="Click to display table of contents">[ToC]</abbr>
+                </h3>
+                <div id="headings" class="readmore">
+                    <ul>
+                        <xsl:for-each select="/tei:TEI/tei:text/tei:body//tei:div/tei:head">
+                            <li>
+                                <a>
+                                    <xsl:attribute name="href">
+                                        <xsl:text>#hd</xsl:text>
+                                        <xsl:number level="any"/>
+                                    </xsl:attribute>
+                                    <xsl:number level="multiple" count="tei:div" format="1.1. "/>
+                                </a>
+                                <xsl:choose>
+                                    <xsl:when test=".//tei:orig">
+                                        <xsl:apply-templates select=".//tei:orig"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:value-of select="."/>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                                
+                            </li>
+                        </xsl:for-each>
+                    </ul>
+                </div>
+            </xsl:if>
                 <xsl:apply-templates select="//tei:text"/>
             
             <div class="panel-footer">
@@ -81,6 +112,14 @@
                     </p>
                 </div>
             </div>
+            <script type="text/javascript">
+                $(document).ready(function(){
+                $( "div[class~='readmore']" ).hide();
+                });
+                $("#clickme").click(function(){
+                $( "div[class~='readmore']" ).toggle("slow");
+                });
+            </script>
         </div>
         <script type="text/javascript">
             // creates a link to the xml version of the current docuemnt available via eXist-db's REST-API
