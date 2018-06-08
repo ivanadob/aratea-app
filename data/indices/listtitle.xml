@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<register xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<register>
 <work xml:id="gerbert_letter">
   <author ref="#gerbert">Gerbert of Aurillac</author>
   <title>Letter to Constantine of Fleury on the abacus</title>

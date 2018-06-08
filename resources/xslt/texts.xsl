@@ -7,12 +7,124 @@
     <xsl:param name="collection-name"/>
     <xsl:param name="path2source"/>
     <xsl:param name="ref"/>
-    
-    
     <xsl:template match="/">
-        <h1>Texts</h1>
-        <p>
-            <xsl:apply-templates select=".//tei:title"/>
-        </p>
-    </xsl:template>
+        <div class="page-header" align="center">
+            <h2>
+                <xsl:for-each select="//tei:fileDesc/tei:titleStmt/tei:title">
+                    <xsl:apply-templates/>
+                    <!--<xsl:value-of select="."/>-->
+                    <br/>
+                </xsl:for-each>
+            </h2>
+            <h4>by<br/>
+                <xsl:for-each select="//tei:titleStmt//tei:author//tei:persName">
+                    <xsl:apply-templates select="."/>
+                    <br/>
+                </xsl:for-each>
+            </h4>
+        </div>
+        <div>
+            <xsl:if test="//tei:div/tei:head">
+                <h3 id="clickme">
+                    <abbr title="Click to display table of contents">[ToC]</abbr>
+                </h3>
+                <div id="headings" class="readmore">
+                    <ul>
+                        <xsl:for-each select="/tei:TEI/tei:text/tei:body//tei:div/tei:head">
+                            <li>
+                                <a>
+                                    <xsl:attribute name="href">
+                                        <xsl:text>#hd</xsl:text>
+                                        <xsl:number level="any"/>
+                                    </xsl:attribute>
+                                    <xsl:number level="multiple" count="tei:div" format="1.1. "/>
+                                </a>
+                                <xsl:choose>
+                                    <xsl:when test=".//tei:orig">
+                                        <xsl:apply-templates select=".//tei:orig"/>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:value-of select="."/>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                                
+                            </li>
+                        </xsl:for-each>
+                    </ul>
+                </div>
+            </xsl:if>
+            <xsl:apply-templates select="//tei:text"/>
+            
+            <div class="panel-footer">
+                <div class="panel-footer">
+                    <p style="text-align:center;">
+                        <xsl:for-each select="tei:TEI/tei:text/tei:body//tei:note">
+                            <div class="footnotes">
+                                <xsl:element name="a">
+                                    <xsl:attribute name="name">
+                                        <xsl:text>fn</xsl:text>
+                                        <xsl:number level="any" format="1" count="tei:note"/>
+                                    </xsl:attribute>
+                                    <a>
+                                        <xsl:attribute name="href">
+                                            <xsl:text>#fna_</xsl:text>
+                                            <xsl:number level="any" format="1" count="tei:note"/>
+                                        </xsl:attribute>
+                                        <span style="font-size:7pt;vertical-align:super;">
+                                            <xsl:number level="any" format="1" count="tei:note"/>
+                                        </span>
+                                    </a>
+                                </xsl:element>
+                                <xsl:choose>
+                                    <xsl:when test=".//tei:ptr">
+                                        <xsl:for-each select=".//tei:ptr">
+                                            <xsl:variable name="selctedID">
+                                                <xsl:value-of select="substring-after(data(./@target),'#')"/>
+                                            </xsl:variable>
+                                            <xsl:variable name="selectedBook">
+                                                <xsl:value-of select="ancestor::tei:TEI//tei:biblStruct[@xml:id=$selctedID]"/>
+                                            </xsl:variable>
+                                            <xsl:choose>
+                                                <xsl:when test="ancestor::tei:TEI//tei:biblStruct[@xml:id=$selctedID]//tei:persName">
+                                                    <xsl:value-of select=" string-join(ancestor::tei:TEI//tei:biblStruct[@xml:id=$selctedID]//tei:surname, '/')"/>,
+                                                    <xsl:value-of select="ancestor::tei:TEI//tei:biblStruct[@xml:id=$selctedID]//tei:date[1]"/>
+                                                    <xsl:apply-templates/>
+                                                    <xsl:if test="position() &lt; last()">; </xsl:if>
+                                                </xsl:when>
+                                                <xsl:otherwise>
+                                                    <xsl:value-of select=" string-join(ancestor::tei:TEI//tei:biblStruct[@xml:id=$selctedID]//tei:author, '/')"/>,
+                                                    <xsl:value-of select="ancestor::tei:TEI//tei:biblStruct[@xml:id=$selctedID]//tei:date[1]"/>
+                                                    <xsl:apply-templates/>
+                                                    <xsl:if test="position() &lt; last()">; </xsl:if>
+                                                </xsl:otherwise>
+                                            </xsl:choose>
+                                        </xsl:for-each>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:value-of select="."/>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </div>
+                        </xsl:for-each>
+                    </p>
+                    <p style="text-align:center;">
+                        <a href="{$path2source}">TEI/XML</a>
+                    </p>
+                </div>
+            </div>
+            <script type="text/javascript">
+                $(document).ready(function(){
+                $( "div[class~='readmore']" ).hide();
+                });
+                $("#clickme").click(function(){
+                $( "div[class~='readmore']" ).toggle("slow");
+                });
+            </script>
+        </div>
+    </xsl:template><!--
+    #####################
+    ###  Formatierung ###
+    #####################
+-->
+    
 </xsl:stylesheet>

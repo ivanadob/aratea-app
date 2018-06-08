@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <div data-template="templates:surround" data-template-with="templates/datatable.html" data-template-at="datatable">
+    
     <div class="panel panel-default">
         <div class="panel-heading" style="text-align:center;">
-            <h1>Bibliography</h1>
+            <h1>Table of Content<br/>
+            </h1>
         </div>
         <div class="panel-body">
             <table id="myTable" class="table table-striped table-condensed table-hover">
                 <thead>
-                    <tr>
-                        <th>Title</th>
-                        <th>Normdata</th>
+                    <tr align="center" font-size="1.0em">
+                        <th>
+                            Title
+                        </th>
+                        <th>
+                            Doc-Name
+                        </th>
                     </tr>
                 </thead>
-                <tbody id="myTableBody" style="display:none">
-                    <tr data-template="app:bibliography"/>
-                </tbody>
+                <tr data-template="app:texttoc"/>
             </table>
         </div>
     </div>
@@ -24,10 +28,5 @@
         buttons: [
         'copy', 'excel', 'pdf'
         ]
-        });
-        
-        $(document).ready(function() {
-        $("#myTableBody").show({
-        });
         });</script>
 </div>

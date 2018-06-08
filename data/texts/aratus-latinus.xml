@@ -5,7 +5,8 @@
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>Aratus Latinus</title>
+            <title type="main">Aratea Digital</title>
+            <title type="sub">Aratus Latinus</title>
          </titleStmt>
          <editionStmt>
             <edition/>

@@ -53,7 +53,7 @@
                     </ul>
                 </div>
             </xsl:if>
-                <xsl:apply-templates select="//tei:text"/>
+            <xsl:apply-templates select="//tei:text"/>
             
             <div class="panel-footer">
                 <div class="panel-footer">
@@ -87,7 +87,7 @@
                                             <xsl:choose>
                                                 <xsl:when test="ancestor::tei:TEI//tei:biblStruct[@xml:id=$selctedID]//tei:persName">
                                                     <xsl:value-of select=" string-join(ancestor::tei:TEI//tei:biblStruct[@xml:id=$selctedID]//tei:surname, '/')"/>,
-                                                <xsl:value-of select="ancestor::tei:TEI//tei:biblStruct[@xml:id=$selctedID]//tei:date[1]"/>
+                                                    <xsl:value-of select="ancestor::tei:TEI//tei:biblStruct[@xml:id=$selctedID]//tei:date[1]"/>
                                                     <xsl:apply-templates/>
                                                     <xsl:if test="position() &lt; last()">; </xsl:if>
                                                 </xsl:when>
@@ -108,7 +108,7 @@
                         </xsl:for-each>
                     </p>
                     <p style="text-align:center;">
-                        <a id="link_to_source"/>
+                        <a href="{$path2source}">TEI/XML</a>
                     </p>
                 </div>
             </div>
@@ -121,28 +121,6 @@
                 });
             </script>
         </div>
-        <script type="text/javascript">
-            // creates a link to the xml version of the current docuemnt available via eXist-db's REST-API
-            var params={};
-            window.location.search
-            .replace(/[?&amp;]+([^=&amp;;]+)=([^&amp;;]*)/gi, function(str,key,value) {
-            params[key] = value;
-            }
-            );
-            var collection;
-            if (params['directory'] === "undefined"  || params['directory'] === "") {
-            collection = 'editions';
-            } else {
-            collection = params['directory']
-            }
-            var path = window.location.origin+window.location.pathname;
-            var replaced = path.replace("exist/apps/", "exist/rest/db/apps/");
-            current_html = window.location.pathname.substring(window.location.pathname.lastIndexOf("/") + 1)
-            var source_dokument = replaced.replace("pages/"+current_html, "data/"+collection+"/"+params['document']);
-            // console.log(source_dokument)
-            $( "#link_to_source" ).attr('href',source_dokument);
-            $( "#link_to_source" ).text(source_dokument);
-        </script>
     </xsl:template><!--
     #####################
     ###  Formatierung ###

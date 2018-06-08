@@ -11,7 +11,8 @@ declare variable  $app:indices := $config:app-root||'/data/indices';
 declare variable $app:placeIndex := $config:app-root||'/data/indices/listplace.xml';
 declare variable $app:personIndex := $config:app-root||'/data/indices/listperson.xml';
 declare variable $app:orgIndex := $config:app-root||'/data/indices/listorg.xml';
-declare variable $app:workIndex := $config:app-root||'/data/indices/listwork.xml';
+declare variable $app:workIndex := $config:app-root||'/data/indices/listtitle.xml';
+declare variable $app:biblIndex := $config:app-root||'/data/indices/listbibl.xml';
 declare variable $app:defaultXsl := doc($config:app-root||'/resources/xslt/xmlToHtml.xsl');
 
 declare function functx:contains-case-insensitive
@@ -231,6 +232,41 @@ declare function app:listPlace($node as node(), $model as map(*)) {
         </tr>
 };
 
+(:~
+ : creates a basic table of content derived from the documents stored in '/data/editions'
+ :)
+declare function app:texttoc($node as node(), $model as map(*)) {
+
+    let $collection := request:get-parameter("collection", "")
+    let $docs := if ($collection)
+        then
+            collection(concat($config:app-root, '/data/', $collection, '/'))//tei:TEI
+        else
+            collection(concat($config:app-root, '/data/editions/'))//tei:TEI
+    for $title in $docs
+        let $date := $title//tei:title[@type='sub']//text()
+        let $link2doc := if ($collection)
+            then
+                <a href="{app:hrefToDoc($title, $collection)}">{app:getDocName($title)}</a>
+            else
+                <a href="{app:hrefToDoc($title)}">{app:getDocName($title)}</a>
+        let $status := data($title//tei:revisionDesc/@status)
+        let $transcription := if(contains($date, 'Transcription'))
+            then
+                'yes'
+            else
+                'no'
+        return
+        <tr>
+           <td>
+               {$date}
+           </td>
+           <td>
+               {$link2doc}
+           </td>
+        </tr>
+};
+
 
 (:~
  : creates a basic table of content derived from the documents stored in '/data/editions'
@@ -312,10 +348,28 @@ return
     transform:transform($xml, $xsl, $params)
 };
 
+
 (:~
  : creates a basic work-index derived from the  '/data/indices/listbibl.xml'
  :)
-declare function app:listBibl($node as node(), $model as map(*)) {
+declare function app:bibliography($node as node(), $model as map(*)) {
+    let $hitHtml := "hits.html?searchkey="
+    for $item in doc($app:biblIndex)//tei:item
+    return
+             <tr>
+                 <td>{$item/tei:label/text()}</td>
+                 <td>
+                     {$item/tei:bibl}
+                 </td>
+             </tr>
+};
+
+
+
+(:~
+ : creates a basic work-index derived from the  '/data/indices/listbibl.xml'
+ :)
+declare function app:listTitle($node as node(), $model as map(*)) {
     let $hitHtml := "hits.html?searchkey="
     for $item in doc($app:workIndex)//work
     let $author := normalize-space(string-join($item/author//text(), ' '))
