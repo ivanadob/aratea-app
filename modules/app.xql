@@ -283,10 +283,18 @@ declare function app:toc($node as node(), $model as map(*)) {
         let $date := $title//tei:title[@type='sub']//text()
         let $link2doc := if ($collection)
             then
-                <a href="{app:hrefToDoc($title, $collection)}">{app:getDocName($title)}</a>
+                <a href="{app:hrefToDoc($title, $collection)}">{$date}</a>
             else
                 <a href="{app:hrefToDoc($title)}">{app:getDocName($title)}</a>
         let $status := data($title//tei:revisionDesc/@status)
+        let $texts := 
+            for $y in $title//tei:msItem/tei:title[@ref]
+                let $id := substring-after(data($y/@ref), '#')
+                let $sourcetext := doc($app:workIndex)//work[@xml:id=$id]
+                where $sourcetext[@type='al']
+                return
+                    <li>{$sourcetext/author/text()}, {$sourcetext/title/text()}</li>
+        
         let $transcription := if(contains($date, 'Transcription'))
             then
                 'yes'
@@ -295,11 +303,11 @@ declare function app:toc($node as node(), $model as map(*)) {
         return
         <tr>
            <td>
-               {$date}
-           </td>
-           <td>
                {$link2doc}
            </td>
+            <td>
+                {$texts}
+            </td>
             <td>
                 {$status}
             </td>
