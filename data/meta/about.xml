@@ -14,10 +14,10 @@
             <publicationStmt>
                 <publisher/>
                 <availability>
-                       <licence target="https://creativecommons.org/licenses/by/4.0/">
-                           <p>The (CC BY 4.0)-License applies to this document.</p>
-                       </licence>
-                   </availability>
+                    <licence target="https://creativecommons.org/licenses/by/4.0/">
+                        <p>The (CC BY 4.0)-License applies to this document.</p>
+                    </licence>
+                </availability>
             </publicationStmt>
             <sourceDesc>
                 <p>Born digital.</p>
@@ -27,33 +27,60 @@
     <text>
         <body>
             <div>
-                <head>Aratea Digital</head>
-                <p>The term Aratea or Aratea carmina refers to three classical Latin translations (these of Cicero, Germanicus, and Avienus) as well as multiple medieval renderings of Aratus‘ (ca. 315/310-240 BC) didactic poem the Phaenomena.[1] With more than sixty manuscripts the Aratea was the main and in many respects the only source from which medieval readers received information about stellar astronomy, making it an important research topic. Sufficient numbers of studies have been devoted to the literary aspects of the Latin translations of the poem. Some manuscripts of the Aratea have attracted scholarly attention due to their illustrations and diagrams, but no overall study on the transmission and reception of the Aratea has been written.[2] The utmost goal of my dissertation project is an evaluation of the role the text of the Aratea played in the astronomical studies during a period from the 8th c. to the 12th c., taking into consideration how the entire body of the texts that make up the Aratea was read, commented on and copied during this period.</p>
                 <div>
-                    <head>Concise History of the Texts</head>
-                    <div>
-                        <head>The Greek Original(s)</head>
-                        <div>
-                            <head>Aratus’ Poem – the Phaenomena</head>
-                            <p>
-                                The Phaenomena, literary “Things that appear”, is a didactic poem, which teaches about the fixed stars, and their annual motion, as well as about the atmospheric occurrences, and the behaviour of the flora and fauna.[3] Aratus leitmotif was not to write an astronomical didactic poem, but to draw attention to the perceivable signs in nature, which Zeus benignly gives to mankind. Nevertheless, early on a division was introduced between the astronomical part (refer to as Phaenomena and comprising the first 757 verses) and the later (refer to as Diosemeia comprising the later 383 verses).
-                                <list>
-                                    <item>
-                                        1-18 proem
-                                    </item>
-                                    <item>
-                                        19-461 constellations in the northern and southern hemispheres
-                                    </item>
-                                </list>
-                            </p>
-                        </div>
-                    </div>
+                    <head>About</head>
+                    <p> Aratea Digital is a database collecting information about astronomy in the
+                        Early Middle Ages. The main focus of the project is the Latin transmission
+                        of the so-called Aratea texts including the Latin translations and the
+                        derivative texts based on Aratus' didactic poem Phaenomena. The website
+                        presents descriptions of their (pre-13th-century) manuscripts, references to
+                        the latest editions and relevant literature. </p>
+                    <p> This website is work-in-progress. We are constantly working on improving and
+                        enhancing the information provided. </p>
                 </div>
                 <div>
-                    <head>Aratus Latinus, Revised Aratus Latinus and their derivative texts.</head>
+                    <head>Goals</head>
+                    <list>
+                        <item>Summary introduction of the Aratea texts, providing basic information
+                            on their history, as well as the authoritative edition, relevant
+                            literature and links to further resources. Also all manuscripts that
+                            contain the respective text will be automatically listed here.</item>
+                        <item>Description of all pre
+                            13th-century manuscripts of the Aratea texts.</item>
+                        <item>Indices for all places and people connected with the manuscript
+                            transmission of the Aratea, as well as other text, which build up their Überlieferungsgemeinschaft. We aim
+                            to link all entities with Authority files (<ref target="http://www.dnb.de/DE/Standardisierung/GND/gnd_node.html">GND</ref> and <ref target="http://www.geonames.org/">geonames</ref>) to
+                            facilitate identification and future interoperability.</item>
+                    </list>
+                </div>
+                <div>
+                    <head>Manuscripts</head>
+                    <p> The manuscript descriptions are encoded using the guidelines of the <ref target="http://www.tei-c.org/">Text Encoding Initiative (TEI)</ref>, which
+                        is an XML standard widely adopted in the digital humanities for the
+                        representation of texts. </p>
+                    <p> To validate the mark-up we used the TEI P5 schema for <ref target="http://www.europeanaregia.eu/">Europeana Regia</ref> (ER). The
+                        practices from the <ref target="http://www.hab.de/">Herzog August library
+                            Wolfenbüttel</ref> were taken as an example for structuring the manuscript
+                        descriptions. People, places are texts (works within manuscripts) are tagged
+                        as such and gathered in indices together with additional information as well
+                        as links to further resources. The XML files are also available for
+                        download. </p>
+                    <p> With the growing number of manuscript description being added to the
+                        database we are further working on different possibilities to search, filter
+                        and analyse the data. Apart from full text search we plan to integrate
+                        faceted search to filter the manuscripts according to certain criteria
+                        (shelfmark, origin place / time, texts etc.) and possibly to combine
+                        different criteria. </p>
+                </div>
+                <div>
+                    <head>Licence</head>
+                    <p> The material is licensed under a <ref target="https://creativecommons.org/licenses/by/4.0/">Creative Commons
+                            Attribution 4.0 International license (CC BY 4.0)</ref>, meaning you are
+                        free to make use of it, share and adapt it to your need, as long as you give
+                        us appropriate credit (mention the project website for instance), provide a
+                        link to the license, and indicate if changes were made. </p>
                 </div>
             </div>
-            
         </body>
     </text>
 </TEI>
