@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
         <fileDesc>
@@ -55,10 +54,12 @@
                 </div>
                 <div>
                     <head>Manuscripts</head>
-                    <p> The manuscript descriptions are encoded using the guidelines of the <ref target="http://www.tei-c.org/">Text Encoding Initiative (TEI)</ref>, which
+                    <p> The manuscript descriptions are encoded using the guidelines of the <ref
+                            target="http://www.tei-c.org/">Text Encoding Initiative (TEI)</ref>, which
                         is an XML standard widely adopted in the digital humanities for the
                         representation of texts. </p>
-                    <p> To validate the mark-up we used the TEI P5 schema for <ref target="http://www.europeanaregia.eu/">Europeana Regia</ref> (ER). The
+                    <p> To validate the mark-up we used the TEI P5 schema for <ref
+                            target="http://www.europeanaregia.eu/">Europeana Regia</ref> (ER). The
                         practices from the <ref target="http://www.hab.de/">Herzog August library
                             Wolfenbüttel</ref> were taken as an example for structuring the manuscript
                         descriptions. People, places are texts (works within manuscripts) are tagged
@@ -74,7 +75,8 @@
                 </div>
                 <div>
                     <head>Licence</head>
-                    <p> The material is licensed under a <ref target="https://creativecommons.org/licenses/by/4.0/">Creative Commons
+                    <p> The material is licensed under a <ref
+                            target="https://creativecommons.org/licenses/by/4.0/">Creative Commons
                             Attribution 4.0 International license (CC BY 4.0)</ref>, meaning you are
                         free to make use of it, share and adapt it to your need, as long as you give
                         us appropriate credit (mention the project website for instance), provide a
