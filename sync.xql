@@ -1,11 +1,11 @@
-xquery version "3.0";
+xquery version "3.1";
 
 declare namespace expath="http://expath.org/ns/pkg";
 declare namespace repo="http://exist-db.org/xquery/repo";
 
 import module namespace config="http://www.digital-archiv.at/ns/aratea-digital/config" at "modules/config.xqm";
 
-let $target-base-default := "C:\Users\pandorfer\Documents\Redmine\ivana"
+let $target-base-default := "C:\Users\pandorfer\Documents\Redmine\konde"
 let $app-name := doc(concat($config:app-root, "/repo.xml"))//repo:target/text()
 return
 

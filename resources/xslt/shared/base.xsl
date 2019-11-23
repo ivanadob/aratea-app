@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns="http://www.w3.org/1999/xhtml" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tei="http://www.tei-c.org/ns/1.0" exclude-result-prefixes="tei" version="2.0">
+    <xsl:template match="tei:date[@*]">
+        <abbr>
+            <xsl:attribute name="title">
+                <xsl:value-of select="data(./@*)"/>
+            </xsl:attribute>
+            <xsl:apply-templates/>
+        </abbr>
+    </xsl:template>
     <xsl:template match="tei:term">
         <span>
             <xsl:apply-templates/>
@@ -11,6 +19,16 @@
                 <u>
                     <xsl:apply-templates/>
                 </u>
+            </xsl:when>
+            <xsl:when test="@rend='superscript'">
+                <sup>
+                    <xsl:apply-templates/>
+                </sup>
+            </xsl:when>
+            <xsl:when test="@rend='strikethrough'">
+                <strike>
+                    <xsl:apply-templates/>
+                </strike>
             </xsl:when>
             <xsl:when test="@rend='italic'">
                 <i>
@@ -432,14 +450,14 @@
         <xsl:variable name="x">
             <xsl:number count="." level="any"/>
         </xsl:variable>
-        <div class="panel panel-default" id="mspart_{$x}">
-            <div class="panel-heading">
+        <div class="card-header" id="mspart_{$x}">
+            <div class="card-header">
                     <h4 align="center">
                         <xsl:value-of select="./tei:msIdentifier"/>
                         <xsl:value-of select="./tei:head"/>
                     </h4>
             </div>
-            <div class="panel-body">
+            <div class="card-body">
                 <xsl:apply-templates select=".//tei:msContents"/>
             </div>
         </div>
@@ -538,14 +556,46 @@
         </code>
     </xsl:template>
     
+    <xsl:template match="tei:ref[starts-with(./@target, '#text__')]">
+        <xsl:variable name="point-to">
+            <xsl:value-of select="substring-after(./@target, '#')"/>
+        </xsl:variable>
+        <xsl:variable name="link">
+            <xsl:value-of select="concat('./show.html?document=', $point-to, '&amp;directory=texts')"/>
+        </xsl:variable>
+        <a>
+            <xsl:attribute name="href">
+                <xsl:value-of select="$link"/>
+            </xsl:attribute>
+            <xsl:apply-templates/>
+        </a>
+    </xsl:template>
+    
+    <xsl:template match="tei:ref[starts-with(./@target, '#desc__')]">
+        <xsl:variable name="point-to">
+            <xsl:value-of select="substring-after(./@target, '#')"/>
+        </xsl:variable>
+        <xsl:variable name="link">
+            <xsl:value-of select="concat('./show.html?document=', $point-to, '&amp;directory=descriptions')"/>
+        </xsl:variable>
+        <a>
+            <xsl:attribute name="href">
+                <xsl:value-of select="$link"/>
+            </xsl:attribute>
+            <xsl:apply-templates/>
+        </a>
+    </xsl:template>
+    
     <xsl:template match="tei:list">
         <ul>
-            <xsl:for-each select="./tei:item">
-                <li>
-                    <xsl:apply-templates/>
-                </li>
-            </xsl:for-each>
+            <xsl:apply-templates/>
         </ul>
+    </xsl:template>
+    
+    <xsl:template match="tei:list/tei:item">
+        <li>
+            <xsl:apply-templates/>
+        </li>
     </xsl:template>
  
 </xsl:stylesheet>
