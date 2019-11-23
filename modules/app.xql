@@ -1,9 +1,9 @@
 xquery version "3.1";
-module namespace app="http://www.digital-archiv.at/ns/aratea-digital/templates";
+module namespace app="http://www.digital-archiv.at/ns/templates";
 declare namespace tei="http://www.tei-c.org/ns/1.0";
 declare namespace functx = 'http://www.functx.com';
 import module namespace templates="http://exist-db.org/xquery/templates" ;
-import module namespace config="http://www.digital-archiv.at/ns/aratea-digital/config" at "config.xqm";
+import module namespace config="http://www.digital-archiv.at/ns/config" at "config.xqm";
 import module namespace kwic = "http://exist-db.org/xquery/kwic" at "resource:org/exist/xquery/lib/kwic.xql";
 
 
@@ -54,9 +54,9 @@ declare function functx:substring-after-last
    concat(upper-case(substring($arg,1,1)),
              substring($arg,2))
  } ;
- 
+
 (:~
- : returns the names of the previous, current and next document  
+ : returns the names of the previous, current and next document
 :)
 
 declare function app:next-doc($collection as xs:string, $current as xs:string) {
@@ -64,7 +64,7 @@ let $all := sort(xmldb:get-child-resources($collection))
 let $currentIx := index-of($all, $current)
 let $prev := if ($currentIx > 1) then $all[$currentIx - 1] else false()
 let $next := if ($currentIx < count($all)) then $all[$currentIx + 1] else false()
-return 
+return
     ($prev, $current, $next)
 };
 
@@ -74,7 +74,7 @@ let $currentIx := index-of($all, $current)
 let $prev := if ($currentIx > 1) then $all[$currentIx - 1] else false()
 let $next := if ($currentIx < count($all)) then $all[$currentIx + 1] else false()
 let $amount := count($all)
-return 
+return
     ($prev, $current, $next, $amount, $currentIx)
 };
 
@@ -238,7 +238,7 @@ declare function app:listPers($node as node(), $model as map(*)) {
             <a href="{$ref}">{$ref}</a>
         else
             "-"
-        
+
     return
         <tr>
             <td>
@@ -440,7 +440,7 @@ let $params :=
     <param name="amount" value="{$amount}"/>
     <param name="currentIx" value="{$currentIx}"/>
     <param name="progress" value="{$progress}"/>
-    
+
    {
         for $p in request:get-parameter-names()
             let $val := request:get-parameter($p,())
@@ -460,7 +460,7 @@ declare function app:listBibl($node as node(), $model as map(*)) {
     for $item in doc($app:workIndex)//tei:listBibl/tei:bibl
     let $author := normalize-space(string-join($item/tei:author//text(), ' '))
     let $gnd := $item//tei:idno/text()
-    let $gnd_link := if ($gnd) 
+    let $gnd_link := if ($gnd)
         then
             <a href="{$gnd}">{$gnd}</a>
         else
@@ -509,5 +509,3 @@ declare function app:firstDoc($node as node(), $model as map(*)) {
         return
             <a class="btn btn-main btn-outline-primary btn-lg" href="{$href}" role="button">Start Reading</a>
 };
-
-

@@ -3,7 +3,7 @@ xquery version "3.0";
 declare namespace expath="http://expath.org/ns/pkg";
 declare namespace repo="http://exist-db.org/xquery/repo";
 
-import module namespace config="http://www.digital-archiv.at/ns/aratea-digital/config" at "../modules/config.xqm";
+import module namespace config="http://www.digital-archiv.at/ns/config" at "../modules/config.xqm";
 
 let $target-base-default := "/home/csae8092/repos/aratea"
 let $app-name := "aratea-app"
