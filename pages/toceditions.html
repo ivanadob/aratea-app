@@ -17,12 +17,18 @@
             <div class="card-body">
                 <table id="myTable" class="table table-striped table-condensed table-hover">
                     <thead>
-                        <tr align="center" font-size="1.0em">
+                        <tr>
+                            <th>Title</th>
+                            <th>Doc-Name</th>
+                        </tr>
+                        <tr id="filterrow">
                             <th>Title</th>
                             <th>Doc-Name</th>
                         </tr>
                     </thead>
-                    <tr data-template="app:toctrans"/>
+                    <tbody id="myTableBody">
+                        <tr data-template="app:toctrans"/>
+                    </tbody>
                 </table>
             </div>
         </div>
@@ -44,11 +50,5 @@
             </div>
         </div>
     </div>
-    <script>var table = $('#myTable').DataTable({
-            keepConditions: true,
-            dom: 'Bfrtip',
-            buttons: [
-                'copy', 'excel', 'pdf'
-            ]
-        });</script>
+    <script type="text/javascript" src="../resources/js/datatables.custom.js"/>
 </div>

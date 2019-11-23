@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet 
-	xmlns:tei="http://www.tei-c.org/ns/1.0" 
-	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
-	exclude-result-prefixes="#all"
-	version="2.0">
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tei="http://www.tei-c.org/ns/1.0" exclude-result-prefixes="#all" version="2.0">
 	<xsl:import href="shared/params.xsl"/>
-	<xsl:variable name="Status"></xsl:variable>
+	<xsl:variable name="Status"/>
 	<xsl:variable name="showAuthorname">yes</xsl:variable>
 	<xsl:variable name="opac"/>
 	<xsl:variable name="gbv"/>
@@ -88,10 +84,18 @@
 						</tr>
 						<xsl:for-each select="descendant::tei:msDesc">
 							<tr>
-								<td><xsl:value-of select="tei:msIdentifier/tei:idno"/></td>
-								<td><xsl:value-of select="tei:head/tei:title"/></td>
-								<td><xsl:value-of select="tei:head/tei:origPlace"/></td>
-								<td><xsl:value-of select="tei:head/tei:origDate"/></td>
+								<td>
+                                        <xsl:value-of select="tei:msIdentifier/tei:idno"/>
+                                    </td>
+								<td>
+                                        <xsl:value-of select="tei:head/tei:title"/>
+                                    </td>
+								<td>
+                                        <xsl:value-of select="tei:head/tei:origPlace"/>
+                                    </td>
+								<td>
+                                        <xsl:value-of select="tei:head/tei:origDate"/>
+                                    </td>
 							</tr>
 						</xsl:for-each>
 					</table>
@@ -226,15 +230,14 @@
 	<xsl:choose>
 		<xsl:when test="@type='siglum'">
 			<div>
-				<span><xsl:attribute name="class">head</xsl:attribute>Sigle: </span>
+				<span>
+                        <xsl:attribute name="class">head</xsl:attribute>Sigle: </span>
 				<xsl:apply-templates/>
 			</div>
 		</xsl:when>
 	</xsl:choose>
 </xsl:template>
-<xsl:template match="tei:altIdentifier[@type='former']
-	[not(@rend='doNotShow')]
-	[not(contains(preceding-sibling::tei:idno, 'olim')) and not(contains(preceding-sibling::tei:idno, tei:idno))]" mode="Schlagzeile">
+<xsl:template match="tei:altIdentifier[@type='former']  [not(@rend='doNotShow')]  [not(contains(preceding-sibling::tei:idno, 'olim')) and not(contains(preceding-sibling::tei:idno, tei:idno))]" mode="Schlagzeile">
 	<xsl:if test="not(preceding-sibling::tei:altIdentifier[@type='former'][not(@rend='doNotShow')])">
 		<xsl:text>Alte Signatur: </xsl:text>
 	</xsl:if>
@@ -248,7 +251,9 @@
 <xsl:template match="tei:author[not(normalize-space(.)='')] | tei:editor[not(normalize-space(.)='')]">
 	<span>
 		<xsl:attribute name="class">author</xsl:attribute>
-		<xsl:if test=" @rend = 'supplied' "><xsl:text>[</xsl:text></xsl:if>
+		<xsl:if test=" @rend = 'supplied' ">
+                <xsl:text>[</xsl:text>
+            </xsl:if>
 		<xsl:choose>
 			<xsl:when test="parent::tei:bibl">
 				<xsl:choose>
@@ -278,29 +283,18 @@
 				<xsl:apply-templates/>
 			</xsl:otherwise>
 		</xsl:choose>
-		<xsl:if test=" @rend = 'supplied' and not( following-sibling::tei:title[ @rend = 'supplied' ]) "><xsl:text>]</xsl:text></xsl:if>
+		<xsl:if test=" @rend = 'supplied' and not( following-sibling::tei:title[ @rend = 'supplied' ]) ">
+                <xsl:text>]</xsl:text>
+            </xsl:if>
 	</span>
 	<xsl:choose>
-		<xsl:when test="following-sibling::tei:author and 
-			not(starts-with(substring-after(..,.),',')) and 
-			not(starts-with(substring-after(..,.),':')) and 
-			not(starts-with(substring-after(..,.),'.')) and
-			not(contains(.,':'))">
+		<xsl:when test="following-sibling::tei:author and     not(starts-with(substring-after(..,.),',')) and     not(starts-with(substring-after(..,.),':')) and     not(starts-with(substring-after(..,.),'.')) and    not(contains(.,':'))">
 			<xsl:text>, </xsl:text>
 		</xsl:when>
-		<xsl:when test="following-sibling::tei:title and 
-			not(starts-with(substring-after(..,.),',')) and 
-			not(starts-with(substring-after(..,.),':')) and 
-			not(starts-with(substring-after(..,.),'.')) and
-			not(contains(.,':'))">
+		<xsl:when test="following-sibling::tei:title and     not(starts-with(substring-after(..,.),',')) and     not(starts-with(substring-after(..,.),':')) and     not(starts-with(substring-after(..,.),'.')) and    not(contains(.,':'))">
 			<xsl:text>: </xsl:text>
 		</xsl:when>
-		<xsl:when test="not(following-sibling::node()[name() = current()/name()]) and parent::tei:msItem and
-			not(following-sibling::tei:title) and 
-			not(starts-with(substring-after(..,.),',')) and 
-			not(starts-with(substring-after(..,.),':')) and 
-			not(starts-with(substring-after(..,.),'.')) and
-			not(contains(.,':'))">
+		<xsl:when test="not(following-sibling::node()[name() = current()/name()]) and parent::tei:msItem and    not(following-sibling::tei:title) and     not(starts-with(substring-after(..,.),',')) and     not(starts-with(substring-after(..,.),':')) and     not(starts-with(substring-after(..,.),'.')) and    not(contains(.,':'))">
 			<xsl:text>. </xsl:text>
 		</xsl:when>
 		<xsl:when test="not(parent::tei:bibl) and preceding-sibling::tei:ptr and normalize-space(following-sibling::text()[1])">
@@ -382,13 +376,19 @@
 			<xsl:choose>
 				<xsl:when test="@xml:id">
 					<a>
-						<xsl:attribute name="name"><xsl:value-of select="@xml:id"/></xsl:attribute>
+						<xsl:attribute name="name">
+                                <xsl:value-of select="@xml:id"/>
+                            </xsl:attribute>
 						<xsl:choose>
 							<xsl:when test="contains(@xml:id,'opac')">
-								<xsl:attribute name="href"><xsl:value-of select="concat($opac,substring-after(@xml:id,'opac_'))"/></xsl:attribute>
+								<xsl:attribute name="href">
+                                        <xsl:value-of select="concat($opac,substring-after(@xml:id,'opac_'))"/>
+                                    </xsl:attribute>
 							</xsl:when>
 							<xsl:when test="contains(@xml:id,'gbv')">
-								<xsl:attribute name="href"><xsl:value-of select="concat($gbv,substring-after(@xml:id,'gbv_'))"/></xsl:attribute>
+								<xsl:attribute name="href">
+                                        <xsl:value-of select="concat($gbv,substring-after(@xml:id,'gbv_'))"/>
+                                    </xsl:attribute>
 							</xsl:when>
 						</xsl:choose>
 						<xsl:apply-templates/>
@@ -399,8 +399,7 @@
 				</xsl:otherwise>
 			</xsl:choose>
 			<xsl:choose>
-				<xsl:when test="ancestor::tei:additional and parent::tei:listBibl and following-sibling::tei:bibl[not(normalize-space(.)='')] and 
-							not(substring(.,string-length(.)-1)=';') and not(substring(.,string-length(.)-1)='.')">
+				<xsl:when test="ancestor::tei:additional and parent::tei:listBibl and following-sibling::tei:bibl[not(normalize-space(.)='')] and         not(substring(.,string-length(.)-1)=';') and not(substring(.,string-length(.)-1)='.')">
 					<xsl:value-of select="$Trennzeichen"/>
 				</xsl:when>
 				<xsl:otherwise>
@@ -421,7 +420,9 @@
 		</xsl:when>
 		<xsl:otherwise>
 			<td>
-				<xsl:if test="contains(@rend,'nowrap')"><xsl:attribute name="nowrap">nowrap</xsl:attribute></xsl:if>
+				<xsl:if test="contains(@rend,'nowrap')">
+                        <xsl:attribute name="nowrap">nowrap</xsl:attribute>
+                    </xsl:if>
 				<xsl:apply-templates/>
 			</td>
 		</xsl:otherwise>
@@ -521,7 +522,7 @@
 		<xsl:value-of select="@unit"/>
 	</xsl:if>
 	<xsl:if test="../tei:width or ../tei:depth">
-		<xsl:text> &#x00D7; </xsl:text>
+		<xsl:text> × </xsl:text>
 	</xsl:if>
 </xsl:template>
 
@@ -532,7 +533,7 @@
 		<xsl:value-of select="@unit"/>
 	</xsl:if>
 	<xsl:if test="../tei:depth">
-		<xsl:text> &#x00D7; </xsl:text>
+		<xsl:text> × </xsl:text>
 	</xsl:if>
 </xsl:template>
 
@@ -557,10 +558,10 @@
 	<xsl:choose>
 		<xsl:when test="starts-with(., tei:locus) and (preceding-sibling::tei:incipit or contains(@rend, 'dottedBegin'))">
 			<xsl:apply-templates select="node()[1][self::tei:locus]"/>
-			<xsl:text> &#x2026; </xsl:text>
+			<xsl:text> … </xsl:text>
 		</xsl:when>
 		<xsl:when test="preceding-sibling::tei:incipit or contains(@rend, 'dottedBegin')">
-			<xsl:text> &#x2026; </xsl:text>
+			<xsl:text> … </xsl:text>
 		</xsl:when>
 	</xsl:choose>
 	<span>
@@ -568,30 +569,28 @@
 		<xsl:apply-templates select="node()[not(position='1')][not(self::tei:locus)]"/>
 	</span>
 	<xsl:choose>
-		<xsl:when test="contains(@rend, 'dottedEnd') or following-sibling::tei:explicit"><xsl:text> &#x2026; </xsl:text></xsl:when>
-		<xsl:otherwise><xsl:call-template name="Satzzeichen"/></xsl:otherwise>
+		<xsl:when test="contains(@rend, 'dottedEnd') or following-sibling::tei:explicit">
+                <xsl:text> … </xsl:text>
+            </xsl:when>
+		<xsl:otherwise>
+                <xsl:call-template name="Satzzeichen"/>
+            </xsl:otherwise>
 	</xsl:choose>
 </xsl:template>
 
-<xsl:template match="tei:extent"></xsl:template>
+<xsl:template match="tei:extent"/>
 
 <xsl:template match="tei:extent[not(normalize-space(.)='')]" mode="Schlagzeile">
-	<xsl:if test="(ancestor::tei:physDesc/preceding-sibling::tei:msIdentifier/tei:altIdentifier[@type='former'][not(@rend='doNotShow')] 
-		and not(contains(ancestor::tei:physDesc/preceding-sibling::tei:msIdentifier/tei:idno,concat('olim ',ancestor::tei:physDesc/preceding-sibling::tei:msIdentifier/tei:altIdentifier[@type='former'][not(@rend='doNotShow')][1]/tei:idno))))
-		or 
-		(ancestor::tei:physDesc/tei:objectDesc/tei:supportDesc/@material 
-		or (normalize-space(ancestor::tei:physDesc/tei:objectDesc/tei:supportDesc/tei:support//tei:material) != ''))">
+	<xsl:if test="(ancestor::tei:physDesc/preceding-sibling::tei:msIdentifier/tei:altIdentifier[@type='former'][not(@rend='doNotShow')]    and not(contains(ancestor::tei:physDesc/preceding-sibling::tei:msIdentifier/tei:idno,concat('olim ',ancestor::tei:physDesc/preceding-sibling::tei:msIdentifier/tei:altIdentifier[@type='former'][not(@rend='doNotShow')][1]/tei:idno))))   or    (ancestor::tei:physDesc/tei:objectDesc/tei:supportDesc/@material    or (normalize-space(ancestor::tei:physDesc/tei:objectDesc/tei:supportDesc/tei:support//tei:material) != ''))">
 		<xsl:value-of select="$Trennzeichen"/>
 	</xsl:if>
 	<xsl:value-of select="descendant::tei:measure[@type = 'leavesCount']"/>
 	<xsl:choose>
-		<xsl:when test="descendant::tei:measure[@type = 'leavesCount'] 
-			and descendant::tei:measure[(@type = 'pageDimensions') or (@type = 'leavesSize')]">
+		<xsl:when test="descendant::tei:measure[@type = 'leavesCount']     and descendant::tei:measure[(@type = 'pageDimensions') or (@type = 'leavesSize')]">
 			<xsl:value-of select="$Trennzeichen"/>
 			<xsl:value-of select="descendant::tei:measure[(@type = 'pageDimensions') or (@type = 'leavesSize')]"/>
 		</xsl:when>
-		<xsl:when test="descendant::tei:measure[@type = 'leavesCount'] 
-			and descendant::tei:dimensions[(@type = 'leaf')]">
+		<xsl:when test="descendant::tei:measure[@type = 'leavesCount']     and descendant::tei:dimensions[(@type = 'leaf')]">
 			<xsl:value-of select="$Trennzeichen"/>
 			<xsl:apply-templates select="descendant::tei:dimensions[(@type = 'leaf')]" mode="Schlagzeile"/>
 		</xsl:when>
@@ -606,11 +605,15 @@
 		<xsl:when test="@reason">
 			<span>
 				<xsl:attribute name="class">normal</xsl:attribute>
-				<xsl:attribute name="title"><xsl:value-of select="@reason"/></xsl:attribute>
-				<xsl:text>&#x2026;</xsl:text>
+				<xsl:attribute name="title">
+                        <xsl:value-of select="@reason"/>
+                    </xsl:attribute>
+				<xsl:text>…</xsl:text>
 			</span>
 		</xsl:when>
-		<xsl:otherwise><xsl:text>&#x2026;</xsl:text></xsl:otherwise>
+		<xsl:otherwise>
+                <xsl:text>…</xsl:text>
+            </xsl:otherwise>
 	</xsl:choose>
 	<!--xsl:call-template name="Leerzeichen"/-->
 </xsl:template>
@@ -634,17 +637,13 @@
 				<xsl:apply-templates select="following-sibling::tei:physDesc/descendant::tei:supportDesc" mode="Schlagzeile"/>
 				<xsl:choose>
 					<xsl:when test="(tei:origPlace != '')">
-						<xsl:if test="preceding-sibling::tei:msIdentifier/tei:altIdentifier[@type='former'][not(@rend='doNotShow')] 
-							and not(contains(preceding-sibling::tei:msIdentifier/tei:idno,concat('olim ',preceding-sibling::tei:msIdentifier/tei:altIdentifier[@type='former'][not(@rend='doNotShow')][1]/tei:idno)))
-							or following-sibling::tei:physDesc/descendant::tei:supportDesc">
+						<xsl:if test="preceding-sibling::tei:msIdentifier/tei:altIdentifier[@type='former'][not(@rend='doNotShow')]         and not(contains(preceding-sibling::tei:msIdentifier/tei:idno,concat('olim ',preceding-sibling::tei:msIdentifier/tei:altIdentifier[@type='former'][not(@rend='doNotShow')][1]/tei:idno)))        or following-sibling::tei:physDesc/descendant::tei:supportDesc">
 							<xsl:value-of select="$Trennzeichen"/>
 						</xsl:if>
 						<xsl:apply-templates select="tei:origPlace" mode="Schlagzeile"/>
 					</xsl:when>
 					<xsl:when test="(following-sibling::tei:history/tei:origin//tei:origPlace != '')">
-						<xsl:if test="preceding-sibling::tei:msIdentifier/tei:altIdentifier[@type='former'][not(@rend='doNotShow')] 
-							and not(contains(preceding-sibling::tei:msIdentifier/tei:idno,concat('olim ',preceding-sibling::tei:msIdentifier/tei:altIdentifier[@type='former'][not(@rend='doNotShow')][1]/tei:idno)))
-							or following-sibling::tei:physDesc/descendant::tei:supportDesc">
+						<xsl:if test="preceding-sibling::tei:msIdentifier/tei:altIdentifier[@type='former'][not(@rend='doNotShow')]         and not(contains(preceding-sibling::tei:msIdentifier/tei:idno,concat('olim ',preceding-sibling::tei:msIdentifier/tei:altIdentifier[@type='former'][not(@rend='doNotShow')][1]/tei:idno)))        or following-sibling::tei:physDesc/descendant::tei:supportDesc">
 							<xsl:value-of select="$Trennzeichen"/>
 						</xsl:if>
 						<xsl:apply-templates select="following-sibling::tei:history/tei:origin//tei:origPlace" mode="Schlagzeile"/>
@@ -652,19 +651,13 @@
 				</xsl:choose>
 				<xsl:choose>
 					<xsl:when test="(tei:origDate != '')">
-						<xsl:if test="preceding-sibling::tei:msIdentifier/tei:altIdentifier[@type='former'][not(@rend='doNotShow')] 
-							and not(contains(preceding-sibling::tei:msIdentifier/tei:idno,concat('olim ',preceding-sibling::tei:msIdentifier/tei:altIdentifier[@type='former'][not(@rend='doNotShow')][1]/tei:idno)))
-							or following-sibling::tei:physDesc/descendant::tei:supportDesc
-							or tei:origPlace or following-sibling::tei:history/tei:origin//tei:origPlace">
+						<xsl:if test="preceding-sibling::tei:msIdentifier/tei:altIdentifier[@type='former'][not(@rend='doNotShow')]         and not(contains(preceding-sibling::tei:msIdentifier/tei:idno,concat('olim ',preceding-sibling::tei:msIdentifier/tei:altIdentifier[@type='former'][not(@rend='doNotShow')][1]/tei:idno)))        or following-sibling::tei:physDesc/descendant::tei:supportDesc        or tei:origPlace or following-sibling::tei:history/tei:origin//tei:origPlace">
 							<xsl:value-of select="$Trennzeichen"/>
 						</xsl:if>
 						<xsl:apply-templates select="tei:origDate" mode="Schlagzeile"/>
 					</xsl:when>
 					<xsl:when test="(following-sibling::tei:history/tei:origin//tei:origDate != '')">
-						<xsl:if test="preceding-sibling::tei:msIdentifier/tei:altIdentifier[@type='former'][not(@rend='doNotShow')] 
-							and not(contains(preceding-sibling::tei:msIdentifier/tei:idno,concat('olim ',preceding-sibling::tei:msIdentifier/tei:altIdentifier[@type='former'][not(@rend='doNotShow')][1]/tei:idno)))
-							or following-sibling::tei:physDesc/descendant::tei:supportDesc
-							or tei:origPlace or following-sibling::tei:history/tei:origin//tei:origPlace">
+						<xsl:if test="preceding-sibling::tei:msIdentifier/tei:altIdentifier[@type='former'][not(@rend='doNotShow')]         and not(contains(preceding-sibling::tei:msIdentifier/tei:idno,concat('olim ',preceding-sibling::tei:msIdentifier/tei:altIdentifier[@type='former'][not(@rend='doNotShow')][1]/tei:idno)))        or following-sibling::tei:physDesc/descendant::tei:supportDesc        or tei:origPlace or following-sibling::tei:history/tei:origin//tei:origPlace">
 							<xsl:value-of select="$Trennzeichen"/>
 						</xsl:if>
 						<xsl:apply-templates select="following-sibling::tei:history/tei:origin//tei:origDate" mode="Schlagzeile"/>
@@ -683,9 +676,7 @@
 
 <xsl:template match="tei:hi[not(normalize-space(.)='')]">
 	<xsl:choose>
-		<xsl:when test="contains( @rend, 'font-weight:' ) 
-			or contains( @rend, 'font-variant:' ) 
-			or contains( @rend, 'font-size:' )">
+		<xsl:when test="contains( @rend, 'font-weight:' )     or contains( @rend, 'font-variant:' )     or contains( @rend, 'font-size:' )">
 			<span>
 				<xsl:attribute name="style" select="@rend"/>
 				<xsl:apply-templates/>
@@ -694,12 +685,12 @@
 		<xsl:when test="( @rend = 'rubricated' )">
 			<span>
 				<xsl:attribute name="class">smaller</xsl:attribute>
-				<xsl:text>&#x203A;</xsl:text>
+				<xsl:text>›</xsl:text>
 			</span>
 			<xsl:apply-templates/>
 			<span>
 				<xsl:attribute name="class">smaller</xsl:attribute>
-				<xsl:text>&#x2039;</xsl:text>
+				<xsl:text>‹</xsl:text>
 			</span>
 		</xsl:when>
 		<xsl:when test="contains( @rend, 'smallCaps' )">
@@ -786,10 +777,7 @@
 			<a name="{ancestor::tei:TEI/@xml:id}"/>
 		</xsl:when>
 	</xsl:choose>
-	<xsl:if test="preceding-sibling::tei:settlement and not(preceding-sibling::tei:settlement = $ignoreInSettlement)
-		or preceding-sibling::tei:institution and not(preceding-sibling::tei:institution = $ignoreInInstitution)
-		or preceding-sibling::tei:repository and not(preceding-sibling::tei:repository = $ignoreInRepository)
-		or preceding-sibling::tei:collection and not(preceding-sibling::tei:collection = $ignoreInCollection)">
+	<xsl:if test="preceding-sibling::tei:settlement and not(preceding-sibling::tei:settlement = $ignoreInSettlement)   or preceding-sibling::tei:institution and not(preceding-sibling::tei:institution = $ignoreInInstitution)   or preceding-sibling::tei:repository and not(preceding-sibling::tei:repository = $ignoreInRepository)   or preceding-sibling::tei:collection and not(preceding-sibling::tei:collection = $ignoreInCollection)">
 		<xsl:text>, </xsl:text>
 	</xsl:if>
 	<xsl:apply-templates/>
@@ -804,9 +792,13 @@
 </xsl:template>
 
 <xsl:template match="tei:incipit[not(normalize-space(.)='')]">
-	<xsl:if test="contains(@rend, 'dottedBegin')"><xsl:text>&#x2026; </xsl:text></xsl:if>
+	<xsl:if test="contains(@rend, 'dottedBegin')">
+            <xsl:text>… </xsl:text>
+        </xsl:if>
 	<span>
-		<xsl:attribute name="class"><xsl:text>incipit</xsl:text></xsl:attribute>
+		<xsl:attribute name="class">
+                <xsl:text>incipit</xsl:text>
+            </xsl:attribute>
 		<xsl:apply-templates/>
 	</span>
 	<xsl:choose>
@@ -814,13 +806,13 @@
 			<xsl:text> </xsl:text>
 		</xsl:when>
 		<xsl:when test="(@type='recipe') or (@type='sermon')">
-			<xsl:text> &#x2026; </xsl:text>
+			<xsl:text> … </xsl:text>
 		</xsl:when>
 		<xsl:when test="contains(@rend, 'dottedEnd') or following-sibling::tei:incipit">
-			<xsl:text> &#x2026; </xsl:text>
+			<xsl:text> … </xsl:text>
 		</xsl:when>
 		<xsl:when test="following-sibling::tei:explicit or following-sibling::tei:finalRubric">
-			<xsl:text> &#x2026; &#x2014; </xsl:text>
+			<xsl:text> … — </xsl:text>
 		</xsl:when>
 		<xsl:otherwise>
 			<xsl:call-template name="Satzzeichen"/>
@@ -945,7 +937,9 @@
 				<span>
 					<xsl:attribute name="class">listBiblHead</xsl:attribute>
 					<xsl:value-of select="tei:head"/>
-					<xsl:if test="not(contains(tei:head,':'))"><xsl:text>: </xsl:text></xsl:if>
+					<xsl:if test="not(contains(tei:head,':'))">
+                            <xsl:text>: </xsl:text>
+                        </xsl:if>
 				</span>
 			</xsl:if>
 			<xsl:apply-templates select="*[not(self::tei:head)]"/>
@@ -1360,7 +1354,9 @@
 		</xsl:when>
 	</xsl:choose>
 	<xsl:choose>
-		<xsl:when test="(@type='pageDimensions') and parent::tei:accMat"><xsl:apply-templates/></xsl:when>
+		<xsl:when test="(@type='pageDimensions') and parent::tei:accMat">
+                <xsl:apply-templates/>
+            </xsl:when>
 		<xsl:when test="(@type='pageDimensions')"/>
 		<xsl:when test="contains(.,'cm') or contains(.,'mm')">
 			<xsl:apply-templates/>
@@ -1377,7 +1373,9 @@
 </xsl:template>
 
 <xsl:template match="tei:msDesc">
-	<xsl:param name="xmlid"><xsl:value-of select="replace(replace(replace(replace(replace(replace(replace(translate(translate(lower-case(tei:msIdentifier/tei:idno),'.',''),' ','-'),'fol','2f'),'4to','4f'),'8vo','8f'),'12mo','12f'),'&#x03B1;','alpha'),'&#x03B2;','beta'),'&#x2014;','--')"/></xsl:param>
+	<xsl:param name="xmlid">
+            <xsl:value-of select="replace(replace(replace(replace(replace(replace(replace(translate(translate(lower-case(tei:msIdentifier/tei:idno),'.',''),' ','-'),'fol','2f'),'4to','4f'),'8vo','8f'),'12mo','12f'),'α','alpha'),'β','beta'),'—','--')"/>
+        </xsl:param>
 	<xsl:if test="preceding::tei:msDesc">
 		<hr style="margin-top:15px;margin-bottom:15px"/>
 	</xsl:if>
@@ -1406,18 +1404,13 @@
 				<xsl:call-template name="Satzzeichen"/>
 			</p>
 		</xsl:when>
-		<xsl:when test="(parent::tei:msItem[parent::tei:msContents] 
-			and descendant::tei:msItem 
-			and (number(substring-before(tei:locus[1]/@from, 'r') or substring-before(tei:locus[1]/@from, 'v')) gt number(substring-before(parent::*/tei:locus[1]/@from, 'r') or substring-before(parent::*/tei:locus[1]/@from, 'v'))))
-			or (contains(@rend, 'break'))">
+		<xsl:when test="(parent::tei:msItem[parent::tei:msContents]     and descendant::tei:msItem     and (number(substring-before(tei:locus[1]/@from, 'r') or substring-before(tei:locus[1]/@from, 'v')) gt number(substring-before(parent::*/tei:locus[1]/@from, 'r') or substring-before(parent::*/tei:locus[1]/@from, 'v'))))    or (contains(@rend, 'break'))">
 			<br/>
 			<xsl:apply-templates/>
 			<xsl:call-template name="Satzzeichen"/>
 		</xsl:when>
-		<xsl:when test="parent::tei:msItem[parent::tei:msContents] 
-			and descendant::tei:msItem[tei:note[.='leer.']] 
-			and (number(substring-before(tei:locus[1]/@from, 'r') or substring-before(tei:locus[1]/@from, 'v')) le number(substring-before(parent::*/tei:locus[1]/@from, 'r') or substring-before(parent::*/tei:locus[1]/@from, 'v')))">
-			<xsl:text> &#x2013; </xsl:text>
+		<xsl:when test="parent::tei:msItem[parent::tei:msContents]     and descendant::tei:msItem[tei:note[.='leer.']]     and (number(substring-before(tei:locus[1]/@from, 'r') or substring-before(tei:locus[1]/@from, 'v')) le number(substring-before(parent::*/tei:locus[1]/@from, 'r') or substring-before(parent::*/tei:locus[1]/@from, 'v')))">
+			<xsl:text> – </xsl:text>
 			<xsl:apply-templates/>
 			<xsl:call-template name="Satzzeichen"/>
 		</xsl:when>
@@ -1434,13 +1427,17 @@
 </xsl:template>
 
 <xsl:template match="tei:msName[not(normalize-space(.)='')]">
-	<xsl:if test="preceding-sibling::tei:msName"><xsl:value-of select="$Trennzeichen"/></xsl:if>
+	<xsl:if test="preceding-sibling::tei:msName">
+            <xsl:value-of select="$Trennzeichen"/>
+        </xsl:if>
 	<xsl:apply-templates/>
 </xsl:template>
 
 <xsl:template match="tei:msPart[not(@rend = 'condensed')]">
 	<xsl:apply-templates select="tei:msIdentifier | tei:altIdentifier" mode="msPart"/>
-	<xsl:if test="($showMsPartTitles = 'yes')"><xsl:call-template name="Ueberschrift"/></xsl:if>
+	<xsl:if test="($showMsPartTitles = 'yes')">
+            <xsl:call-template name="Ueberschrift"/>
+        </xsl:if>
 	<xsl:apply-templates select="tei:head" mode="Schlagzeile"/>
 	<xsl:call-template name="Hauptverteiler"/>
 </xsl:template>
@@ -1451,7 +1448,9 @@
 </xsl:template>
 
 <xsl:template match="tei:note[not(normalize-space(.)='')]">
-	<xsl:if test="@rend='supplied'"><xsl:text>[</xsl:text></xsl:if>
+	<xsl:if test="@rend='supplied'">
+            <xsl:text>[</xsl:text>
+        </xsl:if>
 	<xsl:choose>
 		<xsl:when test="parent::tei:rubric or parent::tei:incipit or parent::tei:quote or parent::tei:explicit or parent::tei:colophon or parent::tei:finalRubric">
 			<span>
@@ -1467,17 +1466,22 @@
 				<xsl:apply-templates/>
 			</span>
 		</xsl:when>
-		<xsl:otherwise><xsl:apply-templates/></xsl:otherwise>
+		<xsl:otherwise>
+                <xsl:apply-templates/>
+            </xsl:otherwise>
 	</xsl:choose>
 	<xsl:choose>
-		<xsl:when test="@rend='supplied'"><xsl:text>] </xsl:text></xsl:when>
-		<xsl:otherwise><xsl:call-template name="Satzzeichen"/></xsl:otherwise>
+		<xsl:when test="@rend='supplied'">
+                <xsl:text>] </xsl:text>
+            </xsl:when>
+		<xsl:otherwise>
+                <xsl:call-template name="Satzzeichen"/>
+            </xsl:otherwise>
 	</xsl:choose>
 </xsl:template>
 
 <xsl:template match="tei:origin[not(normalize-space(.)='')] | tei:acquisition[not(normalize-space(.)='')]">
-	<xsl:if test="(preceding-sibling::tei:origin[not(normalize-space(.) = '')] or preceding-sibling::tei:provenance[not(. = '')]) 
-		and not(normalize-space(.) = '')">
+	<xsl:if test="(preceding-sibling::tei:origin[not(normalize-space(.) = '')] or preceding-sibling::tei:provenance[not(. = '')])    and not(normalize-space(.) = '')">
 		<xsl:value-of select="$Trennzeichen"/>
 	</xsl:if>
 	<xsl:apply-templates/>
@@ -1485,8 +1489,7 @@
 
 <xsl:template match="tei:provenance[not(normalize-space(.)='')]">
 	<xsl:choose>
-		<xsl:when test="(preceding-sibling::tei:origin[not(normalize-space(.) = '')] and not(preceding-sibling::tei:provenance[not(. = '')])) 
-			and not(normalize-space(.) = '')">
+		<xsl:when test="(preceding-sibling::tei:origin[not(normalize-space(.) = '')] and not(preceding-sibling::tei:provenance[not(. = '')]))     and not(normalize-space(.) = '')">
 			<xsl:value-of select="$Trennzeichen"/>
 		</xsl:when>
 		<xsl:when test="preceding-sibling::tei:provenance[not(. = '')]">
@@ -1498,8 +1501,12 @@
 
 <xsl:template match="tei:org" mode="Register">
 	<xsl:choose>
-		<xsl:when test="tei:label"><xsl:value-of select="tei:label"/></xsl:when>
-		<xsl:when test="tei:orgName"><xsl:value-of select="tei:orgName"/></xsl:when>
+		<xsl:when test="tei:label">
+                <xsl:value-of select="tei:label"/>
+            </xsl:when>
+		<xsl:when test="tei:orgName">
+                <xsl:value-of select="tei:orgName"/>
+            </xsl:when>
 	</xsl:choose>
 </xsl:template>
 
@@ -1571,10 +1578,7 @@
 
 <xsl:template match="tei:p[not(normalize-space(.)='')]">
 	<xsl:choose>
-		<xsl:when test="(normalize-space(.) = 'Papier')
-			or (normalize-space(.) = 'Pergament')
-			or (normalize-space(.) = 'Pergament und Papier')
-			or (normalize-space(.) = 'Papier und Pergament')"/>
+		<xsl:when test="(normalize-space(.) = 'Papier')    or (normalize-space(.) = 'Pergament')    or (normalize-space(.) = 'Pergament und Papier')    or (normalize-space(.) = 'Papier und Pergament')"/>
 		<xsl:otherwise>
 			<xsl:if test="@xml:id and preceding-sibling::tei:p">
 				<br/>
@@ -1649,10 +1653,12 @@
 	<xsl:if test="@type = 'rubric' ">
 		<span>
 			<xsl:attribute name="class">smaller</xsl:attribute>
-			<xsl:text>&#x203A;</xsl:text>
+			<xsl:text>›</xsl:text>
 		</span>
 	</xsl:if>
-	<xsl:if test="contains(@rend, 'dottedBegin')"><xsl:text>&#x2026; </xsl:text></xsl:if>
+	<xsl:if test="contains(@rend, 'dottedBegin')">
+            <xsl:text>… </xsl:text>
+        </xsl:if>
 	<xsl:choose>
 		<xsl:when test="contains(@rend,'before:content')">
 			<xsl:value-of select="substring-before(substring-after(@rend,'before:content('),')')"/>
@@ -1668,12 +1674,12 @@
 		</xsl:when>
 	</xsl:choose>
 	<xsl:if test="@rend = 'dottedEnd' ">
-		<xsl:text> &#x2026;</xsl:text>
+		<xsl:text> …</xsl:text>
 	</xsl:if>
 	<xsl:if test="@type='rubric'">
 		<span>
 			<xsl:attribute name="class">smaller</xsl:attribute>
-			<xsl:text>&#x2039;</xsl:text>
+			<xsl:text>‹</xsl:text>
 		</span>
 	</xsl:if>
 	<xsl:choose>
@@ -1683,9 +1689,11 @@
 		</xsl:when>
 -->
 		<xsl:when test="(@type='incipit') and following-sibling::node()[1][self::tei:quote[@type='explicit']]">
-			<xsl:text> &#x2026; &#x2014; &#x2026; </xsl:text>
+			<xsl:text> … — … </xsl:text>
 		</xsl:when>
-		<xsl:when test="tei:gap[not(following-sibling::text())]"><xsl:call-template name="Leerzeichen"/></xsl:when>
+		<xsl:when test="tei:gap[not(following-sibling::text())]">
+                <xsl:call-template name="Leerzeichen"/>
+            </xsl:when>
 	</xsl:choose>
 </xsl:template>
 
@@ -1735,7 +1743,9 @@
 			</a>
 		</xsl:when>
 		<xsl:when test="@type='biblical' and @cRef">
-			<xsl:if test="not(normalize-space(.) = translate(@cRef, '_.', '  '))"><xsl:apply-templates/></xsl:if>
+			<xsl:if test="not(normalize-space(.) = translate(@cRef, '_.', '  '))">
+                    <xsl:apply-templates/>
+                </xsl:if>
 			<xsl:if test="not(self::tei:ptr) and normalize-space(.) = normalize-space(parent::node())">
 <!--
 				<span>
@@ -1784,7 +1794,9 @@
 			<xsl:apply-templates/>
 			<xsl:text> [</xsl:text>
 			<a>
-				<xsl:attribute name="href"><xsl:text>#cao</xsl:text></xsl:attribute>
+				<xsl:attribute name="href">
+                        <xsl:text>#cao</xsl:text>
+                    </xsl:attribute>
 				<xsl:text>CAO</xsl:text>
 			</a>
 			<xsl:text> </xsl:text>
@@ -1821,18 +1833,21 @@
 			</xsl:when>
 		<xsl:when test="@type='mss' and @cRef">
 			<a>
-				<xsl:attribute name="href"><xsl:value-of select="concat($pathFromHere,@cRef,'.html')"/></xsl:attribute>
+				<xsl:attribute name="href">
+                        <xsl:value-of select="concat($pathFromHere,@cRef,'.html')"/>
+                    </xsl:attribute>
 				<xsl:apply-templates/>
 			</a>
 		</xsl:when>
 		<xsl:when test="@type='ebdb' and @cRef">
-			<xsl:if test="self::tei:ptr"><a href="#EBDB">EBDB</a><xsl:text> </xsl:text></xsl:if>
+			<xsl:if test="self::tei:ptr">
+                    <a href="#EBDB">EBDB</a>
+                    <xsl:text> </xsl:text>
+                </xsl:if>
 			<a>
 				<xsl:attribute name="href">
 					<xsl:choose>
-						<xsl:when test="starts-with(@cRef, 's') or
-							starts-with(@cRef, 'r') or
-							starts-with(@cRef, 'p')">
+						<xsl:when test="starts-with(@cRef, 's') or        starts-with(@cRef, 'r') or        starts-with(@cRef, 'p')">
 							<xsl:value-of select="concat($ebdb, 'wz=', @cRef)"/>
 						</xsl:when>
 						<xsl:when test="starts-with(@cRef, 'w')">
@@ -1841,8 +1856,12 @@
 					</xsl:choose>
 				</xsl:attribute>
 				<xsl:choose>
-					<xsl:when test="self::tei:ptr"><xsl:value-of select="@cRef"/></xsl:when>
-					<xsl:otherwise><xsl:apply-templates/></xsl:otherwise>
+					<xsl:when test="self::tei:ptr">
+                            <xsl:value-of select="@cRef"/>
+                        </xsl:when>
+					<xsl:otherwise>
+                            <xsl:apply-templates/>
+                        </xsl:otherwise>
 				</xsl:choose>
 			</a>
 		</xsl:when>
@@ -1856,7 +1875,7 @@
 		</xsl:when>
 		<xsl:when test="@type='gw' and @cRef">
 			<a>
-				<xsl:attribute name="href" >
+				<xsl:attribute name="href">
 					<xsl:value-of select="concat($cRef-gw-start, @cRef, $cRef-gw-end)"/>
 				</xsl:attribute>
 				<xsl:choose>
@@ -1910,7 +1929,9 @@
 					<xsl:when test="self::tei:ptr">
 						<xsl:value-of select="translate(@cRef, '+', ' ')"/>
 					</xsl:when>
-					<xsl:otherwise><xsl:apply-templates/></xsl:otherwise>
+					<xsl:otherwise>
+                            <xsl:apply-templates/>
+                        </xsl:otherwise>
 				</xsl:choose>
 			</a>
 		</xsl:when>
@@ -1923,13 +1944,13 @@
 					<xsl:when test="self::tei:ptr">
 						<xsl:value-of select="@cRef"/>
 					</xsl:when>
-					<xsl:otherwise><xsl:apply-templates/></xsl:otherwise>
+					<xsl:otherwise>
+                            <xsl:apply-templates/>
+                        </xsl:otherwise>
 				</xsl:choose>
 			</a>
 		</xsl:when>
-		<xsl:when test="($listAbbreviatedTitles = 'yes') and parent::tei:bibl and
-			((.=//tei:list[@type = 'bibliography'][not(preceding::tei:list[@type = 'bibliography'])]/tei:item/tei:label) or
-			(@target=//tei:list[@type = 'bibliography'][not(preceding::tei:list[@type = 'bibliography'])]/tei:item/@xml:id))">
+		<xsl:when test="($listAbbreviatedTitles = 'yes') and parent::tei:bibl and    ((.=//tei:list[@type = 'bibliography'][not(preceding::tei:list[@type = 'bibliography'])]/tei:item/tei:label) or    (@target=//tei:list[@type = 'bibliography'][not(preceding::tei:list[@type = 'bibliography'])]/tei:item/@xml:id))">
 			<a>
 				<xsl:attribute name="href">
 					<xsl:text>#</xsl:text>
@@ -1938,9 +1959,7 @@
 				<xsl:apply-templates/>
 			</a>
 		</xsl:when>
-		<xsl:when test="($listAbbreviatedTitles = 'no') and parent::tei:bibl and
-			((.=//tei:list[@type = 'bibliography'][not(preceding::tei:list[@type = 'bibliography'])]/tei:item/tei:label) or 
-			 (@target=//tei:list[@type = 'bibliography'][not(preceding::tei:list[@type = 'bibliography'])]/tei:item/@xml:id))">
+		<xsl:when test="($listAbbreviatedTitles = 'no') and parent::tei:bibl and    ((.=//tei:list[@type = 'bibliography'][not(preceding::tei:list[@type = 'bibliography'])]/tei:item/tei:label) or      (@target=//tei:list[@type = 'bibliography'][not(preceding::tei:list[@type = 'bibliography'])]/tei:item/@xml:id))">
 			<a>
 				<xsl:attribute name="href">
 					<xsl:value-of select="$opac"/>
@@ -2029,9 +2048,7 @@
 </xsl:template>
 
 <xsl:template match="tei:rs[not(normalize-space(.)='')][@type = 'person'] | tei:author" mode="Register">
-	<xsl:if test="not(preceding::tei:rs[@type = 'person'][. = current()] or preceding::tei:persName[. = current()] or preceding::tei:author[. = current()]) and
-		(not(preceding::tei:rs[@type = 'person'][@ref = current()/@ref])
-		or not(preceding::tei:rs[@type = 'person'][. = current()]))">
+	<xsl:if test="not(preceding::tei:rs[@type = 'person'][. = current()] or preceding::tei:persName[. = current()] or preceding::tei:author[. = current()]) and   (not(preceding::tei:rs[@type = 'person'][@ref = current()/@ref])   or not(preceding::tei:rs[@type = 'person'][. = current()]))">
 		<xsl:choose>
 			<xsl:when test="doc($listPerson)//*[@xml:id=substring(current()/@ref, 2)]">
 				<xsl:value-of select="doc($listPerson)//*[@xml:id=substring(current()/@ref, 2)]/tei:persName[@xml:id]"/>
@@ -2070,7 +2087,7 @@
 		<xsl:otherwise>
 			<span>
 				<xsl:attribute name="class">smaller</xsl:attribute>
-				<xsl:text>&#x203A;</xsl:text>
+				<xsl:text>›</xsl:text>
 			</span>
 			<xsl:choose>
 				<xsl:when test="contains(@rend,'before:content')">
@@ -2089,17 +2106,17 @@
 			<xsl:if test="not(normalize-space(.) = normalize-space(tei:ref))">
 				<span>
 					<xsl:attribute name="class">smaller</xsl:attribute>
-					<xsl:text>&#x2039;</xsl:text>
+					<xsl:text>‹</xsl:text>
 				</span>
 			</xsl:if>
 		</xsl:otherwise>
 	</xsl:choose>
 	<xsl:choose>
 		<xsl:when test="contains(@rend, 'dottedEnd')">
-			<xsl:text> &#x2026; </xsl:text>
+			<xsl:text> … </xsl:text>
 		</xsl:when>
 		<xsl:when test="following-sibling::*[1][self::tei:finalRubric]">
-			<xsl:text> &#x2026; &#x2014; &#x2026; </xsl:text>
+			<xsl:text> … — … </xsl:text>
 		</xsl:when>
 		<xsl:when test="not(normalize-space(.) = normalize-space(tei:ref))">
 			<xsl:call-template name="Satzzeichen"/>
@@ -2119,15 +2136,21 @@
 </xsl:template>
 
 <xsl:template match="tei:soCalled[not(normalize-space(.)='')]">
-	<xsl:text>&quot;</xsl:text>
+	<xsl:text>"</xsl:text>
 	<xsl:apply-templates/>
-	<xsl:text>&quot;</xsl:text>
+	<xsl:text>"</xsl:text>
 </xsl:template>
 
 <xsl:template match="tei:summary[not(normalize-space(.)='')]">
 	<xsl:choose>
-		<xsl:when test="tei:p"><p><xsl:apply-templates/></p></xsl:when>
-		<xsl:otherwise><xsl:apply-templates/></xsl:otherwise>
+		<xsl:when test="tei:p">
+                <p>
+                    <xsl:apply-templates/>
+                </p>
+            </xsl:when>
+		<xsl:otherwise>
+                <xsl:apply-templates/>
+            </xsl:otherwise>
 	</xsl:choose>
 </xsl:template>
 
@@ -2138,17 +2161,14 @@
 		<xsl:apply-templates/>
 		<xsl:if test="not(contains(.,']'))">]</xsl:if>
 	</span>
-	<xsl:if test="not(parent::tei:w)"><xsl:call-template name="Leerzeichen"/></xsl:if>
+	<xsl:if test="not(parent::tei:w)">
+            <xsl:call-template name="Leerzeichen"/>
+        </xsl:if>
 </xsl:template>
 
 <xsl:template match="tei:support">
 	<xsl:choose>
-		<xsl:when test="(normalize-space(.) = 'Pergament') 
-			or (normalize-space(.) = 'Perg.') 
-			or (normalize-space(.) = 'Papier') 
-			or (normalize-space(.) = 'Pap.') 
-			or (normalize-space(.) = 'Pergament und Papier') 
-			or (normalize-space(.) = 'Papier und Pergament')"/>
+		<xsl:when test="(normalize-space(.) = 'Pergament')     or (normalize-space(.) = 'Perg.')     or (normalize-space(.) = 'Papier')     or (normalize-space(.) = 'Pap.')     or (normalize-space(.) = 'Pergament und Papier')     or (normalize-space(.) = 'Papier und Pergament')"/>
 		<xsl:otherwise>
 			<xsl:apply-templates/>
 			<xsl:call-template name="Leerzeichen"/>
@@ -2180,9 +2200,15 @@
 		</xsl:when>
 		<xsl:when test="(@material != '') and not(@material = 'mixed')">
 			<xsl:choose>
-				<xsl:when test="@material = 'perg' "><xsl:text>Pergament</xsl:text></xsl:when>
-				<xsl:when test="@material = 'chart' "><xsl:text>Papier</xsl:text></xsl:when>
-				<xsl:when test="@material = 'papyrus' "><xsl:text>Papyrus</xsl:text></xsl:when>
+				<xsl:when test="@material = 'perg' ">
+                        <xsl:text>Pergament</xsl:text>
+                    </xsl:when>
+				<xsl:when test="@material = 'chart' ">
+                        <xsl:text>Papier</xsl:text>
+                    </xsl:when>
+				<xsl:when test="@material = 'papyrus' ">
+                        <xsl:text>Papyrus</xsl:text>
+                    </xsl:when>
 			</xsl:choose>
 		</xsl:when>
 		<xsl:when test="(@material = 'mixed') and (normalize-space(tei:support/tei:p[. = tei:material]) != '')">
@@ -2255,9 +2281,13 @@
 		<xsl:when test="not(parent::tei:bibl) and not(@type='sub')">
 			<span>
 				<xsl:attribute name="class">titlemain</xsl:attribute>
-				<xsl:if test=" @rend = 'supplied' and not(preceding-sibling::tei:author[ @rend = 'supplied' ]) "><xsl:text>[</xsl:text></xsl:if>
+				<xsl:if test=" @rend = 'supplied' and not(preceding-sibling::tei:author[ @rend = 'supplied' ]) ">
+                        <xsl:text>[</xsl:text>
+                    </xsl:if>
 				<xsl:apply-templates/>
-				<xsl:if test=" @rend = 'supplied' "><xsl:text>]</xsl:text></xsl:if>
+				<xsl:if test=" @rend = 'supplied' ">
+                        <xsl:text>]</xsl:text>
+                    </xsl:if>
 			</span>
 		</xsl:when>
 		<xsl:when test="not(parent::tei:bibl)">
@@ -2270,7 +2300,9 @@
 			<xsl:choose>
 				<xsl:when test="contains(@n,'ppn')">
 					<a>
-						<xsl:attribute name="target"><xsl:text>_blank</xsl:text></xsl:attribute>
+						<xsl:attribute name="target">
+                                <xsl:text>_blank</xsl:text>
+                            </xsl:attribute>
 						<xsl:attribute name="href">
 							<xsl:value-of select="$opac"/>
 							<xsl:value-of select="substring-after(@n, concat($searchfield, '_'))"/>
@@ -2387,7 +2419,9 @@
 		<ul>
 			<xsl:for-each select="distinct-values(//tei:abbr[parent::tei:bibl][not(. = $bibliography//tei:label)])">
 				<xsl:sort lang="de" collation="http://saxon.sf.net/collation?lang=de;alphanumeric=yes" select="current()"/>
-				<li><xsl:value-of select="concat('&quot;', ., '&quot;')"/></li>
+				<li>
+                        <xsl:value-of select="concat('&#34;', ., '&#34;')"/>
+                    </li>
 			</xsl:for-each>
 		</ul>
 	</xsl:if>
@@ -2428,7 +2462,9 @@
 			</xsl:for-each>
 			<xsl:for-each select="descendant-or-self::tei:fileDesc/tei:titleStmt/tei:respStmt[not(.=preceding::tei:fileDesc/tei:titleStmt/tei:respStmt)]">
 				<meta name="DC.Contributors">
-					<xsl:attribute name="content"><xsl:apply-templates select="." mode="meta"/></xsl:attribute>
+					<xsl:attribute name="content">
+                            <xsl:apply-templates select="." mode="meta"/>
+                        </xsl:attribute>
 				</meta>
 			</xsl:for-each>
 			<link rel="stylesheet" type="text/css" href="{$cssFile}"/>
@@ -2436,8 +2472,7 @@
 		<body>
 			<xsl:call-template name="Kopfzeile"/>
 			<xsl:apply-templates select="descendant-or-self::tei:msDesc"/>
-			<xsl:if test="($listAbbreviatedTitles = 'yes') and 
-				$bibliography//tei:label[. = current()//tei:abbr[parent::tei:bibl[not(ancestor::tei:source)]][not(ancestor::tei:list[@type = 'bibliography'])]]">
+			<xsl:if test="($listAbbreviatedTitles = 'yes') and      $bibliography//tei:label[. = current()//tei:abbr[parent::tei:bibl[not(ancestor::tei:source)]][not(ancestor::tei:list[@type = 'bibliography'])]]">
 				<xsl:call-template name="BibliographieAusgeben"/>
 			</xsl:if>
 			<xsl:if test="not($literaturDB='')">
@@ -2445,14 +2480,7 @@
 					<xsl:with-param name="xmlid" select="tei:TEI/@xml:id"/>
 				</xsl:call-template>
 			</xsl:if>
-			<xsl:if test="($showIndex = 'yes') and ( 
-				descendant::tei:author[parent::tei:msItem] 
-				or descendant::tei:incipit 
-				or descendant::tei:index 
-				or descendant::tei:ref[(@type='mss') or (@type='altMs')]
-				or descendant::tei:rs[(@type='person') or (@type='place') or (@type='org') or (@type='corporate')]
-				or descendant::tei:title[parent::tei:msItem]
-				) ">
+			<xsl:if test="($showIndex = 'yes') and (      descendant::tei:author[parent::tei:msItem]      or descendant::tei:incipit      or descendant::tei:index      or descendant::tei:ref[(@type='mss') or (@type='altMs')]     or descendant::tei:rs[(@type='person') or (@type='place') or (@type='org') or (@type='corporate')]     or descendant::tei:title[parent::tei:msItem]     ) ">
 				<xsl:call-template name="registerAusgeben"/>
 			</xsl:if>
 		</body>
@@ -2470,7 +2498,9 @@
 				<xsl:matching-substring>
 					<xsl:value-of select="concat(number(regex-group(2)), '.', number(regex-group(1)))"/>
 				</xsl:matching-substring>
-				<xsl:non-matching-substring><xsl:value-of select="$date"/></xsl:non-matching-substring>
+				<xsl:non-matching-substring>
+                        <xsl:value-of select="$date"/>
+                    </xsl:non-matching-substring>
 			</xsl:analyze-string>
 		</xsl:non-matching-substring>
 	</xsl:analyze-string>
@@ -2491,23 +2521,7 @@
 <xsl:template name="HandschriftenErwaehnteAusgeben">
 	<ul>
 		<xsl:for-each-group select="descendant::tei:ref[(@type='mss') or (@type='altMs')]" group-by="if (@cRef) then @cRef else normalize-space(.)">
-			<xsl:sort lang="de" collation="http://saxon.sf.net/collation?lang=de;alphanumeric=yes" 
-				select="if (contains(current-grouping-key(), '-aug-') 
-				or contains(current-grouping-key(), '-blank')
-				or contains(current-grouping-key(), '-extrav')
-				or contains(current-grouping-key(), '-gud-')
-				or contains(current-grouping-key(), '-helmst')
-				or contains(current-grouping-key(), '-novi')
-				or contains(current-grouping-key(), '-weiss')
-				or contains(current-grouping-key(), '-mus-hdschr')) 
-				then concat('Wolfenbüttel, Herzog August Bibliothek, ', current-grouping-key())
-				else if (starts-with(current-grouping-key(), 'ba-')) 
-				then concat('Wolfenbüttel, Herzog August Bibliothek, Bibliotheksarchiv', current-grouping-key())
-				else if (starts-with(current-grouping-key(), 'hbs-')) 
-				then concat('Halberstadt, ', current-grouping-key())
-				else if (starts-with(current-grouping-key(), 'lg-')) 
-				then concat('Lüneburg, ', current-grouping-key())
-				else current-grouping-key()"/>
+			<xsl:sort lang="de" collation="http://saxon.sf.net/collation?lang=de;alphanumeric=yes" select="if (contains(current-grouping-key(), '-aug-')      or contains(current-grouping-key(), '-blank')     or contains(current-grouping-key(), '-extrav')     or contains(current-grouping-key(), '-gud-')     or contains(current-grouping-key(), '-helmst')     or contains(current-grouping-key(), '-novi')     or contains(current-grouping-key(), '-weiss')     or contains(current-grouping-key(), '-mus-hdschr'))      then concat('Wolfenbüttel, Herzog August Bibliothek, ', current-grouping-key())     else if (starts-with(current-grouping-key(), 'ba-'))      then concat('Wolfenbüttel, Herzog August Bibliothek, Bibliotheksarchiv', current-grouping-key())     else if (starts-with(current-grouping-key(), 'hbs-'))      then concat('Halberstadt, ', current-grouping-key())     else if (starts-with(current-grouping-key(), 'lg-'))      then concat('Lüneburg, ', current-grouping-key())     else current-grouping-key()"/>
 			<li>
 				<xsl:call-template name="SignaturAusgeben">
 					<xsl:with-param name="Value" select="current-grouping-key()"/>
@@ -2537,7 +2551,9 @@
 						<xsl:if test="not(position() = last())"><xsl:text>,</xsl:text></xsl:if>
 					</xsl:for-each>
 					-->
-					<xsl:if test="not(position() = last())"><xsl:text>;</xsl:text></xsl:if>
+					<xsl:if test="not(position() = last())">
+                            <xsl:text>;</xsl:text>
+                        </xsl:if>
 				</xsl:for-each-group>
 			</li>
 		</xsl:for-each-group>
@@ -2577,7 +2593,9 @@
 												<xsl:if test="not(position() = last())"><xsl:text>,</xsl:text></xsl:if>
 											</xsl:for-each>
 											-->
-											<xsl:if test="not(position() = last())"><xsl:text>;</xsl:text></xsl:if>
+											<xsl:if test="not(position() = last())">
+                                                    <xsl:text>;</xsl:text>
+                                                </xsl:if>
 										</xsl:for-each-group>
 									</li>
 								</xsl:for-each-group>
@@ -2626,7 +2644,8 @@ function Go (select) {
 		}
 	}
 }
-]]></script>
+]]>
+        </script>
 </xsl:template>
 
 <xsl:template name="Kopfzeile">
@@ -2658,32 +2677,28 @@ function Go (select) {
 		<xsl:if test="descendant::tei:fileDesc/tei:titleStmt/tei:funder">
 			<br/>
 			<xsl:for-each select="descendant::tei:fileDesc/tei:titleStmt/tei:funder[not(.=preceding::tei:fileDesc/tei:titleStmt/tei:funder)]">
-				<xsl:if test="preceding-sibling::tei:funder"><xsl:text>, </xsl:text></xsl:if>
+				<xsl:if test="preceding-sibling::tei:funder">
+                        <xsl:text>, </xsl:text>
+                    </xsl:if>
 				<xsl:apply-templates/>
 			</xsl:for-each>
 		</xsl:if>
 		<xsl:if test=" $Status = 'vorlaeufig' ">
 			<xsl:text> (Vorläufige </xsl:text>
 			<xsl:choose>
-				<xsl:when test="(count(//tei:msDesc) &gt; 1)"><xsl:text>Beschreibungen </xsl:text></xsl:when>
-				<xsl:otherwise><xsl:text>Beschreibung)</xsl:text></xsl:otherwise>
+				<xsl:when test="(count(//tei:msDesc) &gt; 1)">
+                        <xsl:text>Beschreibungen </xsl:text>
+                    </xsl:when>
+				<xsl:otherwise>
+                        <xsl:text>Beschreibung)</xsl:text>
+                    </xsl:otherwise>
 			</xsl:choose>
 		</xsl:if>
 	</p>
 </xsl:template>
 
 <xsl:template name="Leerzeichen">
-    <xsl:if test="(
-    	not(ends-with(normalize-space(parent::*), normalize-space(.))) and
-    	not(starts-with(following-sibling::node()[1],')')) and
-    	not(starts-with(following-sibling::node()[1],',')) and
-    	not(starts-with(following-sibling::node()[1],';')) and
-    	not(starts-with(following-sibling::node()[1],'.')) and
-    	not(starts-with(following-sibling::node()[1],':')) and
-    	not(starts-with(following-sibling::node()[1],'-')) and
-    	not(starts-with(following-sibling::node()[1],'–')) and
-    	not(starts-with(following-sibling::node()[1],']'))
-    	) or starts-with(following-sibling::node()[1],'&#x2026;')">
+    <xsl:if test="(      not(ends-with(normalize-space(parent::*), normalize-space(.))) and      not(starts-with(following-sibling::node()[1],')')) and      not(starts-with(following-sibling::node()[1],',')) and      not(starts-with(following-sibling::node()[1],';')) and      not(starts-with(following-sibling::node()[1],'.')) and      not(starts-with(following-sibling::node()[1],':')) and      not(starts-with(following-sibling::node()[1],'-')) and      not(starts-with(following-sibling::node()[1],'–')) and      not(starts-with(following-sibling::node()[1],']'))      ) or starts-with(following-sibling::node()[1],'…')">
       <xsl:text> </xsl:text>
     </xsl:if>
 </xsl:template>
@@ -2737,14 +2752,22 @@ function Go (select) {
 			<xsl:when test="contains(ancestor::tei:TEI/@xml:id, '_') and contains(ancestor::tei:TEI/@xml:id, 'tei-msDesc')">
 				<xsl:value-of select="substring-before(substring-after(ancestor::tei:TEI/@xml:id, concat($collection, '_')), '_tei-msDesc')"/>
 			</xsl:when>
-			<xsl:otherwise><xsl:value-of select="ancestor::tei:TEI/@xml:id"/></xsl:otherwise>
+			<xsl:otherwise>
+                    <xsl:value-of select="ancestor::tei:TEI/@xml:id"/>
+                </xsl:otherwise>
 		</xsl:choose>
 	</xsl:variable>
 	<xsl:variable name="facsimile">
 		<xsl:choose>
-			<xsl:when test="ancestor-or-self::tei:TEI/tei:facsimile"><xsl:copy-of select="ancestor-or-self::tei:TEI/tei:facsimile"/></xsl:when>
-			<xsl:when test="doc-available('tei-msDesc.xml') and doc('tei-msDesc.xml')//tei:facsimile"><xsl:copy-of select="doc('tei-msDesc.xml')//tei:facsimile"/></xsl:when>
-			<xsl:when test="doc-available(concat($server, $collection, '/', $xmlid, '/', $facsimileData))"><xsl:copy-of select="doc(concat($server, $collection, '/', $xmlid, '/', $facsimileData))"/></xsl:when>
+			<xsl:when test="ancestor-or-self::tei:TEI/tei:facsimile">
+                    <xsl:copy-of select="ancestor-or-self::tei:TEI/tei:facsimile"/>
+                </xsl:when>
+			<xsl:when test="doc-available('tei-msDesc.xml') and doc('tei-msDesc.xml')//tei:facsimile">
+                    <xsl:copy-of select="doc('tei-msDesc.xml')//tei:facsimile"/>
+                </xsl:when>
+			<xsl:when test="doc-available(concat($server, $collection, '/', $xmlid, '/', $facsimileData))">
+                    <xsl:copy-of select="doc(concat($server, $collection, '/', $xmlid, '/', $facsimileData))"/>
+                </xsl:when>
 		</xsl:choose>
 	</xsl:variable>
 	<xsl:choose>
@@ -2808,7 +2831,9 @@ function Go (select) {
 					<xsl:attribute name="class">condensed</xsl:attribute>
 					<xsl:for-each select="tei:msPart/tei:msPart[@rend = 'condensed']">
 						<li>
-							<xsl:if test="not(normalize-space(tei:altIdentifier/*) = string(position()))"><xsl:value-of select="concat(normalize-space(tei:altIdentifier/*),'. ')"/></xsl:if>
+							<xsl:if test="not(normalize-space(tei:altIdentifier/*) = string(position()))">
+                                    <xsl:value-of select="concat(normalize-space(tei:altIdentifier/*),'. ')"/>
+                                </xsl:if>
 							<xsl:apply-templates select="tei:head/*" mode="condensed"/>
 							<xsl:apply-templates select="tei:physDesc/*" mode="condensed"/>
 							<!--					<xsl:for-each select="tei:head/*">
@@ -2827,7 +2852,9 @@ function Go (select) {
 					<xsl:attribute name="class">condensed</xsl:attribute>
 					<xsl:for-each select="tei:msPart[@rend = 'condensed']">
 						<li>
-							<xsl:if test="not(normalize-space(tei:altIdentifier/*) = string(position()))"><xsl:value-of select="concat(normalize-space(tei:altIdentifier/*),'. ')"/></xsl:if>
+							<xsl:if test="not(normalize-space(tei:altIdentifier/*) = string(position()))">
+                                    <xsl:value-of select="concat(normalize-space(tei:altIdentifier/*),'. ')"/>
+                                </xsl:if>
 							<xsl:apply-templates select="tei:head/*" mode="condensed"/>
 							<xsl:apply-templates select="tei:physDesc/*" mode="condensed"/>
 							<!--					<xsl:for-each select="tei:head/*">
@@ -2847,13 +2874,7 @@ function Go (select) {
 
 <xsl:template match="*[not(normalize-space(.)='')]" mode="condensed">
 	<xsl:apply-templates/>
-	<xsl:if test="
-		not(ends-with(normalize-space(.), ',')) and
-		not(ends-with(normalize-space(.), ';')) and
-		not(ends-with(normalize-space(.), '.')) and
-		not(ends-with(normalize-space(.), ':')) and
-		not(ends-with(normalize-space(.), '!')) and
-		not(ends-with(normalize-space(parent::*), normalize-space(.)))">
+	<xsl:if test="   not(ends-with(normalize-space(.), ',')) and   not(ends-with(normalize-space(.), ';')) and   not(ends-with(normalize-space(.), '.')) and   not(ends-with(normalize-space(.), ':')) and   not(ends-with(normalize-space(.), '!')) and   not(ends-with(normalize-space(parent::*), normalize-space(.)))">
 		<xsl:text>.</xsl:text>
 	</xsl:if>
 	<xsl:text> </xsl:text>
@@ -2922,7 +2943,9 @@ function Go (select) {
 												<xsl:apply-templates select="self::node()">
 													<xsl:with-param name="index">yes</xsl:with-param>
 												</xsl:apply-templates>
-												<xsl:if test="not(position() = last())"><xsl:text>,</xsl:text></xsl:if>
+												<xsl:if test="not(position() = last())">
+                                                        <xsl:text>,</xsl:text>
+                                                    </xsl:if>
 											</xsl:for-each>
 										</xsl:for-each-group>
 									</li>
@@ -2962,7 +2985,9 @@ function Go (select) {
 									<xsl:apply-templates select="self::node()">
 										<xsl:with-param name="index">yes</xsl:with-param>
 									</xsl:apply-templates>
-									<xsl:if test="not(position() = last())"><xsl:text>,</xsl:text></xsl:if>
+									<xsl:if test="not(position() = last())">
+                                            <xsl:text>,</xsl:text>
+                                        </xsl:if>
 								</xsl:for-each>
 							</xsl:for-each-group>
 						</li>
@@ -2994,7 +3019,9 @@ function Go (select) {
 							<xsl:apply-templates select="self::node()">
 								<xsl:with-param name="index">yes</xsl:with-param>
 							</xsl:apply-templates>
-							<xsl:if test="not(position() = last())"><xsl:text>,</xsl:text></xsl:if>
+							<xsl:if test="not(position() = last())">
+                                    <xsl:text>,</xsl:text>
+                                </xsl:if>
 						</xsl:for-each>
 					</xsl:for-each-group>
 				</li>
@@ -3038,9 +3065,13 @@ function Go (select) {
 																	<xsl:apply-templates select="self::node()">
 																		<xsl:with-param name="index">yes</xsl:with-param>
 																	</xsl:apply-templates>
-																	<xsl:if test="not(position() = last())"><xsl:text>,</xsl:text></xsl:if>
+																	<xsl:if test="not(position() = last())">
+                                                                            <xsl:text>,</xsl:text>
+                                                                        </xsl:if>
 																</xsl:for-each>
-																<xsl:if test="not(position() = last())"><xsl:text>;</xsl:text></xsl:if>
+																<xsl:if test="not(position() = last())">
+                                                                        <xsl:text>;</xsl:text>
+                                                                    </xsl:if>
 															</xsl:for-each-group>
 														</li>
 													</xsl:for-each-group>
@@ -3068,9 +3099,13 @@ function Go (select) {
 														<xsl:apply-templates select="self::node()">
 															<xsl:with-param name="index">yes</xsl:with-param>
 														</xsl:apply-templates>
-														<xsl:if test="not(position() = last())"><xsl:text>,</xsl:text></xsl:if>
+														<xsl:if test="not(position() = last())">
+                                                                <xsl:text>,</xsl:text>
+                                                            </xsl:if>
 													</xsl:for-each>
-													<xsl:if test="not(position() = last())"><xsl:text>;</xsl:text></xsl:if>
+													<xsl:if test="not(position() = last())">
+                                                            <xsl:text>;</xsl:text>
+                                                        </xsl:if>
 												</xsl:for-each-group>
 											</xsl:otherwise>
 										</xsl:choose>
@@ -3100,9 +3135,13 @@ function Go (select) {
 									<xsl:apply-templates select="self::node()">
 										<xsl:with-param name="index">yes</xsl:with-param>
 									</xsl:apply-templates>
-									<xsl:if test="not(position() = last())"><xsl:text>,</xsl:text></xsl:if>
+									<xsl:if test="not(position() = last())">
+                                            <xsl:text>,</xsl:text>
+                                        </xsl:if>
 								</xsl:for-each>
-								<xsl:if test="not(position() = last())"><xsl:text>;</xsl:text></xsl:if>
+								<xsl:if test="not(position() = last())">
+                                        <xsl:text>;</xsl:text>
+                                    </xsl:if>
 							</xsl:for-each-group>
 						</xsl:otherwise>
 					</xsl:choose>
@@ -3116,10 +3155,18 @@ function Go (select) {
 							<xsl:sort lang="de" collation="http://saxon.sf.net/collation?lang=de;alphanumeric=yes" select="current-grouping-key()"/>
 							<li>
 								<xsl:choose>
-									<xsl:when test="current-grouping-key()='illustration'"><xsl:text>Illustrationen</xsl:text></xsl:when>
-									<xsl:when test="current-grouping-key()='initial'"><xsl:text>Initialen</xsl:text></xsl:when>
-									<xsl:when test="current-grouping-key()='miniature'"><xsl:text>Miniaturen</xsl:text></xsl:when>
-									<xsl:otherwise><xsl:value-of select="current-grouping-key()"/></xsl:otherwise>
+									<xsl:when test="current-grouping-key()='illustration'">
+                                            <xsl:text>Illustrationen</xsl:text>
+                                        </xsl:when>
+									<xsl:when test="current-grouping-key()='initial'">
+                                            <xsl:text>Initialen</xsl:text>
+                                        </xsl:when>
+									<xsl:when test="current-grouping-key()='miniature'">
+                                            <xsl:text>Miniaturen</xsl:text>
+                                        </xsl:when>
+									<xsl:otherwise>
+                                            <xsl:value-of select="current-grouping-key()"/>
+                                        </xsl:otherwise>
 								</xsl:choose>
 								<ul>
 									<xsl:for-each-group select="descendant::tei:term[not(parent::tei:index)]" group-by=".">
@@ -3147,9 +3194,13 @@ function Go (select) {
 													<xsl:apply-templates select="self::node()">
 														<xsl:with-param name="index">yes</xsl:with-param>
 													</xsl:apply-templates>
-													<xsl:if test="not(position() = last())"><xsl:text>,</xsl:text></xsl:if>
+													<xsl:if test="not(position() = last())">
+                                                            <xsl:text>,</xsl:text>
+                                                        </xsl:if>
 												</xsl:for-each>
-												<xsl:if test="not(position() = last())"><xsl:text>;</xsl:text></xsl:if>
+												<xsl:if test="not(position() = last())">
+                                                        <xsl:text>;</xsl:text>
+                                                    </xsl:if>
 											</xsl:for-each-group>
 										</li>
 									</xsl:for-each-group>
@@ -3159,9 +3210,7 @@ function Go (select) {
 					</ul>
 				</li>
 			</xsl:if>
-			<xsl:for-each-group select="descendant::tei:rs[(@type='person') or (@type='place') or (@type='org') or (@type='corporate') or (@type='object')][ancestor::tei:msDesc] 
-				| descendant::tei:persName[not(ancestor::tei:adminInfo)][ancestor::tei:msDesc] 
-				| descendant::tei:placeName[ancestor::tei:msDesc]" group-by=" if (@ref) then @ref else normalize-space(.)">
+			<xsl:for-each-group select="descendant::tei:rs[(@type='person') or (@type='place') or (@type='org') or (@type='corporate') or (@type='object')][ancestor::tei:msDesc]      | descendant::tei:persName[not(ancestor::tei:adminInfo)][ancestor::tei:msDesc]      | descendant::tei:placeName[ancestor::tei:msDesc]" group-by=" if (@ref) then @ref else normalize-space(.)">
 				<xsl:sort lang="de" collation="http://saxon.sf.net/collation?lang=de;alphanumeric=yes" select="current-grouping-key()"/>
 				<li>
 					<xsl:choose>
@@ -3215,17 +3264,25 @@ function Go (select) {
 							<xsl:apply-templates select="self::node()">
 								<xsl:with-param name="index">yes</xsl:with-param>
 							</xsl:apply-templates>
-							<xsl:if test="not(position() = last())"><xsl:text>,</xsl:text></xsl:if>
+							<xsl:if test="not(position() = last())">
+                                    <xsl:text>,</xsl:text>
+                                </xsl:if>
 						</xsl:for-each>
-						<xsl:if test="not(position() = last())"><xsl:text>;</xsl:text></xsl:if>
+						<xsl:if test="not(position() = last())">
+                                <xsl:text>;</xsl:text>
+                            </xsl:if>
 					</xsl:for-each-group>
 				</li>
 			</xsl:for-each-group>
 			<xsl:if test="descendant::tei:ref[(@type='mss') or (@type='altMs')] or descendant::tei:msIdentifier[parent::tei:bibl]">
 				<li>Handschriften, erwähnte
 					<xsl:choose>
-						<xsl:when test="$listMssSeperately = 'yes' "><xsl:text> siehe separates Register</xsl:text></xsl:when>
-						<xsl:otherwise><xsl:call-template name="HandschriftenErwaehnteAusgeben"/></xsl:otherwise>
+						<xsl:when test="$listMssSeperately = 'yes' ">
+                                <xsl:text> siehe separates Register</xsl:text>
+                            </xsl:when>
+						<xsl:otherwise>
+                                <xsl:call-template name="HandschriftenErwaehnteAusgeben"/>
+                            </xsl:otherwise>
 					</xsl:choose>
 				</li>
 			</xsl:if>
@@ -3268,7 +3325,9 @@ function Go (select) {
 										<xsl:if test="not(position() = last())"><xsl:text>,</xsl:text></xsl:if>
 										</xsl:for-each>
 									-->
-									<xsl:if test="not(position() = last())"><xsl:text>,</xsl:text></xsl:if>
+									<xsl:if test="not(position() = last())">
+                                            <xsl:text>,</xsl:text>
+                                        </xsl:if>
 								</xsl:for-each-group>
 							</li>
 						</xsl:for-each-group>
@@ -3300,7 +3359,9 @@ function Go (select) {
 													</xsl:choose>
 												</a>
 											</span>
-											<xsl:if test="not(position() = last())"><xsl:text>;</xsl:text></xsl:if>
+											<xsl:if test="not(position() = last())">
+                                                    <xsl:text>;</xsl:text>
+                                                </xsl:if>
 										</xsl:for-each-group>
 									</li>
 								</xsl:for-each-group>
@@ -3334,7 +3395,9 @@ function Go (select) {
 													</xsl:choose>
 												</a>
 											</span>
-											<xsl:if test="not(position() = last())"><xsl:text>;</xsl:text></xsl:if>
+											<xsl:if test="not(position() = last())">
+                                                    <xsl:text>;</xsl:text>
+                                                </xsl:if>
 										</xsl:for-each-group>
 									</li>
 								</xsl:for-each-group>
@@ -3365,7 +3428,9 @@ function Go (select) {
 							<xsl:apply-templates select="self::node()">
 								<xsl:with-param name="index">yes</xsl:with-param>
 							</xsl:apply-templates>
-							<xsl:if test="not(position() = last())"><xsl:text>,</xsl:text></xsl:if>
+							<xsl:if test="not(position() = last())">
+                                    <xsl:text>,</xsl:text>
+                                </xsl:if>
 						</xsl:for-each>
 					</xsl:for-each>
 				</li>
@@ -3394,7 +3459,9 @@ function Go (select) {
 									<xsl:apply-templates select="self::node()">
 										<xsl:with-param name="index">yes</xsl:with-param>
 									</xsl:apply-templates>
-									<xsl:if test="not(position() = last())"><xsl:text>,</xsl:text></xsl:if>
+									<xsl:if test="not(position() = last())">
+                                            <xsl:text>,</xsl:text>
+                                        </xsl:if>
 								</xsl:for-each>
 							</li>
 						</xsl:for-each>
@@ -3402,8 +3469,7 @@ function Go (select) {
 				</li>
 			</xsl:if>
 
-<xsl:if test="descendant::tei:accMat[not(descendant::tei:term[contains(., 'Fragment')])] 
-					   or descendant::tei:msPart[contains(tei:msIdentifier/tei:idno, 'Fragment')][not(descendant::tei:term[contains(., 'Fragment')])]">
+<xsl:if test="descendant::tei:accMat[not(descendant::tei:term[contains(., 'Fragment')])]          or descendant::tei:msPart[contains(tei:msIdentifier/tei:idno, 'Fragment')][not(descendant::tei:term[contains(., 'Fragment')])]">
 				<li>Fragmente
 					<ul>
 						<xsl:for-each-group select="descendant::tei:accMat[not(descendant::tei:term[contains(., 'Fragment')])]" group-by="tei:title">
@@ -3428,9 +3494,13 @@ function Go (select) {
 									<xsl:apply-templates select="self::node()">
 										<xsl:with-param name="index">yes</xsl:with-param>
 									</xsl:apply-templates>
-									<xsl:if test="not(position() = last())"><xsl:text>,</xsl:text></xsl:if>
+									<xsl:if test="not(position() = last())">
+                                            <xsl:text>,</xsl:text>
+                                        </xsl:if>
 								</xsl:for-each>
-								<xsl:if test="not(position() = last())"><xsl:text>;</xsl:text></xsl:if>
+								<xsl:if test="not(position() = last())">
+                                        <xsl:text>;</xsl:text>
+                                    </xsl:if>
 							</li>
 						</xsl:for-each-group>
 					</ul>
@@ -3499,7 +3569,9 @@ function Go (select) {
 								<xsl:apply-templates select="self::node()">
 									<xsl:with-param name="index">yes</xsl:with-param>
 								</xsl:apply-templates>
-								<xsl:if test="not(position() = last())"><xsl:text>,</xsl:text></xsl:if>
+								<xsl:if test="not(position() = last())">
+                                        <xsl:text>,</xsl:text>
+                                    </xsl:if>
 							</xsl:for-each>
 						</xsl:for-each-group>
 					</li>
@@ -3528,7 +3600,9 @@ function Go (select) {
 								<xsl:apply-templates select="self::node()">
 									<xsl:with-param name="index">yes</xsl:with-param>
 								</xsl:apply-templates>
-								<xsl:if test="not(position() = last())"><xsl:text>,</xsl:text></xsl:if>
+								<xsl:if test="not(position() = last())">
+                                        <xsl:text>,</xsl:text>
+                                    </xsl:if>
 							</xsl:for-each>
 						</xsl:for-each-group>
 					</li>
@@ -3574,7 +3648,9 @@ function Go (select) {
 							<xsl:apply-templates select="self::node()">
 								<xsl:with-param name="index">yes</xsl:with-param>
 							</xsl:apply-templates>
-							<xsl:if test="not(position() = last())"><xsl:text>,</xsl:text></xsl:if>
+							<xsl:if test="not(position() = last())">
+                                    <xsl:text>,</xsl:text>
+                                </xsl:if>
 						</xsl:for-each>
 					</xsl:for-each-group>
 				</li>
@@ -3591,23 +3667,14 @@ function Go (select) {
     	not(starts-with(substring-after(.., normalize-space(.)), ':')) and
     	not(starts-with(substring-after(.., normalize-space(.)), ']'))">
 -->
-	<xsl:if test="
-		not(descendant::tei:gap[not(following-sibling::text())]) and
-		not(descendant-or-self::node()[@rend = 'dottedEnd']) and
-		not(descendant-or-self::node()[(@type='recipe') or (@type='sermon')]) and
-		not(ends-with(normalize-space(.), ',')) and
-		not(ends-with(normalize-space(.), ';')) and
-		not(ends-with(normalize-space(.), '.')) and
-		not(ends-with(normalize-space(.), ':')) and
-		not(ends-with(normalize-space(.), '!')) and
-		not(starts-with(substring-after(.., normalize-space(.)), ',')) and
-		(self::tei:msItem and (not(parent::tei:msItem)) or not(ends-with(normalize-space(parent::*), normalize-space(.)))) and
-		not(parent::tei:abbr) and not(parent::tei:ptr) and not(parent::tei:ref) and
-		not(parent::tei:rubric) and not(parent::tei:incipit) and not(parent::tei:quote) and not(parent::tei:explicit) and not(parent::tei:finalRubric) and not(parent::tei:colophon) and
-		not(parent::tei:title) and not(parent::tei:note) and not(parent::tei:item)">
+	<xsl:if test="   not(descendant::tei:gap[not(following-sibling::text())]) and   not(descendant-or-self::node()[@rend = 'dottedEnd']) and   not(descendant-or-self::node()[(@type='recipe') or (@type='sermon')]) and   not(ends-with(normalize-space(.), ',')) and   not(ends-with(normalize-space(.), ';')) and   not(ends-with(normalize-space(.), '.')) and   not(ends-with(normalize-space(.), ':')) and   not(ends-with(normalize-space(.), '!')) and   not(starts-with(substring-after(.., normalize-space(.)), ',')) and   (self::tei:msItem and (not(parent::tei:msItem)) or not(ends-with(normalize-space(parent::*), normalize-space(.)))) and   not(parent::tei:abbr) and not(parent::tei:ptr) and not(parent::tei:ref) and   not(parent::tei:rubric) and not(parent::tei:incipit) and not(parent::tei:quote) and not(parent::tei:explicit) and not(parent::tei:finalRubric) and not(parent::tei:colophon) and   not(parent::tei:title) and not(parent::tei:note) and not(parent::tei:item)">
 		<xsl:choose>
-			<xsl:when test="self::tei:item"><xsl:text>,</xsl:text></xsl:when>
-			<xsl:otherwise><xsl:text>.</xsl:text></xsl:otherwise>
+			<xsl:when test="self::tei:item">
+                    <xsl:text>,</xsl:text>
+                </xsl:when>
+			<xsl:otherwise>
+                    <xsl:text>.</xsl:text>
+                </xsl:otherwise>
 		</xsl:choose>
 	</xsl:if>
 	<xsl:call-template name="Leerzeichen"/>
@@ -3616,7 +3683,7 @@ function Go (select) {
 <xsl:template name="source">
 	<div>
 		<xsl:attribute name="class">source</xsl:attribute>
-		<xsl:value-of select="descendant::tei:source/tei:bibl"></xsl:value-of>
+		<xsl:value-of select="descendant::tei:source/tei:bibl"/>
 	</div>
 </xsl:template>
 
@@ -3631,8 +3698,7 @@ function Go (select) {
 				<xsl:apply-templates select="tei:msIdentifier/tei:msName"/>
 			</xsl:when>
 			<xsl:otherwise>
-				<xsl:for-each
-					select="tei:msContents/tei:msItem[tei:author or tei:title] | tei:msPart/tei:msContents/tei:msItem[tei:author or tei:title]">
+				<xsl:for-each select="tei:msContents/tei:msItem[tei:author or tei:title] | tei:msPart/tei:msContents/tei:msItem[tei:author or tei:title]">
 					<xsl:if test="preceding-sibling::tei:msItem[tei:author or tei:title]">
 						<xsl:value-of select="$Trennzeichen"/>
 					</xsl:if>
@@ -3648,19 +3714,13 @@ function Go (select) {
 </xsl:template>
 
 <xsl:template match="tei:back | tei:body | tei:index | tei:publicationStmt | tei:text | tei:titleStmt"/>
-<xsl:template match="tei:settlement[. = $ignoreInSettlement] | 
-	tei:institution[. = $ignoreInInstitution] | 
-	tei:repository[. = $ignoreInRepository] | 
-	tei:collection[. = $ignoreInCollection]" mode="Schlagzeile"/>
-<xsl:template match="tei:settlement[not(. = $ignoreInSettlement)] | 
-	tei:institution[not(. = $ignoreInInstitution)] | 
-	tei:repository[not(. = $ignoreInRepository)] | 
-	tei:collection[not(. = $ignoreInCollection)]" mode="Schlagzeile">
+<xsl:template match="tei:settlement[. = $ignoreInSettlement] |   tei:institution[. = $ignoreInInstitution] |   tei:repository[. = $ignoreInRepository] |   tei:collection[. = $ignoreInCollection]" mode="Schlagzeile"/>
+<xsl:template match="tei:settlement[not(. = $ignoreInSettlement)] |   tei:institution[not(. = $ignoreInInstitution)] |   tei:repository[not(. = $ignoreInRepository)] |   tei:collection[not(. = $ignoreInCollection)]" mode="Schlagzeile">
 	<xsl:if test="parent::tei:altIdentifier and not(. = ancestor::tei:msIdentifier/node()[name() = current()/name()])">
 		<xsl:value-of select="."/>
-		<xsl:if test="preceding-sibling::tei:settlement 
-			or preceding-sibling::tei:institution 
-			or preceding-sibling::tei:repository"><xsl:text>, </xsl:text></xsl:if>
+		<xsl:if test="preceding-sibling::tei:settlement     or preceding-sibling::tei:institution     or preceding-sibling::tei:repository">
+                <xsl:text>, </xsl:text>
+            </xsl:if>
 	</xsl:if>
 </xsl:template>
 

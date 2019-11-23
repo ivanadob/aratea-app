@@ -2644,7 +2644,8 @@ function Go (select) {
 		}
 	}
 }
-]]></script>
+]]>
+        </script>
 </xsl:template>
 
 <xsl:template name="Kopfzeile">

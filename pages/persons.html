@@ -23,16 +23,14 @@
                             <th>Occupation</th>
                             <th>Authority ID</th>
                         </tr>
-                    </thead>
-                    <tfoot style="display:none">
-                        <tr>
+                        <tr id="filterrow">
                             <th>Name</th>
                             <th>alt-names</th>
                             <th>Occupation</th>
                             <th>Authority ID</th>
                         </tr>
-                    </tfoot>
-                    <tbody id="myTableBody" style="display:none">
+                    </thead>
+                    <tbody id="myTableBody">
                         <tr data-template="app:listPers"/>
                     </tbody>
                 </table>
@@ -56,36 +54,5 @@
             </div>
         </div>
     </div>
-    <script>
-        var table = $('#myTable').DataTable({
-        keepConditions: true,
-        "pageLength": 25,
-        dom: 'Bfrtip',
-        buttons: [
-        'copy', 'excel', 'pdf'
-        ]
-        });
-        
-        $(document).ready(function() {
-        $("#myTableBody").show({});
-        $('#myTable tfoot th').each( function () {
-        var title = $(this).text();
-        $(this).html( '<input type="text"/>' );
-        });
-        $("#myTable tfoot").show();
-        table.columns().every( function () {
-        var that = this;
-        
-        $( 'input', this.footer() ).on( 'keyup change', function () {
-        if ( that.search() !== this.value ) {
-        that
-        .search( this.value )
-        .draw();
-        }
-        } );
-        } );
-        });
-        
-        
-    </script>
+    <script type="text/javascript" src="../resources/js/datatables.custom.js"/>
 </div>
