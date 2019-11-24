@@ -9,6 +9,7 @@ import module namespace kwic = "http://exist-db.org/xquery/kwic" at "resource:or
 
 declare variable $app:data := $config:app-root||'/data';
 declare variable $app:editions := $config:app-root||'/data/editions';
+declare variable $app:texts := $config:app-root||'/data/texts';
 declare variable $app:descriptions := $config:app-root||'/data/descriptions';
 declare variable $app:indices := $config:app-root||'/data/indices';
 declare variable $app:placeIndex := $config:app-root||'/data/indices/listplace.xml';
@@ -165,7 +166,7 @@ declare function app:nameOfIndexEntry($node as node(), $model as map (*)){
  :)
 declare function app:hrefToDoc($node as node()){
 let $name := functx:substring-after-last($node, '/')
-let $href := concat('show.html','?document=', app:getDocName($node))
+let $href := concat('../pages/show.html','?document=', app:getDocName($node))
     return $href
 };
 
@@ -174,7 +175,7 @@ let $href := concat('show.html','?document=', app:getDocName($node))
  :)
 declare function app:hrefToDoc($node as node(), $collection as xs:string){
 let $name := functx:substring-after-last($node, '/')
-let $href := concat('show.html','?document=', app:getDocName($node), '&amp;directory=', $collection)
+let $href := concat('../pages/show.html','?document=', app:getDocName($node), '&amp;directory=', $collection)
     return $href
 };
 
