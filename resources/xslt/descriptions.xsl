@@ -53,6 +53,13 @@
                                 <a href="{$path2source}">
                                     <i class="fas fa-download" title="show TEI source"/>
                                 </a>
+                                |
+                                <a>
+                                    <xsl:attribute name="href">
+                                        <xsl:value-of select="concat('../netvis/netvis.html?type=Manuscript&amp;id=', $document)"/>
+                                    </xsl:attribute>
+                                    <i class="fas fa-project-diagram" title="as Network"/>
+                                </a>
                             </h2>
                             <h2 style="text-align:center;">
                                 <input type="range" min="1" max="{$amount}" value="{$currentIx}" data-rangeslider="" style="width:100%;"/>
