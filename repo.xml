@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <meta xmlns="http://exist-db.org/xquery/repo">
     <description>A collection of digital editions and manuscript descriptions of medieval transmissions of Aratus‘ (ca. 315/310-240 BC) didactic poem the Phaenomena</description>
     <author ref="http://d-nb.info/gnd/129199176">Peter Andorfer</author>
@@ -10,6 +9,6 @@
     <target>aratea-digital</target>
     <prepare>pre-install.xql</prepare>
     <finish>post-install.xql</finish>
-    <permissions xmlns:repo="http://exist-db.org/xquery/repo" password="" user="admin" group="dba" mode="rw-rw-r--"/>
+    <permissions xmlns:repo="http://exist-db.org/xquery/repo" user="admin" group="dba" mode="rw-rw-r--"/>
 
-</meta>
+<deployed>2020-05-30T17:34:56.622+02:00</deployed></meta>
